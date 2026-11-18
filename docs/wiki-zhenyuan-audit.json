@@ -1,0 +1,108 @@
+[
+  {
+    "id": "chan-nguyen",
+    "title": "Chân Nguyên",
+    "summary": "Đeo Chân Nguyên chính rồi dùng Tu Luyện Đơn để tăng riêng từng dòng, hoặc Sách Tu Luyện để cộng điểm cả bốn dòng; tối đa cấp 400 mỗi dòng.",
+    "status": "issues",
+    "verdict": "Đã đối chiếu công thức tu luyện, bảng kinh nghiệm, cửa hàng và rương vĩnh viễn. Tu Luyện Đơn có kiểm tra vật phẩm, trang bị và lỗi giao dịch; nhánh sách/rương còn thiếu kiểm tra kết quả engine. Chưa thử trực tiếp trên nhân vật trong game.",
+    "steps": [
+      "Quan Phi Phi → Cửa Hàng Đặc Biệt (shop 209). Mua Rương Chân Nguyên (Vĩnh Viễn) (18,1,3118,2) với 20 Kim Nguyên Bảo Đại (18,1,1338,1).",
+      "Để ít nhất 5 ô hành trang trống, nhấn phải rương và chọn Diệp Tịnh, Hạ Tiểu Sảnh, Oanh Oanh, Mộc Siêu, Tử Uyển hoặc Tần Trọng. Nhận 1 Chân Nguyên tương ứng và 1 Sách Tu Luyện (Chân Nguyên) (18,1,3119,7). Bảo Ngọc có mẫu trang bị nhưng không có trong menu rương vĩnh viễn.",
+      "Nhân vật cần đạt cấp 100 để đeo các mẫu Chân Nguyên này. Đeo món vừa nhận vào ô Chân Nguyên chính. Tu luyện chỉ tác động món đang đeo ở ô này; để trong túi hoặc ô phụ sẽ không được xử lý. Kiểm tra bốn dòng thuộc tính trên món đồ trước khi chọn dòng cần nâng.",
+      "Tu luyện từng dòng: giữ Chân Nguyên Tu Luyện Đơn (18,1,1333,1 hoặc 18,1,402,1) trong hành trang, nhấn phải đơn rồi chọn Tu Luyện thuộc tính Thứ Nhất, Thứ Hai, Thứ Ba hoặc Thứ Tư. Mỗi lần chọn thực hiện ngay, dùng 1 đơn để cộng 100 điểm vào đúng dòng đã chọn; không thu thêm KNB, Bạc, Đồng hay Bùa Bảo Toàn.",
+      "Điểm được tích lũy, đủ ngưỡng thì dòng thuộc tính tự lên cấp, tối đa 400. Theo bảng hiện tại, từ cấp c lên c+1 cần 5 × c điểm; mỗi dòng từ cấp 1, 0 điểm lên 400 cần 399.000 điểm = 3.990 đơn. Cả bốn dòng cần 15.960 đơn nếu bắt đầu từ cấp 1, 0 điểm và chỉ dùng đơn.",
+      "Tu luyện bằng sách: đeo đúng Chân Nguyên muốn nâng, nhấn phải Sách Tu Luyện (Chân Nguyên), rồi chọn nút [Nâng Max] Ngoại Trang. Dù chữ trên nút ghi Ngoại Trang, mã này tăng Chân Nguyên chính: cộng 1.000.000 điểm cho mỗi dòng trong bốn dòng và dùng 1 sách. Lượng điểm này đủ lên cấp 400 theo bảng hiện tại.",
+      "Nguồn Tu Luyện Đơn: Rương Hoàng Kim có nhánh 43% nhận 5 đơn; Rương Bạch Ngân có nhánh 45,25% nhận 3 đơn. Đây là xác suất nhận nguyên liệu khi mở rương, khác với tu luyện vốn không quay tỷ lệ thành công. Bảng rơi boss Bạch Hổ Đường và một số boss cũng có đơn; lượng thực nhận phụ thuộc hoạt động và lượt rơi.",
+      "Xem lại cấp/điểm từng dòng sau khi tu luyện. Dòng đã đạt 400 không dùng thêm đơn; chọn dòng khác còn thiếu. Khi gần chạm trần, một đơn vẫn bị dùng hết dù chỉ cần phần nhỏ trong 100 điểm, điểm dư không chuyển sang dòng khác hoặc hoàn thành đơn mới."
+    ],
+    "recipes": [
+      {
+        "name": "Mua Rương Chân Nguyên vĩnh viễn",
+        "formula": "20 Kim Nguyên Bảo Đại (18,1,1338,1) tại Quan Phi Phi → Cửa Hàng Đặc Biệt.",
+        "result": "1 Rương Chân Nguyên (Vĩnh Viễn) (18,1,3118,2).",
+        "chance": "Mua trực tiếp, không quay tỷ lệ.",
+        "notes": ["Giá theo mặt hàng 4992, quầy 209. Rương kèm sách khi mở; không cần mua thêm nguyên liệu tu luyện nếu chỉ muốn dùng sách lên trần."]
+      },
+      {
+        "name": "Mở rương và chọn Chân Nguyên",
+        "formula": "1 Rương Chân Nguyên (Vĩnh Viễn) (18,1,3118,2) + ít nhất 5 ô hành trang trống.",
+        "result": "1 Chân Nguyên đã chọn: Diệp Tịnh (1,24,1,1), Hạ Tiểu Sảnh (1,24,3,1), Oanh Oanh (1,24,4,1), Mộc Siêu (1,24,5,1), Tử Uyển (1,24,6,1) hoặc Tần Trọng (1,24,7,1); kèm 1 Sách Tu Luyện (Chân Nguyên) (18,1,3119,7).",
+        "chance": "Chọn loại trực tiếp; không có nhánh trượt ngẫu nhiên.",
+        "notes": ["MathRandom(1) luôn trả 1; chú thích 50% trong script không phản ánh công thức.", "Rương không tự nâng bốn dòng: phải đeo món nhận được rồi dùng sách đi kèm."]
+      },
+      {
+        "name": "Tu luyện thuộc tính Thứ Nhất",
+        "formula": "Đeo Chân Nguyên chính, dòng 1 chưa đạt cấp 400 + 1 Chân Nguyên Tu Luyện Đơn (18,1,1333,1) hoặc 1 Chân Nguyên Tu Luyện Đơn (18,1,402,1) trong túi.",
+        "result": "Cộng 100 điểm tu luyện vào dòng 1; đủ điểm thì tự tăng cấp, tối đa cấp 400.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Nhấn phải đơn → Tu Luyện thuộc tính Thứ Nhất. Không tăng ba dòng còn lại.", "Không tốn thêm tiền hay Bùa; dòng đã đủ cấp 400 giữ nguyên đơn. Gần trần chỉ nhận phần điểm còn thiếu, vẫn dùng 1 đơn."]
+      },
+      {
+        "name": "Tu luyện thuộc tính Thứ Hai",
+        "formula": "Đeo Chân Nguyên chính, dòng 2 chưa đạt cấp 400 + 1 Chân Nguyên Tu Luyện Đơn (18,1,1333,1) hoặc 1 Chân Nguyên Tu Luyện Đơn (18,1,402,1) trong túi.",
+        "result": "Cộng 100 điểm tu luyện vào dòng 2; đủ điểm thì tự tăng cấp, tối đa cấp 400.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Nhấn phải đơn → Tu Luyện thuộc tính Thứ Hai. Không tăng ba dòng còn lại.", "Không tốn thêm tiền hay Bùa; dòng đã đủ cấp 400 giữ nguyên đơn. Gần trần chỉ nhận phần điểm còn thiếu, vẫn dùng 1 đơn."]
+      },
+      {
+        "name": "Tu luyện thuộc tính Thứ Ba",
+        "formula": "Đeo Chân Nguyên chính, dòng 3 chưa đạt cấp 400 + 1 Chân Nguyên Tu Luyện Đơn (18,1,1333,1) hoặc 1 Chân Nguyên Tu Luyện Đơn (18,1,402,1) trong túi.",
+        "result": "Cộng 100 điểm tu luyện vào dòng 3; đủ điểm thì tự tăng cấp, tối đa cấp 400.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Nhấn phải đơn → Tu Luyện thuộc tính Thứ Ba. Không tăng ba dòng còn lại.", "Không tốn thêm tiền hay Bùa; dòng đã đủ cấp 400 giữ nguyên đơn. Gần trần chỉ nhận phần điểm còn thiếu, vẫn dùng 1 đơn."]
+      },
+      {
+        "name": "Tu luyện thuộc tính Thứ Tư",
+        "formula": "Đeo Chân Nguyên chính, dòng 4 chưa đạt cấp 400 + 1 Chân Nguyên Tu Luyện Đơn (18,1,1333,1) hoặc 1 Chân Nguyên Tu Luyện Đơn (18,1,402,1) trong túi.",
+        "result": "Cộng 100 điểm tu luyện vào dòng 4; đủ điểm thì tự tăng cấp, tối đa cấp 400.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Nhấn phải đơn → Tu Luyện thuộc tính Thứ Tư. Không tăng ba dòng còn lại.", "Không tốn thêm tiền hay Bùa; dòng đã đủ cấp 400 giữ nguyên đơn. Gần trần chỉ nhận phần điểm còn thiếu, vẫn dùng 1 đơn."]
+      },
+      {
+        "name": "Dùng Sách Tu Luyện cho cả bốn dòng",
+        "formula": "Đeo Chân Nguyên chính cần nâng + 1 Sách Tu Luyện (Chân Nguyên) (18,1,3119,7) trong túi.",
+        "result": "Cộng 1.000.000 điểm vào mỗi dòng 1–4; đủ đưa cả bốn dòng lên cấp 400 theo bảng hiện tại. Dùng 1 sách.",
+        "chance": "Không quay tỷ lệ; nhánh sách chưa kiểm tra đầy đủ lỗi engine.",
+        "notes": ["Nhấn phải sách → [Nâng Max] Ngoại Trang; nút đang ghi sai tên nhưng tác động Chân Nguyên chính.", "Không thu thêm KNB, Bạc, Đồng hoặc Tu Luyện Đơn. Không hoàn điểm dư; tránh dùng sách nếu cả bốn dòng đã đạt trần.", "Script sách chưa kiểm tra kết quả nâng từng dòng trước khi xóa sách; cần kiểm tra cấp thực tế sau khi dùng."]
+      },
+      {
+        "name": "Nhận Tu Luyện Đơn từ Rương Hoàng Kim",
+        "formula": "1 Rương Hoàng Kim; ít nhất 1 ô hành trang trống; chưa mở đủ 70 rương theo bộ đếm tuần.",
+        "result": "Nhánh nguyên liệu Chân Nguyên nhận 5 Chân Nguyên Tu Luyện Đơn (18,1,1333,1). Các nhánh khác trao phần thưởng khác.",
+        "chance": "43% mỗi lần mở rương.",
+        "notes": ["Đây là nguồn nguyên liệu ngẫu nhiên, không đảm bảo 5 đơn trong mọi lần mở."]
+      },
+      {
+        "name": "Nhận Tu Luyện Đơn từ Rương Bạch Ngân",
+        "formula": "1 Rương Bạch Ngân; ít nhất 1 ô hành trang trống; chưa mở đủ 100 rương theo bộ đếm tuần.",
+        "result": "Nhánh nguyên liệu Chân Nguyên nhận 3 Chân Nguyên Tu Luyện Đơn (18,1,1333,1). Các nhánh khác trao phần thưởng khác.",
+        "chance": "45,25% mỗi lần mở rương.",
+        "notes": ["Đây là nguồn nguyên liệu ngẫu nhiên, không đảm bảo 3 đơn trong mọi lần mở."]
+      }
+    ],
+    "warnings": [
+      "Chân Nguyên được tu luyện bằng vật phẩm, không có nút tương ứng ở NPC Quan Ưng Phi. Mục này bổ sung vào Wiki để tra cứu cách nâng.",
+      "100 điểm tu luyện không đồng nghĩa 100 cấp hoặc 100 điểm chỉ số chiến đấu. Ngưỡng tăng cấp là 5 × cấp hiện tại; cấp và điểm của bốn dòng được lưu riêng. Ví dụ dòng cấp 1, 0 điểm dùng 1 đơn sẽ lên cấp 6, dư 25 điểm.",
+      "Hai mã Tu Luyện Đơn 18,1,1333,1 và 18,1,402,1 dùng cùng xử lý, mỗi vật phẩm cộng 100 điểm; không phải hai nguyên liệu phải dùng chung.",
+      "Chữ Max trên mô tả rương không có nghĩa trang bị nhận về đã nâng tối đa. Sách đi kèm mới thực hiện nâng cả bốn dòng; nút sách hiện ghi nhầm Ngoại Trang.",
+      "Rương vĩnh viễn và sách chưa kiểm tra lại quyền sở hữu vật phẩm/kết quả tạo hoặc nâng trước khi trừ. Chỉ mở bằng vật phẩm đang có, giữ đủ ô trống và kiểm tra kết quả; các nhánh này chưa được xác nhận giao dịch trực tiếp trong game."
+    ],
+    "sources": [
+      { "path": "script/item/class/zhenyuanzhu.lua", "line": 8, "label": "Menu chọn một trong bốn dòng tu luyện" },
+      { "path": "script/item/class/zhenyuanzhu.lua", "line": 21, "label": "Điều kiện, cộng 100 điểm, tiêu đúng một đơn và xử lý lỗi" },
+      { "path": "script/jxsf8/item/zhenyuan/zhenyuan_define.lua", "line": 8, "label": "Bốn thuộc tính và giới hạn cấp 400" },
+      { "path": "script/jxsf8/item/zhenyuan/zhenyuan.lua", "line": 142, "label": "Tích lũy kinh nghiệm, lên cấp và điểm dư" },
+      { "path": "setting/item/001/zhenyuansetting/levelsetting.txt", "line": 2, "label": "Mỗi cấp c cần 5 × c điểm; tổng cấp 1–400 là 399.000 điểm" },
+      { "path": "setting/item/001/other/scriptitem.txt", "line": 1780, "label": "Hai mã vật phẩm Tu Luyện Đơn dùng cùng class" },
+      { "path": "setting/shop/goods.txt", "line": 3596, "label": "Rương vĩnh viễn giá 20 KNB Đại" },
+      { "path": "setting/shop/buysell.txt", "line": 203, "label": "Mặt hàng 4992 nằm trong quầy 209" },
+      { "path": "script/tinhtinhtang/ruongtb_ChanNguyen_VV.lua", "line": 4, "label": "Sáu lựa chọn rương vĩnh viễn, yêu cầu 5 ô trống và sách đi kèm" },
+      { "path": "script/tinhtinhtang/ruongtb_NangMaxChanNguyen_VV.lua", "line": 14, "label": "Sách cộng 1.000.000 điểm cho cả bốn dòng" },
+      { "path": "setting/item/001/equip/general/zhenyuan.txt", "line": 2, "label": "Mẫu trang bị và bốn thuộc tính của từng loại Chân Nguyên" },
+      { "path": "script/item/function/requiredesc.lua", "line": 9, "label": "ReqProp loại 5 là yêu cầu cấp nhân vật; các mẫu Chân Nguyên yêu cầu cấp 100" },
+      { "path": "script/item/class/goldbox.lua", "line": 26, "label": "Rương Hoàng Kim: tỷ lệ 43%, nhận 5 đơn" },
+      { "path": "script/item/class/silverbox.lua", "line": 26, "label": "Rương Bạch Ngân: tỷ lệ 45,25%, nhận 3 đơn" },
+      { "path": "script/npc/baihutangboss.lua", "line": 330, "label": "Nhánh boss Bạch Hổ Đường thả Tu Luyện Đơn" }
+    ]
+  }
+]

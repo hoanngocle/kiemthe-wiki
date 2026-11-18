@@ -1,0 +1,1930 @@
+[
+  {
+    "id": "thucung",
+    "title": "Thú Cưng",
+    "summary": "Ba nhánh đã sửa: pet vật phẩm LV1–11; Danh Vọng đồng bộ task/skill1798 cấp1–10; sáu kỹ năng xác minh tiêu nguyên liệu và giữ task/hoàn nguyên liệu khi engine không tăng skill.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "NPC Nâng Cấp → Hệ Thống Thú Cưng → Tiến Cấp Thú Cưng: đặt đúng một đối tượng vật phẩm hợp lệ vào khung rồi xác nhận; yêu cầu cấp pet thực >=250.",
+      "NPC Nâng Cấp → Thú Cưng → Nâng Cấp Kỹ Năng Thú Cưng → Kích Hoạt Skill Thú Cưng (500 KNB Đại); thao tác này cũng mở task Danh Vọng 7879/1 ở cấp 1.",
+      "Nâng Danh Vọng bằng nhánh Nâng Cấp Danh Vọng Thú Cưng; nâng từng món bằng sáu nút trong nhánh kỹ năng. Các cấp được đọc từ task, không đọc cấp cộng thêm từ trang bị."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt kỹ năng và Danh Vọng thú cưng",
+        "formula": "500 × KNB Đại (18,1,1338,1)",
+        "result": "task 7879/1=1; skill 1798 Lv1; skills 1528–1533 Lv1; task 7879/2–7=1",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chỉ khi task 7879/1<1. Không có công thức nhận vật phẩm pet trong ba menu này; kích hoạt đây là skill nhân vật, không phát pet."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV1 → LV2",
+        "formula": "1 × thú cưng (18,d,p,1), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 1000 × Linh Tê Ngọc (18,1,3028,3) + 1000 × Căn Cốt Đan (18,1,3028,2) + 1000 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,2); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 1; không bùa thì giữ tier1.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV2 → LV3",
+        "formula": "1 × thú cưng (18,d,p,2), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 1500 × Linh Tê Ngọc (18,1,3028,3) + 1500 × Căn Cốt Đan (18,1,3028,2) + 1500 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,3); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 2; không bùa thì pet cũ đổi thành 1 pet khóa tier 1.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV3 → LV4",
+        "formula": "1 × thú cưng (18,d,p,3), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 2000 × Linh Tê Ngọc (18,1,3028,3) + 2000 × Căn Cốt Đan (18,1,3028,2) + 2000 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,4); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 3; không bùa thì pet cũ đổi thành 1 pet khóa tier 2.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV4 → LV5",
+        "formula": "1 × thú cưng (18,d,p,4), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 2500 × Linh Tê Ngọc (18,1,3028,3) + 2500 × Căn Cốt Đan (18,1,3028,2) + 2500 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,5); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 4; không bùa thì pet cũ đổi thành 1 pet khóa tier 3.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV5 → LV6",
+        "formula": "1 × thú cưng (18,d,p,5), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 3000 × Linh Tê Ngọc (18,1,3028,3) + 3000 × Căn Cốt Đan (18,1,3028,2) + 3000 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,6); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 5; không bùa thì pet cũ đổi thành 1 pet khóa tier 4.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV6 → LV7",
+        "formula": "1 × thú cưng (18,d,p,6), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 3500 × Linh Tê Ngọc (18,1,3028,3) + 3500 × Căn Cốt Đan (18,1,3028,2) + 3500 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,7); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 6; không bùa thì pet cũ đổi thành 1 pet khóa tier 5.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV7 → LV8",
+        "formula": "1 × thú cưng (18,d,p,7), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 4000 × Linh Tê Ngọc (18,1,3028,3) + 4000 × Căn Cốt Đan (18,1,3028,2) + 4000 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,8); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 7; không bùa thì pet cũ đổi thành 1 pet khóa tier 6.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV8 → LV9",
+        "formula": "1 × thú cưng (18,d,p,8), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 4500 × Linh Tê Ngọc (18,1,3028,3) + 4500 × Căn Cốt Đan (18,1,3028,2) + 4500 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,9); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 8; không bùa thì pet cũ đổi thành 1 pet khóa tier 7.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV9 → LV10",
+        "formula": "1 × thú cưng (18,d,p,9), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 5000 × Linh Tê Ngọc (18,1,3028,3) + 5000 × Căn Cốt Đan (18,1,3028,2) + 5000 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,10); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 9; không bùa thì pet cũ đổi thành 1 pet khóa tier 8.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Tiến cấp vật phẩm thú cưng LV10 → LV11",
+        "formula": "1 × thú cưng (18,d,p,10), p=1730–1779 trừ1753/1763/1773; d=1,class FollowPartner + 5500 × Linh Tê Ngọc (18,1,3028,3) + 5500 × Căn Cốt Đan (18,1,3028,2) + 5500 × Kim Nguyên Bảo (18,1,1338,2)",
+        "result": "Thành công: 1 × pet khóa (18,d,p,11); pet thực task 7864/2=1, 7864/3=0; thử cộng 50 tiềm năng và 10 × KNB thường khóa (18,1,1338,2)",
+        "chance": "50%",
+        "notes": [
+          "Yêu cầu cấp pet thực task 7864/2 >=250; max tier vật phẩm 11.",
+          "Thành công mất pet cũ + đủ ba loại nguyên liệu; bùa không bị tiêu.",
+          "Thất bại luôn mất đủ ba nguyên liệu; có Bùa Bảo Toàn (18,1,3031,1) thì tự tiêu 1 và giữ tier 10; không bùa thì pet cũ đổi thành 1 pet khóa tier 9.",
+          "Thất bại không reset pet thực về Lv1; các nhánh thu hồi pet thất bại có hoàn nguyên liệu theo mã.",
+          "Callback kiểm tra lại tier/cost/cấp thực/pet cũ. Tạo1 pet kết quả khóa bằng AddItemEx (con trỏ) trước khi tiêu; tạo thất bại không tiêu gì."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=2; AddFightSkill(1798,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=3; AddFightSkill(1798,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=4; AddFightSkill(1798,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=5; AddFightSkill(1798,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=6; AddFightSkill(1798,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=7; AddFightSkill(1798,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=8; AddFightSkill(1798,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=9; AddFightSkill(1798,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Danh Vọng thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1)",
+        "result": "task7879/1=10; AddFightSkill(1798,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt kỹ năng trước (task 7879/1>=1); max Danh Vọng 10.",
+          "Thất bại mất 20 KNB Đại, giữ nguyên task/cấp. Không cần mảnh ghép."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=2; AddFightSkill(1528,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=3; AddFightSkill(1528,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=4; AddFightSkill(1528,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=5; AddFightSkill(1528,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=6; AddFightSkill(1528,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=7; AddFightSkill(1528,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=8; AddFightSkill(1528,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=9; AddFightSkill(1528,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nón] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nón] Thú Cưng (18,1,3120,1)",
+        "result": "task 7879/2=10; AddFightSkill(1528,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=2; AddFightSkill(1529,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=3; AddFightSkill(1529,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=4; AddFightSkill(1529,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=5; AddFightSkill(1529,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=6; AddFightSkill(1529,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=7; AddFightSkill(1529,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=8; AddFightSkill(1529,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=9; AddFightSkill(1529,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Áo] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Áo] Thú Cưng (18,1,3120,2)",
+        "result": "task 7879/3=10; AddFightSkill(1529,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=2; AddFightSkill(1530,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=3; AddFightSkill(1530,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=4; AddFightSkill(1530,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=5; AddFightSkill(1530,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=6; AddFightSkill(1530,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=7; AddFightSkill(1530,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=8; AddFightSkill(1530,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=9; AddFightSkill(1530,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Giày] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Giày] Thú Cưng (18,1,3120,3)",
+        "result": "task 7879/4=10; AddFightSkill(1530,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=2; AddFightSkill(1531,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=3; AddFightSkill(1531,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=4; AddFightSkill(1531,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=5; AddFightSkill(1531,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=6; AddFightSkill(1531,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=7; AddFightSkill(1531,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=8; AddFightSkill(1531,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=9; AddFightSkill(1531,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Vũ Khí] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Vũ Khí] Thú Cưng (18,1,3120,4)",
+        "result": "task 7879/5=10; AddFightSkill(1531,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=2; AddFightSkill(1532,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=3; AddFightSkill(1532,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=4; AddFightSkill(1532,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=5; AddFightSkill(1532,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=6; AddFightSkill(1532,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=7; AddFightSkill(1532,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=8; AddFightSkill(1532,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=9; AddFightSkill(1532,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Nhẫn] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Nhẫn] Thú Cưng (18,1,3120,5)",
+        "result": "task 7879/6=10; AddFightSkill(1532,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 1 → 2",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=2; AddFightSkill(1533,2)",
+        "chance": "90%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 2 → 3",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=3; AddFightSkill(1533,3)",
+        "chance": "80%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 3 → 4",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=4; AddFightSkill(1533,4)",
+        "chance": "70%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 4 → 5",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=5; AddFightSkill(1533,5)",
+        "chance": "60%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 5 → 6",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=6; AddFightSkill(1533,6)",
+        "chance": "50%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 6 → 7",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=7; AddFightSkill(1533,7)",
+        "chance": "40%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 7 → 8",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=8; AddFightSkill(1533,8)",
+        "chance": "30%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 8 → 9",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=9; AddFightSkill(1533,9)",
+        "chance": "20%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Kỹ năng [Bội] thú cưng 9 → 10",
+        "formula": "20 × KNB Đại (18,1,1338,1) + 2000 × Mảnh [Bội] Thú Cưng (18,1,3120,6)",
+        "result": "task 7879/7=10; AddFightSkill(1533,10)",
+        "chance": "10%",
+        "notes": [
+          "Phải kích hoạt và món đang cấp 1–9; max cấp món 10.",
+          "Thất bại mất đủ nguyên liệu, giữ cấp món; skill chính 1798 và Danh Vọng không đổi.",
+          "Xác minh tiêu thực tế; nếu engine không tăng skill thì giữ task và hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Thưởng khi nhiều món thú cưng đạt cấp 10",
+        "formula": "2/3/4/5/6 món trong sáu món có task cấp >=10",
+        "result": "AddFightSkill(1705,1/2/3/4/5) tương ứng số món đạt max trừ 1",
+        "chance": "Tự động sau lần nâng món thành công",
+        "notes": [
+          "Không tiêu thêm vật phẩm; chỉ đếm sáu task món, không đếm Danh Vọng hoặc pet thực."
+        ]
+      }
+    ],
+    "warnings": [
+      "Kiểm thử Lua5.1 mô phỏng qua lua5.dll thật:1135 kiểm tra,0 lỗi; đã nạp lại GS1–GS4; chưa thử giao dịch trong game hoặc thay dữ liệu người chơi trực tiếp.",
+      "Túi đồ/task/skill/RNG/hội thoại được thay ở ranh giới engine. Cần phân phối đồng bộ server/client và xác minh ưu tiên loose file so với pack trước khi triển khai.",
+      "Hoàn nguyên liệu dùng AddStackItem dạng khóa khi phát hiện tiêu thiếu. Nếu engine đồng thời không thể hoàn vật phẩm hoặc xóa output đặt trước, Lua không bảo đảm giao dịch nguyên tử; cần nhật ký và xử lý vận hành. Chưa thử lỗi kép này trên engine thật.",
+      "Loại whitelist1753/1763/1773 vì không có item. Giữ ID pet có sẵn:1730/8–10 là Tiểu Yêu Tinh;1731/1 là Tiểu Hồ Lô;1755 Thanh Long;1766 Huyền Vũ;1777 Bạch Hổ. Xóa dòng cũ trùng khóa Thanh Long/Chu Tước/Bạch Hổ1730, Rương Thú Cưng1731 và Ông Già Noel1755/1766/1777 ở server/client; không đổi ID pet người chơi. Nguồn phát1731 ở Nhanthucung/Nhandonghanh là pet Tiểu Hồ Lô.",
+      "companioncanonical.lua gộp tất cả thuộc tính cũ; khi trùng khóa dùng trị số skilladdthem tùy chỉnh, giữ thuộc tính chỉ có ở legacy (ví dụ Vũ Khí có cả lifemax_v và lifemax_p). Cả3 nơi đăng ký áp bảng canonical sau cùng.",
+      "Giữ50% và500×cấp đích cho mỗi nguyên liệu. Bùa3031/1 chỉ bảo vệ khi thất bại. Pet thực250 là task chung7864/2; thành công reset Lv1/EXP0 và giữ template7864/1 như mã gốc. Dùng vật phẩm tier mới để triệu hồi lại.",
+      "50 tiềm năng chỉ cộng nếu API me.AddPotential tồn tại; thưởng10 KNB cần engine tạo thành công. Vẫn cần thử nhận thưởng khi đầy túi trong game."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 42,
+        "label": "Ba nhánh menu"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 19,
+        "label": "Whitelist bỏ ID thiếu"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 30,
+        "label": "Nguyên liệu/bùa"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 37,
+        "label": "500×cấp đích"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 121,
+        "label": "1 item,detail1,class FollowPartner"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 171,
+        "label": "Callback xác minh và đặt output trước"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thu1.lua",
+        "line": 4,
+        "label": "Danh Vọng1798/task7879"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thucung.lua",
+        "line": 28,
+        "label": "Sáu skill và mảnh"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thucung.lua",
+        "line": 98,
+        "label": "Kích hoạt sáu skill"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thucung.lua",
+        "line": 123,
+        "label": "Nâng sáu món"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thucung.lua",
+        "line": 190,
+        "label": "Thưởng1705"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 22,
+        "label": "Phục hồi khi skill lỗi"
+      },
+      {
+        "path": "script/fightskill/companioncanonical.lua",
+        "line": 2,
+        "label": "Thuộc tính canonical"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 2103,
+        "label": "1731/1 canonical"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 2008,
+        "label": "Mảnh3120/1–6"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/Nhanthucung.lua",
+        "line": 19,
+        "label": "Nguồn phát Tiểu Hồ Lô"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/Nhandonghanh.lua",
+        "line": 49,
+        "label": "Nguồn phát pet1731"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1917,
+        "label": "Skill1798"
+      },
+      {
+        "path": "script/fightskill/faction/skilladdthem.lua",
+        "line": 326,
+        "label": "Áp canonical sau đăng ký"
+      },
+      {
+        "path": "script/iDoctor/ThuCung/NangCapDongHanh.lua",
+        "line": 190,
+        "label": "Đặt trước1 pet bằng AddItemEx trả con trỏ; thất bại không tiêu nguồn/nguyên liệu"
+      },
+      {
+        "path": "script/player/kluaplayer.lua",
+        "line": 386,
+        "label": "Hợp đồng AddStackItem trả số lượng,0 khi thất bại; không dùng làm con trỏ output"
+      }
+    ]
+  },
+  {
+    "id": "phapsu",
+    "title": "Pháp Sư",
+    "summary": "Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Linh Khí. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "Đến NPC Nâng cấp → Pháp Sư.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Pháp Sư để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Linh Khí trong hành trang. Mỗi lần chọn Nâng cấp Pháp Sư thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Linh Khí khóa. Rương TDLT ngẫu nhiên cho 5 Linh Khí khóa. Thưởng online tại NPC quay số may mắn có lượt nhận 1 Linh Khí khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt Pháp Sư",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Pháp Sư cấp 1.",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chưa kích hoạt Pháp Sư."
+        ]
+      },
+      {
+        "name": "Pháp Sư 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Pháp Sư 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Pháp Sư đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Pháp Sư trong menu này là kỹ năng nhân vật; Linh Khí là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 105,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phapsu.lua",
+        "line": 4,
+        "label": "Task/skill/chi phí"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phapsu.lua",
+        "line": 4,
+        "label": "Callback menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phapsu.lua",
+        "line": 4,
+        "label": "Kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phapsu.lua",
+        "line": 4,
+        "label": "Callback kiểm tra lại"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 34,
+        "label": "Xác minh tiêu kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 41,
+        "label": "Cấp1–9, tỷ lệ/kết quả"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1908,
+        "label": "Skill kết quả duy nhất"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 41,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 31,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 138,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "hauvuong",
+    "title": "Phù Thủy",
+    "summary": "Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Linh Khí. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "Đến NPC Nâng cấp → Phù Thủy.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Phù Thủy để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Linh Khí trong hành trang. Mỗi lần chọn Nâng cấp Phù Thủy thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Linh Khí khóa. Rương TDLT ngẫu nhiên cho 5 Linh Khí khóa. Thưởng online tại NPC quay số may mắn có lượt nhận 1 Linh Khí khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt Phù Thủy",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Phù Thủy cấp 1.",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chưa kích hoạt Phù Thủy."
+        ]
+      },
+      {
+        "name": "Phù Thủy 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Phù Thủy 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Phù Thủy đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Phù Thủy trong menu này là kỹ năng nhân vật; Linh Khí là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 101,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/hauvuong.lua",
+        "line": 4,
+        "label": "Task/skill/chi phí"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/hauvuong.lua",
+        "line": 4,
+        "label": "Callback menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/hauvuong.lua",
+        "line": 4,
+        "label": "Kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/hauvuong.lua",
+        "line": 4,
+        "label": "Callback kiểm tra lại"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 34,
+        "label": "Xác minh tiêu kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 41,
+        "label": "Cấp1–9, tỷ lệ/kết quả"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1916,
+        "label": "Skill kết quả duy nhất"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 41,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 31,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 138,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "phunghoang",
+    "title": "Bạch Linh",
+    "summary": "Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Linh Khí. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "Đến NPC Nâng cấp → Bạch Linh.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Bạch Linh để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Linh Khí trong hành trang. Mỗi lần chọn Nâng cấp Bạch Linh thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Linh Khí khóa. Rương TDLT ngẫu nhiên cho 5 Linh Khí khóa. Thưởng online tại NPC quay số may mắn có lượt nhận 1 Linh Khí khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt Bạch Linh",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Bạch Linh cấp 1.",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chưa kích hoạt Bạch Linh."
+        ]
+      },
+      {
+        "name": "Bạch Linh 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Bạch Linh 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Bạch Linh đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Bạch Linh trong menu này là kỹ năng nhân vật; Linh Khí là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 87,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phunghoang.lua",
+        "line": 4,
+        "label": "Task/skill/chi phí"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phunghoang.lua",
+        "line": 4,
+        "label": "Callback menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phunghoang.lua",
+        "line": 4,
+        "label": "Kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/phunghoang.lua",
+        "line": 4,
+        "label": "Callback kiểm tra lại"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 34,
+        "label": "Xác minh tiêu kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 41,
+        "label": "Cấp1–9, tỷ lệ/kết quả"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1926,
+        "label": "Skill kết quả duy nhất"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 41,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 31,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 138,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "tinvat",
+    "title": "Tín Vật",
+    "summary": "Kích hoạt cấp 1: 500 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Mật Tín. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "Đến NPC Nâng cấp → Tín Vật.",
+      "Kích hoạt: để 500 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Tín Vật để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Mật Tín trong hành trang. Mỗi lần chọn Nâng cấp Tín Vật thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Mật Tín khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt Tín Vật",
+        "formula": "500 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Tín Vật cấp 1.",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chưa kích hoạt Tín Vật."
+        ]
+      },
+      {
+        "name": "Tín Vật 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Tín Vật 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mật Tín, để trong hành trang.",
+        "result": "Thành công: Tín Vật đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Tín Vật trong menu này là kỹ năng nhân vật; Mật Tín là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 91,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/tinvat.lua",
+        "line": 4,
+        "label": "Task/skill/chi phí"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/tinvat.lua",
+        "line": 4,
+        "label": "Callback menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/tinvat.lua",
+        "line": 4,
+        "label": "Kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/tinvat.lua",
+        "line": 4,
+        "label": "Callback kiểm tra lại"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 34,
+        "label": "Xác minh tiêu kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 41,
+        "label": "Cấp1–9, tỷ lệ/kết quả"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1940,
+        "label": "Skill kết quả duy nhất"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 98,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      }
+    ]
+  },
+  {
+    "id": "huychuong",
+    "title": "Huy Chương",
+    "summary": "Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "đã sửa + kiểm thử Lua mô phỏng; chưa thử game",
+    "steps": [
+      "Đến NPC Nâng cấp → Huy Chương.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Huy Chương để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Huy chương Chiến Thần trong hành trang. Mỗi lần chọn Nâng cấp Huy Chương thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Huy chương Chiến Thần khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt Huy Chương",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Huy Chương cấp 1.",
+        "chance": "100% (không roll)",
+        "notes": [
+          "Chưa kích hoạt Huy Chương."
+        ]
+      },
+      {
+        "name": "Huy Chương 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Huy Chương 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Huy chương Chiến Thần, để trong hành trang.",
+        "result": "Thành công: Huy Chương đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Huy Chương trong menu này là kỹ năng nhân vật; Huy chương Chiến Thần là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký.",
+      "Mở menu có thể khôi phục kỹ năng Huy Chương theo cấp đã lưu; không thu phí khi chỉ mở menu."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 96,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/huychuong.lua",
+        "line": 4,
+        "label": "Task/skill/chi phí"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/huychuong.lua",
+        "line": 4,
+        "label": "Callback menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/huychuong.lua",
+        "line": 4,
+        "label": "Kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/huychuong.lua",
+        "line": 4,
+        "label": "Callback kiểm tra lại"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 34,
+        "label": "Xác minh tiêu kích hoạt"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 41,
+        "label": "Cấp1–9, tỷ lệ/kết quả"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/companionupgrade.lua",
+        "line": 10,
+        "label": "Xác minh tiêu/hoàn nguyên liệu"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1941,
+        "label": "Skill kết quả duy nhất"
+      },
+      {
+        "path": "script/tinhtinhtang/HuyChuong_VIP4.lua",
+        "line": 16,
+        "label": "Nguồn VIP4"
+      },
+      {
+        "path": "script/fightskill/skill150/skill150.lua",
+        "line": 64,
+        "label": "Giữ attack1963"
+      },
+      {
+        "path": "script/fightskill/companioncanonical.lua",
+        "line": 33,
+        "label": "Buff hợp nhất"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 101,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      }
+    ]
+  }
+]

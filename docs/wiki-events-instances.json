@@ -1,0 +1,529 @@
+[
+  {
+    "id": "thi-dau-loan-chien",
+    "title": "Thi Đấu Loạn Chiến",
+    "category": "doi-khang",
+    "summary": "Đấu trường cá nhân chung cho các môn phái, gồm hỗn chiến và vòng loại 16 → 8 → 4 → 2 → quán quân. Có NPC chiến đấu và thưởng theo hạng.",
+    "schedule": "Mở thủ công bất kỳ lúc nào tại NPC Hoạt Động; báo danh trong 18 giây sau khi mở.",
+    "timings": [
+      {
+        "label": "Mở và báo danh",
+        "when": "Bất kỳ lúc nào; báo danh 18 giây",
+        "detail": "Chọn mở trận rồi tham gia ngay. Vào đấu trường trong thời gian báo danh sẽ tự ghi danh."
+      },
+      {
+        "label": "Hỗn chiến",
+        "when": "4 chặng, mỗi chặng 12 giây",
+        "detail": "Sau hỗn chiến chuyển sang nhánh loại trực tiếp."
+      },
+      {
+        "label": "Loại trực tiếp",
+        "when": "Chuẩn bị 6 giây/vòng; đấu 30 / 30 / 30 / 60 giây",
+        "detail": "Lần lượt tranh 8, 4, 2 cường và quán quân."
+      },
+      {
+        "label": "Nhận thưởng hạng",
+        "when": "Hằng ngày, 00:00 đến trước 23:59",
+        "detail": "Nhận qua Bảng Xếp Hạng Thi Đấu, cần 20 ô hành trang trống."
+      }
+    ],
+    "entry": [
+      "Hoạt Động → Thi Đấu Loạn Chiến → Mở Thi đấu môn phái ngay. Sau đó chọn Tôi muốn tham gia thi đấu môn phái.",
+      "Cấp 50 trở lên và đã gia nhập môn phái. Không cần vé, phí bạc hoặc tổ đội; các phái cùng vào một đấu trường."
+    ],
+    "steps": [
+      "Mở trận, vào ngay trong 18 giây báo danh và ở lại đấu trường.",
+      "Đánh hỗn chiến, sau đó thi đấu loại trực tiếp. Nhánh 16 cường lấy tối đa 16 người đủ điều kiện đang trong đấu trường rồi bổ sung NPC và trộn cặp; không chọn theo bảng điểm hạ gục.",
+      "Thắng các vòng loại để tranh quán quân. Khi hết giờ, cặp người chơi so sát thương đã gây ra; hòa thì chọn ngẫu nhiên.",
+      "Xem Bảng Xếp Hạng Thi Đấu để nhận thưởng hạng. Điểm đổi giải thưởng là lựa chọn riêng; quán quân tương tác cờ trao giải khi cờ xuất hiện."
+    ],
+    "mechanics": [
+      {
+        "title": "Hồi sinh trong hỗn chiến",
+        "description": "Chết được hồi sinh và phải chờ 10, 20, 40 rồi 60 giây tùy số lần chết trước khi đánh tiếp. Từ lần thứ tư giữ mức 60 giây."
+      },
+      {
+        "title": "Đấu với NPC",
+        "description": "Hệ thống có NPC hỗn chiến và NPC bù vòng loại; 16 cường có thể gồm cả người chơi lẫn NPC."
+      },
+      {
+        "title": "Cờ quán quân",
+        "description": "Chỉ đúng quán quân nhận được thưởng từ cờ. Cờ tồn tại 60 giây; sau đó có lửa trại kinh nghiệm."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Thưởng hạng",
+        "detail": "Nhận tại Bảng Xếp Hạng Thi Đấu từ 00:00 đến trước 23:59, cần 20 ô túi trống. Theo thứ tự: Túi Nguyên Liệu Đồng Hành / Túi Nguyên Liệu Nâng Cấp / Kim Nguyên Bảo Đại / Thẻ Tích Lũy Sự Kiện / Tử Không-Vô Hạ Dẫn. Quán quân: 200 / 200 / 10 / 10 / 5; á quân: 150 / 150 / 8 / 8 / 4; 4 cường: 100 / 100 / 6 / 6 / 3; 8 cường: 50 / 50 / 4 / 4 / 3; 16 cường: 30 / 30 / 2 / 2 / 2. Quán quân và á quân có thêm danh hiệu."
+      },
+      {
+        "title": "Điểm đổi thưởng",
+        "detail": "Sau khi trận đóng, đổi điểm lấy EXP, rương và uy vọng theo điểm cùng mốc đã vượt qua. Đổi xong xóa điểm; kỳ thi mới cũng xóa điểm kỳ cũ. EXP được tăng theo danh hiệu đang đeo nếu có."
+      }
+    ],
+    "limits": [
+      "Tối đa 400 người báo danh; không nhận đăng ký mới khi hỗn chiến đã bắt đầu. Rời đấu trường có thể mất tư cách tham gia.",
+      "Không giới hạn số trận mở theo ngày. Thưởng hạng có đánh dấu đã nhận; bảng hạng được cập nhật lại khi có kết quả trận mới."
+    ],
+    "issues": [
+      "Nút Quà Tham Gia Ngoài TOP 16 hiện chưa nhận được do đường gọi thưởng lỗi.",
+      "Thời gian dọn phần trao giải còn hai mốc 60 giây và 10 phút; nên nhận cờ quán quân ngay khi xuất hiện."
+    ],
+    "status": "issues",
+    "verdict": "Mở thủ công, thi đấu cá nhân liên phái có NPC và thưởng hạng. Quà tham gia ngoài top 16 còn lỗi.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 12,
+        "label": "Menu Thi Đấu Loạn Chiến"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/factionbattle_npc.lua",
+        "line": 9,
+        "label": "Mở thủ công và điều kiện tham gia"
+      },
+      {
+        "path": "Server/gamecenter/script/pvp/factionbattle_gc.lua",
+        "line": 9,
+        "label": "GC chỉ mở khi nhận yêu cầu thủ công"
+      },
+      {
+        "path": "Server/gamecenter/setting/scheduletask/tasklist.ini",
+        "line": 131,
+        "label": "Lịch tự động đã tắt"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/factionbattle_def.lua",
+        "line": 161,
+        "label": "Thời gian các giai đoạn"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/factionbattle_base.lua",
+        "line": 1,
+        "label": "Lõi thi đấu, chọn 16 cường và trao giải (Lua biên dịch)"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/Faction_Add.lua",
+        "line": 211,
+        "label": "Nhận thưởng hạng và nút quà tham gia"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/factionbattle_sub.lua",
+        "line": 55,
+        "label": "Cờ quán quân"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/factionbattle_sub.lua",
+        "line": 186,
+        "label": "Đổi điểm thưởng"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1937,
+        "label": "Tên túi nguyên liệu hiện hành"
+      }
+    ]
+  },
+  {
+    "id": "lau-lan-co-thanh",
+    "title": "Lâu Lan Cổ Thành",
+    "category": "pho-ban",
+    "summary": "Bản đồ tranh đoạt chung: săn quái, boss và NPC tuần tra, giao chiến với người chơi để tích lũy hạ gục. Có thể tham gia một mình hoặc theo tổ đội.",
+    "schedule": "Hằng ngày 09:00–09:30, 14:00–14:30 và 20:00–20:30, theo giờ máy chủ. Cấu hình còn mốc mở lại 14:05 nên phiên chiều có thể bị đặt lại.",
+    "timings": [
+      {
+        "label": "Các phiên",
+        "when": "09:00–09:30; 14:00–14:30; 20:00–20:30",
+        "detail": "Lịch máy chủ gọi mở và đóng bản đồ mỗi ngày."
+      },
+      {
+        "label": "Boss",
+        "when": "Đầu phiên và khoảng giữa phiên",
+        "detail": "Cấu hình có các mốc 09:00/09:15, 14:00/14:15 và 20:00/20:15; lịch boss chiều còn dòng trùng 14:05 nên mốc thứ hai chưa chắc chắn."
+      },
+      {
+        "label": "Thời gian tham gia",
+        "when": "Tối đa 30 phút mỗi lượt tính giờ",
+        "detail": "Có bộ đếm thời gian trong bản đồ. Vào lại khi hoạt động đang mở hiện đặt lại bộ đếm."
+      }
+    ],
+    "entry": [
+      "Mục Hoạt Động → Lâu Lan Cổ Thành chỉ giới thiệu. Để vào, gặp Yến Tiểu Lâu — Người tiếp dẫn Lâu Lan Cổ Thành, chọn Đến Lâu Lan Cổ Thành.",
+      "Cấp 100 trở lên, đã gia nhập môn phái và đang trang bị Phi Phong cấp 6 (Hỗn Thiên) trở lên. Có thể vào một mình, không cần tạo đội.",
+      "Nếu đi tổ đội, đội trưởng chọn vào; mọi thành viên phải online, đứng gần trong phạm vi 50 và đủ điều kiện."
+    ],
+    "steps": [
+      "Vào đúng phiên hoạt động. Sau 5 giây bảo hộ, ra khỏi khu an toàn để săn quái, NPC tuần tra hoặc tranh boss.",
+      "Hạ người chơi và NPC nhân vật ảo để tăng số giết địch. Quái và boss có phần rơi đồ riêng.",
+      "Khi chết được hồi sinh về một điểm an toàn. Vật báu và thần binh tạm có thể bị mất hoặc rơi; chú ý giữ tài nguyên đã nhặt.",
+      "Sau khi phiên đóng, quay lại Yến Tiểu Lâu chọn Nhận thưởng giết địch. Nhận trước khi vào lại phiên sau để tránh mất tiến độ thưởng."
+    ],
+    "mechanics": [
+      {
+        "title": "Tranh đoạt tự do",
+        "description": "Đây là bản đồ dùng chung có PvP và NPC tuần tra, không có đội thắng chung hay vòng đấu loại trực tiếp."
+      },
+      {
+        "title": "Tài nguyên mang theo",
+        "description": "Một phần vật báu Lâu Lan có thể bị mất khi chết hoặc rời bản đồ; thần binh trong hoạt động là trang bị tạm."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Thưởng giết địch",
+        "detail": "Sau khi kết thúc, mỗi đủ 10 hạ gục nhận 1 Túi Nguyên Liệu Nâng Cấp và 1 Túi Nguyên Liệu Đồng Hành. Ví dụ 25 hạ gục được 2 túi mỗi loại; phần đã nhận không nhận lại."
+      },
+      {
+        "title": "Quái tinh anh",
+        "detail": "Có thể rơi Kinh nghiệm đơn, Kim Nguyên Bảo, Túi Nguyên Liệu Nâng Cấp, Túi Nguyên Liệu Đồng Hành hoặc Bạc khóa."
+      },
+      {
+        "title": "Boss Lâu Lan",
+        "detail": "Có thể rơi Kim Nguyên Bảo Đại, Kim Nguyên Bảo, Rương Trang Bị Đồng Hành, Bùa Bảo Toàn, Túi Nguyên Liệu Nâng Cấp, Lệnh bài Thiên Quỳnh Cung và Bản đồ Vạn Hoa Cốc. Đồ rơi ngẫu nhiên, không bảo đảm đủ mỗi loại."
+      }
+    ],
+    "limits": [
+      "Bản đồ tối đa 360 người. Không có vé hoặc phí vào trong đường tiếp dẫn hiện tại.",
+      "Nút vào có thể xuất hiện ngoài giờ hoạt động; riêng người đi một mình chỉ được vào khi bản đồ đang mở.",
+      "Vào lại đặt lại số giết địch và mốc thưởng đã nhận của nhân vật."
+    ],
+    "issues": [
+      "Lịch còn mốc mở lại 14:05 và mục lịch bị trùng; phiên chiều có thể đặt lại quái, thời gian và tiến độ thưởng giữa chừng.",
+      "Bộ đếm 30 phút bị đặt lại khi vào lại; chưa thể coi đây là giới hạn tổng thời gian mỗi ngày.",
+      "Đường vào theo tổ đội chưa kiểm tra trạng thái đóng giống đường solo, nên có thể vào ngoài phiên nhưng không có nội dung hoạt động."
+    ],
+    "status": "issues",
+    "verdict": "Có đường vào solo và tổ đội; tranh đoạt tài nguyên, thưởng theo hạ gục. Lịch chiều và giới hạn thời gian còn bất nhất.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 201,
+        "label": "Menu giới thiệu Lâu Lan"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5177,
+        "label": "Yến Tiểu Lâu, người tiếp dẫn"
+      },
+      {
+        "path": "Server/gameserver/script/boss/atlantis/npc/atlantis_npc_city.lua",
+        "line": 16,
+        "label": "Đối thoại vào và nhận thưởng"
+      },
+      {
+        "path": "Server/gamecenter/setting/scheduletask/tasklist.ini",
+        "line": 658,
+        "label": "Lịch mở, đóng và boss"
+      },
+      {
+        "path": "Server/gamecenter/script/boss/atlantis/atlantis_gc.lua",
+        "line": 19,
+        "label": "Mở và đóng qua GC"
+      },
+      {
+        "path": "Server/gameserver/script/boss/atlantis/atlantis_def.lua",
+        "line": 17,
+        "label": "Cấp, phi phong, thời gian và số người"
+      },
+      {
+        "path": "Server/gameserver/script/boss/atlantis/atlantis_gs.lua",
+        "line": 1,
+        "label": "Điều kiện vào, tính thời gian và thưởng hạ gục (Lua biên dịch)"
+      },
+      {
+        "path": "Server/gameserver/script/npc/NPCNhanVatAo1.lua",
+        "line": 23,
+        "label": "Hạ NPC nhân vật ảo được tính giết địch"
+      },
+      {
+        "path": "Server/gameserver/script/boss/atlantis/npc/BossLauLan.lua",
+        "line": 6,
+        "label": "Boss Lâu Lan theo lịch"
+      },
+      {
+        "path": "Server/gameserver/script/boss/atlantis/npc/BossLauLan.lua",
+        "line": 15,
+        "label": "Hai boss của Lâu Lan"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 6867,
+        "label": "Bảng rơi hai boss Lâu Lan"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 6869,
+        "label": "Bảng rơi quái tinh anh"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/droprate/atlantis/monster.txt",
+        "line": 2,
+        "label": "Quà ngẫu nhiên từ quái tinh anh"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/droprate/worldboss/daiacma.txt",
+        "line": 2,
+        "label": "Quà boss Thiên Long - Đại Ác Ma"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/droprate/worldboss/thanhcactuhan.txt",
+        "line": 2,
+        "label": "Quà boss Thành Cát Tư Hãn"
+      }
+    ]
+  },
+  {
+    "id": "than-trung-tran",
+    "title": "Thần Trùng Trấn",
+    "category": "pho-ban",
+    "summary": "Phó bản PvE 6 ải, đi một mình hoặc tổ đội tối đa 6 người. Miễn vé, không giới hạn lượt theo ngày; giữ nguyên cơ chế boss và giải đố khi đi solo.",
+    "schedule": "Mở thủ công mọi ngày, mọi giờ qua NPC Hoạt Động. Mỗi phiên tối đa 90 phút; hoàn thành ải 6 đóng sau 50 giây.",
+    "timings": [
+      {
+        "label": "Mở phó bản",
+        "when": "Mọi ngày, mọi giờ",
+        "detail": "Đội trưởng mở; nhân vật đi một mình được tự tạo đội một người."
+      },
+      {
+        "label": "Thời lượng",
+        "when": "90 phút/phiên; 50 giây sau khi hoàn thành",
+        "detail": "Nhặt đồ cuối ải trước khi phó bản đóng."
+      }
+    ],
+    "entry": [
+      "Hoạt Động → Thần Trùng Trấn → Phó Bản Thần Trùng Trấn → Mở Phó Bản; sau đó chọn Tiến vào Thần trùng trấn.",
+      "Mỗi người cấp 100 trở lên và có môn phái. Không cần lệnh bài hoặc nhiệm vụ mở cửa.",
+      "Đi một mình được tự tạo đội; tổ đội có sẵn do đội trưởng mở, các thành viên online và đứng gần trong phạm vi 40."
+    ],
+    "steps": [
+      "Ải 1: diệt trinh sát, vượt các cơ quan trên đường rồi nói chuyện với NPC để mở lối tiếp theo.",
+      "Ải 2: đánh boss và hộ tống Mộc Đạc Lạc đến điểm chuyển ải.",
+      "Ải 3: hạ Tinh Hà Dị Thú; theo dõi thông báo trước đòn để tránh vùng nguy hiểm.",
+      "Ải 4: ghi nhớ và thắp đúng đèn, mỗi lần 5 giây. Có hai lượt, mỗi lượt 5 đèn; thắp sai sinh địch, sai lần thứ tư sẽ đặt lại trận đèn.",
+      "Ải 5: xử lý Định Hồn Thạch và tùy tùng của Thác Đác Phù Anh. Mỗi tùy tùng bị hạ làm boss mất 10% máu tối đa.",
+      "Ải 6: hạ boss cuối, chờ đoạn kết và mở rương trong 5 giây. Nhặt đồ rơi trước khi hết 50 giây đóng phiên."
+    ],
+    "mechanics": [
+      {
+        "title": "Chết và thử lại",
+        "description": "Khi không còn người chiến đấu, ải thất bại và đưa người chơi về điểm hồi sinh. Có thể thử lại trong thời gian còn lại của phiên."
+      },
+      {
+        "title": "Giữ đội hình",
+        "description": "Phiên gắn với tổ đội. Giữ cùng đội khi vào lại hoặc chuyển ải; chơi solo không làm giảm độ khó cơ chế."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Rương ải 1, 4 và 6",
+        "detail": "Mỗi rương thả 1 Huyền Tinh cấp 8 và 1 Huyền Tinh cấp 9 xuống đất gần người mở. Đây là đồ nhặt chung, không phải mỗi thành viên đều được một bộ."
+      },
+      {
+        "title": "Boss ải 2, 3 và 5",
+        "detail": "Thả Huyền Tinh cấp 3–5 theo bảng ngẫu nhiên; có lần lượt 7, 8 và 10 lượt rơi. Quyền nhặt được chọn từ người ở gần boss."
+      },
+      {
+        "title": "EXP và uy vọng",
+        "detail": "Qua đoạn hộ tống ải 2 nhận 1.000.000 EXP cơ bản; hết ải 5 nhận 100.000 EXP cơ bản. EXP tăng theo danh hiệu đang đeo nếu có. Mỗi ải hoàn thành cộng 2 uy vọng gia tộc."
+      }
+    ],
+    "limits": [
+      "Tối đa 6 người/phiên và 50 phiên đồng thời trên một máy chủ game."
+    ],
+    "issues": [
+      "Đội có thành viên đang thuộc nhiều phiên khác nhau có thể gặp lỗi khi mở hoặc vào phó bản."
+    ],
+    "status": "issues",
+    "verdict": "Mở thủ công, miễn vé, solo hoặc tối đa 6 người; 6 ải trong 90 phút.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 54,
+        "label": "Menu Thần Trùng Trấn"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_npc.lua",
+        "line": 26,
+        "label": "Mở phó bản, tạo đội solo và điều kiện"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_gs.lua",
+        "line": 226,
+        "label": "Vào lại và giới hạn người"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_gs.lua",
+        "line": 280,
+        "label": "Nhánh đội nhiều phiên còn lỗi"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_def.lua",
+        "line": 11,
+        "label": "Giới hạn phiên, thời gian và số ải"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_room.lua",
+        "line": 1079,
+        "label": "Cơ chế đèn ải 4"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_npc.lua",
+        "line": 562,
+        "label": "Rương và Huyền Tinh cố định"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_base.lua",
+        "line": 855,
+        "label": "Đồ rơi boss"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/droprate/chenchongzhen/boss1.txt",
+        "line": 2,
+        "label": "Huyền Tinh cấp 3–5"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_room.lua",
+        "line": 801,
+        "label": "EXP hộ tống"
+      },
+      {
+        "path": "Server/gameserver/script/boss/chenchongzhen/chenchongzhen_room.lua",
+        "line": 2197,
+        "label": "EXP ải 5"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 37,
+        "label": "Cộng thưởng theo danh hiệu đang đeo"
+      }
+    ]
+  },
+  {
+    "id": "thoi-quang-dien",
+    "title": "Thời Quang Điện",
+    "category": "pho-ban",
+    "summary": "Phó bản PvE 5 ải cho một người hoặc tổ đội tối đa 6 người. Miễn vé, không giới hạn lượt theo ngày; thưởng trực tiếp khi hạ boss cuối.",
+    "schedule": "Mở thủ công mọi ngày, mọi giờ qua NPC Hoạt Động. Phiên tối đa 60 phút, đóng 10 giây sau khi hoàn thành ải 5.",
+    "timings": [
+      {
+        "label": "Mở phó bản",
+        "when": "Mọi ngày, mọi giờ",
+        "detail": "Đi một mình được tự tạo đội; tổ đội có sẵn do đội trưởng mở."
+      },
+      {
+        "label": "Thời lượng",
+        "when": "60 phút/phiên; 10 giây sau ải 5",
+        "detail": "Thưởng boss cuối phát trực tiếp cho người trong phiên."
+      }
+    ],
+    "entry": [
+      "Hoạt Động → Thời Quang Điện → Phó Bản Thời Quang Điện → Mở Phó Bản; sau đó chọn Tiến vào Thời Quang Điện.",
+      "Cấp 100 trở lên và có môn phái. Không cần lệnh bài, phí bạc hoặc nhiệm vụ mở cửa.",
+      "Tổ đội tối đa 6 người, tất cả online và đứng gần đội trưởng trong phạm vi 40 lúc mở."
+    ],
+    "steps": [
+      "Vào khu chuẩn bị. Đội trưởng nói chuyện với cổng truyền tống để chọn ải; cả đội phải cùng đội và đứng gần trong phạm vi 30.",
+      "Ải 1: nói với NPC để mở trận Vương Di Phong, vượt hai giai đoạn chiến đấu và cơ chế tâm ma.",
+      "Ải 2: chiến đấu với Lý Thuần Phong và Viên Thiên Cang; phải hạ Viên Thiên Cang để qua ải. Khi còn phương sĩ, mỗi lần cứu người chết tiêu hao một phương sĩ.",
+      "Ải 3: hạ boss thái giám, xử lý phân thân và NPC hỗ trợ khi xuất hiện.",
+      "Ải 4: chiến đấu với Trác Phi Phàm, Tử Hiên rồi Nạp Lan Chân. Hái hoa để xóa trạng thái tình cổ; hái cỏ gây sát thương bằng 20% máu tối đa của Tử Hiên.",
+      "Ải 5: hạ Đại Tư Mệnh, chú ý dị cảnh, phân thân và vùng đứng nguy hiểm. Boss chết sẽ phát thưởng rồi đóng phiên sau 10 giây."
+    ],
+    "mechanics": [
+      {
+        "title": "Thử lại trong phiên",
+        "description": "Khi không còn người chiến đấu, ải thất bại. Đội trưởng tập trung cả đội tại cổng để mở lại ải; riêng ải 2 có phương sĩ cứu tại chỗ."
+      },
+      {
+        "title": "Chuyển ải",
+        "description": "Ải đã hoàn thành cho phép truyền cá nhân. Muốn mở ải mới hoặc thử lại, cả đội phải tập trung tại cổng và có đủ thành viên của phiên."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Boss cuối",
+        "detail": "Mỗi người còn trong phiên nhận 1.000.000 đồng thường cơ bản và 100 Kinh nghiệm đơn khóa. Đồng được cộng thêm theo danh hiệu đang đeo nếu có. Kinh nghiệm đơn là vật phẩm nhận vào hành trang, chưa tự cộng EXP khi boss chết."
+      },
+      {
+        "title": "Uy vọng",
+        "detail": "Mỗi ải hoàn thành cộng 2 uy vọng gia tộc; đi đủ 5 ải cùng phiên được tổng 10."
+      },
+      {
+        "title": "Rương",
+        "detail": "Các ải hiện không tạo rương thưởng. Không có thưởng Huyền Tinh hoặc Long Hồn Giám từ các rương cũ."
+      }
+    ],
+    "limits": [
+      "Tối đa 6 người/phiên, 50 phiên đồng thời trên một máy chủ game.",
+      "Không giới hạn lượt mở/vào theo ngày. Solo giữ nguyên cơ chế và độ khó các ải.",
+      "Giữ nguyên tổ đội để chuyển ải; mở được phiên chưa đủ nếu thành viên không tập trung tại cổng."
+    ],
+    "issues": [
+      "Đội có thành viên đang thuộc nhiều phiên khác nhau có thể gặp lỗi khi mở hoặc vào phó bản."
+    ],
+    "status": "issues",
+    "verdict": "Mở thủ công, miễn vé, 5 ải trong 60 phút; solo hoặc tối đa 6 người, thưởng trực tiếp ở boss cuối.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 40,
+        "label": "Menu Thời Quang Điện"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/npc/crosstimeroom_npc.lua",
+        "line": 8,
+        "label": "Mở phó bản, đội solo và điều kiện"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_gs.lua",
+        "line": 253,
+        "label": "Vào lại miễn vé"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_gs.lua",
+        "line": 323,
+        "label": "Nhánh đội nhiều phiên còn lỗi"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_gs.lua",
+        "line": 355,
+        "label": "Mở mọi giờ"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_def.lua",
+        "line": 13,
+        "label": "Giới hạn phiên, thời gian và số người"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/npc/crosstimeroom_transfer.lua",
+        "line": 98,
+        "label": "Tập trung cả đội tại cổng"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/npc/crosstimeroom_npc.lua",
+        "line": 222,
+        "label": "Hoa và cỏ ở ải 4"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_room.lua",
+        "line": 1562,
+        "label": "Boss cuối phát thưởng, không tạo rương"
+      },
+      {
+        "path": "Server/gameserver/script/boss/crosstimeroom/crosstimeroom_base.lua",
+        "line": 34,
+        "label": "Uy vọng và đóng phiên"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 37,
+        "label": "Cộng thưởng theo danh hiệu đang đeo"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1920,
+        "label": "Kinh nghiệm đơn"
+      }
+    ]
+  }
+]

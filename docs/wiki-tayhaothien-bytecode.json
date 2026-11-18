@@ -1,0 +1,5315 @@
+{
+  "source": ".diagnostics/upgrade-fixes/backups/Sever/gameserver/script/tranphai/haothien/tayhaothien.lua",
+  "historical_pre_fix_evidence": true,
+  "bytes": 6699,
+  "sha256": "1ea95913cb9dbb96e3231aaa3cff82ce5af7b7c8dd287f6abc05fac13080df8a",
+  "method": "static decode; no execution",
+  "chunk": {
+    "source_name": "",
+    "original_line_start": 0,
+    "original_line_end": 0,
+    "attributes": [
+      0,
+      0,
+      2,
+      6
+    ],
+    "constants": [
+      "Npc",
+      "GetClass",
+      "tayhaothien",
+      "COST_JBCOIN",
+      10000.0,
+      "EXPIRE_SEC",
+      300.0,
+      "FRAME_PER_SEC",
+      18.0,
+      "tbState",
+      "NEED_ITEM",
+      1.0,
+      1782.0,
+      "NEED_COUNT",
+      "_Dbg",
+      "_Black",
+      "_GetState",
+      "_SetState",
+      "_DelPreviewById",
+      "_ClearState",
+      "AutoDestroy",
+      "OnDialog",
+      "StartNew",
+      "CuongHoa",
+      "ConfirmApply",
+      "ConfirmCancel"
+    ],
+    "instructions": [
+      {
+        "pc": 1,
+        "op": "GETGLOBAL",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "constant_index": 0,
+        "constant_value": "Npc"
+      },
+      {
+        "pc": 2,
+        "op": "SELF",
+        "A": 0,
+        "B": 0,
+        "C": 257,
+        "B_operand": {
+          "register": 0
+        },
+        "C_operand": {
+          "constant_index": 1,
+          "value": "GetClass"
+        }
+      },
+      {
+        "pc": 3,
+        "op": "LOADK",
+        "A": 2,
+        "B": 0,
+        "C": 2,
+        "constant_index": 2,
+        "constant_value": "tayhaothien"
+      },
+      {
+        "pc": 4,
+        "op": "CALL",
+        "A": 0,
+        "B": 3,
+        "C": 2
+      },
+      {
+        "pc": 5,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 259,
+        "C": 260,
+        "B_operand": {
+          "constant_index": 3,
+          "value": "COST_JBCOIN"
+        },
+        "C_operand": {
+          "constant_index": 4,
+          "value": 10000.0
+        }
+      },
+      {
+        "pc": 6,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 261,
+        "C": 262,
+        "B_operand": {
+          "constant_index": 5,
+          "value": "EXPIRE_SEC"
+        },
+        "C_operand": {
+          "constant_index": 6,
+          "value": 300.0
+        }
+      },
+      {
+        "pc": 7,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 263,
+        "C": 264,
+        "B_operand": {
+          "constant_index": 7,
+          "value": "FRAME_PER_SEC"
+        },
+        "C_operand": {
+          "constant_index": 8,
+          "value": 18.0
+        }
+      },
+      {
+        "pc": 8,
+        "op": "GETTABLE",
+        "A": 1,
+        "B": 0,
+        "C": 265,
+        "B_operand": {
+          "register": 0
+        },
+        "C_operand": {
+          "constant_index": 9,
+          "value": "tbState"
+        }
+      },
+      {
+        "pc": 9,
+        "op": "TEST",
+        "A": 1,
+        "B": 0,
+        "C": 1
+      },
+      {
+        "pc": 10,
+        "op": "JMP",
+        "A": 0,
+        "B": 256,
+        "C": 0,
+        "sBx": 1,
+        "jump_target_pc": 12
+      },
+      {
+        "pc": 11,
+        "op": "NEWTABLE",
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      {
+        "pc": 12,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 265,
+        "C": 1,
+        "B_operand": {
+          "constant_index": 9,
+          "value": "tbState"
+        },
+        "C_operand": {
+          "register": 1
+        }
+      },
+      {
+        "pc": 13,
+        "op": "NEWTABLE",
+        "A": 1,
+        "B": 4,
+        "C": 0
+      },
+      {
+        "pc": 14,
+        "op": "LOADK",
+        "A": 2,
+        "B": 0,
+        "C": 8,
+        "constant_index": 8,
+        "constant_value": 18.0
+      },
+      {
+        "pc": 15,
+        "op": "LOADK",
+        "A": 3,
+        "B": 0,
+        "C": 11,
+        "constant_index": 11,
+        "constant_value": 1.0
+      },
+      {
+        "pc": 16,
+        "op": "LOADK",
+        "A": 4,
+        "B": 0,
+        "C": 12,
+        "constant_index": 12,
+        "constant_value": 1782.0
+      },
+      {
+        "pc": 17,
+        "op": "LOADK",
+        "A": 5,
+        "B": 0,
+        "C": 11,
+        "constant_index": 11,
+        "constant_value": 1.0
+      },
+      {
+        "pc": 18,
+        "op": "SETLIST",
+        "A": 1,
+        "B": 4,
+        "C": 1
+      },
+      {
+        "pc": 19,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 266,
+        "C": 1,
+        "B_operand": {
+          "constant_index": 10,
+          "value": "NEED_ITEM"
+        },
+        "C_operand": {
+          "register": 1
+        }
+      },
+      {
+        "pc": 20,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 269,
+        "C": 267,
+        "B_operand": {
+          "constant_index": 13,
+          "value": "NEED_COUNT"
+        },
+        "C_operand": {
+          "constant_index": 11,
+          "value": 1.0
+        }
+      },
+      {
+        "pc": 21,
+        "op": "CLOSURE",
+        "A": 1,
+        "B": 0,
+        "C": 0
+      },
+      {
+        "pc": 22,
+        "op": "CLOSURE",
+        "A": 2,
+        "B": 0,
+        "C": 1
+      },
+      {
+        "pc": 23,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 2
+      },
+      {
+        "pc": 24,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 270,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 14,
+          "value": "_Dbg"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 25,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 3
+      },
+      {
+        "pc": 26,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 271,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 15,
+          "value": "_Black"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 27,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 4
+      },
+      {
+        "pc": 28,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 29,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 272,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 16,
+          "value": "_GetState"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 30,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 5
+      },
+      {
+        "pc": 31,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 32,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 273,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 17,
+          "value": "_SetState"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 33,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 6
+      },
+      {
+        "pc": 34,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 274,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 18,
+          "value": "_DelPreviewById"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 35,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 7
+      },
+      {
+        "pc": 36,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 37,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 275,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 19,
+          "value": "_ClearState"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 38,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 8
+      },
+      {
+        "pc": 39,
+        "op": "MOVE",
+        "A": 0,
+        "B": 2,
+        "C": 0
+      },
+      {
+        "pc": 40,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 276,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 20,
+          "value": "AutoDestroy"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 41,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 9
+      },
+      {
+        "pc": 42,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 43,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 277,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 21,
+          "value": "OnDialog"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 44,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 10
+      },
+      {
+        "pc": 45,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 278,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 22,
+          "value": "StartNew"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 46,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 11
+      },
+      {
+        "pc": 47,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 48,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 279,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 23,
+          "value": "CuongHoa"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 49,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 12
+      },
+      {
+        "pc": 50,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 51,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 280,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 24,
+          "value": "ConfirmApply"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 52,
+        "op": "CLOSURE",
+        "A": 3,
+        "B": 0,
+        "C": 13
+      },
+      {
+        "pc": 53,
+        "op": "MOVE",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      },
+      {
+        "pc": 54,
+        "op": "SETTABLE",
+        "A": 0,
+        "B": 281,
+        "C": 3,
+        "B_operand": {
+          "constant_index": 25,
+          "value": "ConfirmCancel"
+        },
+        "C_operand": {
+          "register": 3
+        }
+      },
+      {
+        "pc": 55,
+        "op": "RETURN",
+        "A": 0,
+        "B": 1,
+        "C": 0
+      }
+    ],
+    "children": [
+      {
+        "source_name": "",
+        "original_line_start": 23,
+        "original_line_end": 30,
+        "attributes": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "constants": [
+          "nId",
+          "szName",
+          "UNKNOWN"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "TEST",
+            "A": 0,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 2,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 4,
+            "sBx": 5,
+            "jump_target_pc": 8
+          },
+          {
+            "pc": 3,
+            "op": "GETTABLE",
+            "A": 1,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "nId"
+            }
+          },
+          {
+            "pc": 4,
+            "op": "TEST",
+            "A": 1,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 5,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 1,
+            "sBx": 2,
+            "jump_target_pc": 8
+          },
+          {
+            "pc": 6,
+            "op": "GETTABLE",
+            "A": 1,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "nId"
+            }
+          },
+          {
+            "pc": 7,
+            "op": "RETURN",
+            "A": 1,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 8,
+            "op": "TEST",
+            "A": 0,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 9,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 2,
+            "sBx": 3,
+            "jump_target_pc": 13
+          },
+          {
+            "pc": 10,
+            "op": "GETTABLE",
+            "A": 1,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "szName"
+            }
+          },
+          {
+            "pc": 11,
+            "op": "TEST",
+            "A": 1,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 12,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 0,
+            "sBx": 1,
+            "jump_target_pc": 14
+          },
+          {
+            "pc": 13,
+            "op": "LOADK",
+            "A": 1,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "UNKNOWN"
+          },
+          {
+            "pc": 14,
+            "op": "RETURN",
+            "A": 1,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 15,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 32,
+        "original_line_end": 34,
+        "attributes": [
+          0,
+          1,
+          0,
+          3
+        ],
+        "constants": [
+          "type",
+          "number"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETGLOBAL",
+            "A": 1,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "type"
+          },
+          {
+            "pc": 2,
+            "op": "MOVE",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "CALL",
+            "A": 1,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 4,
+            "op": "EQ",
+            "A": 1,
+            "B": 1,
+            "C": 257,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "number"
+            }
+          },
+          {
+            "pc": 5,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 0,
+            "sBx": 1,
+            "jump_target_pc": 7
+          },
+          {
+            "pc": 6,
+            "op": "LOADBOOL",
+            "A": 1,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 7,
+            "op": "LOADBOOL",
+            "A": 1,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 8,
+            "op": "RETURN",
+            "A": 1,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 9,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 36,
+        "original_line_end": 40,
+        "attributes": [
+          0,
+          2,
+          0,
+          6
+        ],
+        "constants": [
+          "me",
+          "Msg",
+          "[TAYHT] ",
+          "tostring"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 2,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 11,
+            "sBx": 12,
+            "jump_target_pc": 16
+          },
+          {
+            "pc": 4,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 5,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 257,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "Msg"
+            }
+          },
+          {
+            "pc": 6,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 7,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 7,
+            "sBx": 8,
+            "jump_target_pc": 16
+          },
+          {
+            "pc": 8,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 9,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 257,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "Msg"
+            }
+          },
+          {
+            "pc": 10,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "[TAYHT] "
+          },
+          {
+            "pc": 11,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 3,
+            "constant_index": 3,
+            "constant_value": "tostring"
+          },
+          {
+            "pc": 12,
+            "op": "MOVE",
+            "A": 5,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 13,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 14,
+            "op": "CONCAT",
+            "A": 3,
+            "B": 3,
+            "C": 4
+          },
+          {
+            "pc": 15,
+            "op": "CALL",
+            "A": 2,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 16,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 42,
+        "original_line_end": 48,
+        "attributes": [
+          0,
+          2,
+          0,
+          7
+        ],
+        "constants": [
+          "Dialog",
+          "SendBlackBoardMsg",
+          "me",
+          "tostring",
+          "_Dbg"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 2,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 11,
+            "sBx": 12,
+            "jump_target_pc": 16
+          },
+          {
+            "pc": 4,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 5,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 257,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "SendBlackBoardMsg"
+            }
+          },
+          {
+            "pc": 6,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 7,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 7,
+            "sBx": 8,
+            "jump_target_pc": 16
+          },
+          {
+            "pc": 8,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 9,
+            "op": "SELF",
+            "A": 2,
+            "B": 2,
+            "C": 257,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "SendBlackBoardMsg"
+            }
+          },
+          {
+            "pc": 10,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "me"
+          },
+          {
+            "pc": 11,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 3,
+            "constant_index": 3,
+            "constant_value": "tostring"
+          },
+          {
+            "pc": 12,
+            "op": "MOVE",
+            "A": 6,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 13,
+            "op": "CALL",
+            "A": 5,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 14,
+            "op": "CALL",
+            "A": 2,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 15,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 2,
+            "sBx": 3,
+            "jump_target_pc": 19
+          },
+          {
+            "pc": 16,
+            "op": "SELF",
+            "A": 2,
+            "B": 0,
+            "C": 260,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": "_Dbg"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "MOVE",
+            "A": 4,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 18,
+            "op": "CALL",
+            "A": 2,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 19,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 50,
+        "original_line_end": 52,
+        "attributes": [
+          1,
+          2,
+          0,
+          5
+        ],
+        "constants": [
+          "tbState"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 2,
+            "op": "GETUPVAL",
+            "A": 3,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "MOVE",
+            "A": 4,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 4,
+            "op": "CALL",
+            "A": 3,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 5,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 3,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "register": 3
+            }
+          },
+          {
+            "pc": 6,
+            "op": "RETURN",
+            "A": 2,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 7,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 54,
+        "original_line_end": 56,
+        "attributes": [
+          1,
+          3,
+          0,
+          6
+        ],
+        "constants": [
+          "tbState"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 2,
+            "op": "GETUPVAL",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "MOVE",
+            "A": 5,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 4,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 5,
+            "op": "SETTABLE",
+            "A": 3,
+            "B": 4,
+            "C": 2,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "register": 2
+            }
+          },
+          {
+            "pc": 6,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 58,
+        "original_line_end": 66,
+        "attributes": [
+          0,
+          3,
+          0,
+          6
+        ],
+        "constants": [
+          0.0,
+          "KItem",
+          "GetObjById",
+          "DelItem"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 2,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 1,
+            "sBx": 2,
+            "jump_target_pc": 5
+          },
+          {
+            "pc": 3,
+            "op": "LE",
+            "A": 0,
+            "B": 2,
+            "C": 256,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": 0.0
+            }
+          },
+          {
+            "pc": 4,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 0,
+            "sBx": 1,
+            "jump_target_pc": 6
+          },
+          {
+            "pc": 5,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 6,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "KItem"
+          },
+          {
+            "pc": 7,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 3,
+            "C": 258,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": "GetObjById"
+            }
+          },
+          {
+            "pc": 8,
+            "op": "MOVE",
+            "A": 4,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 9,
+            "op": "CALL",
+            "A": 3,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 10,
+            "op": "TEST",
+            "A": 3,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 11,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 2,
+            "sBx": 3,
+            "jump_target_pc": 15
+          },
+          {
+            "pc": 12,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 1,
+            "C": 259,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "DelItem"
+            }
+          },
+          {
+            "pc": 13,
+            "op": "MOVE",
+            "A": 5,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 14,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 15,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 68,
+        "original_line_end": 70,
+        "attributes": [
+          1,
+          2,
+          0,
+          5
+        ],
+        "constants": [
+          "tbState",
+          null
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 2,
+            "op": "GETUPVAL",
+            "A": 3,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "MOVE",
+            "A": 4,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 4,
+            "op": "CALL",
+            "A": 3,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 5,
+            "op": "SETTABLE",
+            "A": 2,
+            "B": 3,
+            "C": 257,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": null
+            }
+          },
+          {
+            "pc": 6,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 74,
+        "original_line_end": 99,
+        "attributes": [
+          1,
+          2,
+          0,
+          8
+        ],
+        "constants": [
+          "tbState",
+          0.0,
+          "KPlayer",
+          "GetPlayerObjById",
+          "nPlayerId",
+          "_DelPreviewById",
+          "dwPreviewId",
+          "Msg",
+          "Sau 5 phút nếu không xác nhận Vũ Khí View sẽ bị xóa.",
+          null,
+          "bExpired",
+          1.0
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 2,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 1,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "register": 1
+            }
+          },
+          {
+            "pc": 3,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 4,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 1,
+            "sBx": 2,
+            "jump_target_pc": 7
+          },
+          {
+            "pc": 5,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 6,
+            "op": "RETURN",
+            "A": 3,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 7,
+            "op": "LOADNIL",
+            "A": 3,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 8,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "KPlayer"
+          },
+          {
+            "pc": 9,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 10,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 13,
+            "sBx": 14,
+            "jump_target_pc": 25
+          },
+          {
+            "pc": 11,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "KPlayer"
+          },
+          {
+            "pc": 12,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 4,
+            "C": 259,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "GetPlayerObjById"
+            }
+          },
+          {
+            "pc": 13,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 14,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 9,
+            "sBx": 10,
+            "jump_target_pc": 25
+          },
+          {
+            "pc": 15,
+            "op": "GETUPVAL",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 16,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 2,
+            "C": 260,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": "nPlayerId"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 18,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 19,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 4,
+            "sBx": 5,
+            "jump_target_pc": 25
+          },
+          {
+            "pc": 20,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "KPlayer"
+          },
+          {
+            "pc": 21,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 4,
+            "C": 259,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "GetPlayerObjById"
+            }
+          },
+          {
+            "pc": 22,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 2,
+            "C": 260,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": "nPlayerId"
+            }
+          },
+          {
+            "pc": 23,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 24,
+            "op": "MOVE",
+            "A": 3,
+            "B": 4,
+            "C": 0
+          },
+          {
+            "pc": 25,
+            "op": "TEST",
+            "A": 3,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 26,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 13,
+            "sBx": 14,
+            "jump_target_pc": 41
+          },
+          {
+            "pc": 27,
+            "op": "SELF",
+            "A": 4,
+            "B": 0,
+            "C": 261,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 5,
+              "value": "_DelPreviewById"
+            }
+          },
+          {
+            "pc": 28,
+            "op": "MOVE",
+            "A": 6,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 29,
+            "op": "GETTABLE",
+            "A": 7,
+            "B": 2,
+            "C": 262,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 30,
+            "op": "CALL",
+            "A": 4,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 31,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 3,
+            "C": 263,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "Msg"
+            }
+          },
+          {
+            "pc": 32,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 33,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 2,
+            "sBx": 3,
+            "jump_target_pc": 37
+          },
+          {
+            "pc": 34,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 3,
+            "C": 263,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "Msg"
+            }
+          },
+          {
+            "pc": 35,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 8,
+            "constant_index": 8,
+            "constant_value": "Sau 5 phút nếu không xác nhận Vũ Khí View sẽ bị xóa."
+          },
+          {
+            "pc": 36,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 37,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 38,
+            "op": "SETTABLE",
+            "A": 4,
+            "B": 1,
+            "C": 265,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 9,
+              "value": null
+            }
+          },
+          {
+            "pc": 39,
+            "op": "LOADK",
+            "A": 4,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 40,
+            "op": "RETURN",
+            "A": 4,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 41,
+            "op": "SETTABLE",
+            "A": 2,
+            "B": 266,
+            "C": 267,
+            "B_operand": {
+              "constant_index": 10,
+              "value": "bExpired"
+            },
+            "C_operand": {
+              "constant_index": 11,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 42,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 43,
+            "op": "SETTABLE",
+            "A": 4,
+            "B": 1,
+            "C": 2,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "register": 2
+            }
+          },
+          {
+            "pc": 44,
+            "op": "LOADK",
+            "A": 4,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 45,
+            "op": "RETURN",
+            "A": 4,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 46,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 102,
+        "original_line_end": 137,
+        "attributes": [
+          1,
+          1,
+          0,
+          14
+        ],
+        "constants": [
+          "DoScript",
+          "\\script\\tranphai\\haothien\\tayhaothien.lua",
+          "me",
+          "tbState",
+          "bExpired",
+          1.0,
+          "_DelPreviewById",
+          "dwPreviewId",
+          null,
+          "Dialog",
+          "Say",
+          "Vũ khí xem trước đã hết hạn và bị xóa.",
+          0.0,
+          "<color=yellow>Bạn đang có VŨ KHÍ XEM TRƯỚC<color> trong hành trang.\n\n",
+          "<color=cyan>Hãy mở túi và hover để so sánh chỉ số.<color>\n\n",
+          "<color=green>Đồng ý:<color> Chấp nhận kết quả (không bị trừ thêm).\n",
+          "<color=red>Hủy:<color> Xóa preview (không hoàn tiền).\n",
+          "<color=orange>Tạo lại:<color> Xóa preview cũ và tạo preview mới (<color=red>sẽ trừ thêm 20 vạn<color>).",
+          "<color=green>Đồng ý<color>",
+          "ConfirmApply",
+          "<color=red>Hủy<color>",
+          "ConfirmCancel",
+          "<color=orange>Tạo lại<color>",
+          "StartNew",
+          "Để sau"
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETGLOBAL",
+            "A": 1,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "DoScript"
+          },
+          {
+            "pc": 2,
+            "op": "LOADK",
+            "A": 2,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "\\script\\tranphai\\haothien\\tayhaothien.lua"
+          },
+          {
+            "pc": 3,
+            "op": "CALL",
+            "A": 1,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 4,
+            "op": "GETUPVAL",
+            "A": 1,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 5,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "me"
+          },
+          {
+            "pc": 6,
+            "op": "CALL",
+            "A": 1,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 7,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 259,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 8,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 1,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "register": 1
+            }
+          },
+          {
+            "pc": 9,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 10,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 13,
+            "sBx": 14,
+            "jump_target_pc": 25
+          },
+          {
+            "pc": 11,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 2,
+            "C": 260,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": "bExpired"
+            }
+          },
+          {
+            "pc": 12,
+            "op": "EQ",
+            "A": 0,
+            "B": 3,
+            "C": 261,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 5,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 13,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 10,
+            "sBx": 11,
+            "jump_target_pc": 25
+          },
+          {
+            "pc": 14,
+            "op": "SELF",
+            "A": 3,
+            "B": 0,
+            "C": 262,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "_DelPreviewById"
+            }
+          },
+          {
+            "pc": 15,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "me"
+          },
+          {
+            "pc": 16,
+            "op": "GETTABLE",
+            "A": 6,
+            "B": 2,
+            "C": 263,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "CALL",
+            "A": 3,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 18,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 0,
+            "C": 259,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 19,
+            "op": "SETTABLE",
+            "A": 3,
+            "B": 1,
+            "C": 264,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 8,
+              "value": null
+            }
+          },
+          {
+            "pc": 20,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 9,
+            "constant_index": 9,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 21,
+            "op": "SELF",
+            "A": 3,
+            "B": 3,
+            "C": 266,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 10,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 22,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 11,
+            "constant_index": 11,
+            "constant_value": "Vũ khí xem trước đã hết hạn và bị xóa."
+          },
+          {
+            "pc": 23,
+            "op": "CALL",
+            "A": 3,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 24,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 25,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 26,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 36,
+            "sBx": 37,
+            "jump_target_pc": 64
+          },
+          {
+            "pc": 27,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 2,
+            "C": 263,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 28,
+            "op": "TEST",
+            "A": 3,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 29,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 33,
+            "sBx": 34,
+            "jump_target_pc": 64
+          },
+          {
+            "pc": 30,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 2,
+            "C": 263,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 31,
+            "op": "LT",
+            "A": 0,
+            "B": 268,
+            "C": 3,
+            "B_operand": {
+              "constant_index": 12,
+              "value": 0.0
+            },
+            "C_operand": {
+              "register": 3
+            }
+          },
+          {
+            "pc": 32,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 30,
+            "sBx": 31,
+            "jump_target_pc": 64
+          },
+          {
+            "pc": 33,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 13,
+            "constant_index": 13,
+            "constant_value": "<color=yellow>Bạn đang có VŨ KHÍ XEM TRƯỚC<color> trong hành trang.\n\n"
+          },
+          {
+            "pc": 34,
+            "op": "LOADK",
+            "A": 4,
+            "B": 0,
+            "C": 14,
+            "constant_index": 14,
+            "constant_value": "<color=cyan>Hãy mở túi và hover để so sánh chỉ số.<color>\n\n"
+          },
+          {
+            "pc": 35,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 15,
+            "constant_index": 15,
+            "constant_value": "<color=green>Đồng ý:<color> Chấp nhận kết quả (không bị trừ thêm).\n"
+          },
+          {
+            "pc": 36,
+            "op": "LOADK",
+            "A": 6,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "<color=red>Hủy:<color> Xóa preview (không hoàn tiền).\n"
+          },
+          {
+            "pc": 37,
+            "op": "LOADK",
+            "A": 7,
+            "B": 0,
+            "C": 17,
+            "constant_index": 17,
+            "constant_value": "<color=orange>Tạo lại:<color> Xóa preview cũ và tạo preview mới (<color=red>sẽ trừ thêm 20 vạn<color>)."
+          },
+          {
+            "pc": 38,
+            "op": "CONCAT",
+            "A": 3,
+            "B": 3,
+            "C": 7
+          },
+          {
+            "pc": 39,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 9,
+            "constant_index": 9,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 40,
+            "op": "SELF",
+            "A": 4,
+            "B": 4,
+            "C": 266,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 10,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 41,
+            "op": "MOVE",
+            "A": 6,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 42,
+            "op": "NEWTABLE",
+            "A": 7,
+            "B": 4,
+            "C": 0
+          },
+          {
+            "pc": 43,
+            "op": "NEWTABLE",
+            "A": 8,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 44,
+            "op": "LOADK",
+            "A": 9,
+            "B": 0,
+            "C": 18,
+            "constant_index": 18,
+            "constant_value": "<color=green>Đồng ý<color>"
+          },
+          {
+            "pc": 45,
+            "op": "GETTABLE",
+            "A": 10,
+            "B": 0,
+            "C": 275,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 19,
+              "value": "ConfirmApply"
+            }
+          },
+          {
+            "pc": 46,
+            "op": "MOVE",
+            "A": 11,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 47,
+            "op": "SETLIST",
+            "A": 8,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 48,
+            "op": "NEWTABLE",
+            "A": 9,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 49,
+            "op": "LOADK",
+            "A": 10,
+            "B": 0,
+            "C": 20,
+            "constant_index": 20,
+            "constant_value": "<color=red>Hủy<color>"
+          },
+          {
+            "pc": 50,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 0,
+            "C": 277,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 21,
+              "value": "ConfirmCancel"
+            }
+          },
+          {
+            "pc": 51,
+            "op": "MOVE",
+            "A": 12,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 52,
+            "op": "SETLIST",
+            "A": 9,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 53,
+            "op": "NEWTABLE",
+            "A": 10,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 54,
+            "op": "LOADK",
+            "A": 11,
+            "B": 0,
+            "C": 22,
+            "constant_index": 22,
+            "constant_value": "<color=orange>Tạo lại<color>"
+          },
+          {
+            "pc": 55,
+            "op": "GETTABLE",
+            "A": 12,
+            "B": 0,
+            "C": 279,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 23,
+              "value": "StartNew"
+            }
+          },
+          {
+            "pc": 56,
+            "op": "MOVE",
+            "A": 13,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 57,
+            "op": "SETLIST",
+            "A": 10,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 58,
+            "op": "NEWTABLE",
+            "A": 11,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 59,
+            "op": "LOADK",
+            "A": 12,
+            "B": 0,
+            "C": 24,
+            "constant_index": 24,
+            "constant_value": "Để sau"
+          },
+          {
+            "pc": 60,
+            "op": "SETLIST",
+            "A": 11,
+            "B": 1,
+            "C": 1
+          },
+          {
+            "pc": 61,
+            "op": "SETLIST",
+            "A": 7,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 62,
+            "op": "CALL",
+            "A": 4,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 63,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          },
+          {
+            "pc": 64,
+            "op": "SELF",
+            "A": 3,
+            "B": 0,
+            "C": 279,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 23,
+              "value": "StartNew"
+            }
+          },
+          {
+            "pc": 65,
+            "op": "CALL",
+            "A": 3,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 66,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 140,
+        "original_line_end": 163,
+        "attributes": [
+          0,
+          1,
+          0,
+          11
+        ],
+        "constants": [
+          "_GetState",
+          "me",
+          "dwPreviewId",
+          0.0,
+          "_DelPreviewById",
+          "_ClearState",
+          "<color=yellow>Đặt Vũ Khí cần tẩy chỉ số<color> vào khung để tạo <color=green>VŨ KHÍ XEM TRƯỚC<color>.\n\n",
+          "<color=orange>Lưu ý:<color> Tạo vũ khí preview sẽ <color=red>trừ 1 Tử Không-Vô Hạ Dẫn<color>.\n",
+          "<color=cyan>Thời gian:<color> Bạn có <color=yellow>5 phút<color> để quyết định.\n",
+          "<color=pink>Quá 5 phút:<color> nếu không <color=green>Đồng ý<color> → preview <color=red>TỰ HỦY<color> (<color=red>không hoàn tiền<color>).\n\n",
+          "<color=cyan>Hướng dẫn:<color> Tạo xong hãy đóng cửa sổ và xem <color=yellow>vũ khí View<color> trong túi để so sánh.\n",
+          "Đối thoại lại với NPC để <color=green>Đồng ý<color> / <color=red>Hủy<color> / <color=cyan>Tạo lại<color>.",
+          "Dialog",
+          "OpenGift",
+          "CuongHoa",
+          1.0
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "SELF",
+            "A": 1,
+            "B": 0,
+            "C": 256,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": "_GetState"
+            }
+          },
+          {
+            "pc": 2,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "me"
+          },
+          {
+            "pc": 3,
+            "op": "CALL",
+            "A": 1,
+            "B": 3,
+            "C": 2
+          },
+          {
+            "pc": 4,
+            "op": "TEST",
+            "A": 1,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 5,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 12,
+            "sBx": 13,
+            "jump_target_pc": 19
+          },
+          {
+            "pc": 6,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 1,
+            "C": 258,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 7,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 8,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 9,
+            "sBx": 10,
+            "jump_target_pc": 19
+          },
+          {
+            "pc": 9,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 1,
+            "C": 258,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 10,
+            "op": "LT",
+            "A": 0,
+            "B": 259,
+            "C": 2,
+            "B_operand": {
+              "constant_index": 3,
+              "value": 0.0
+            },
+            "C_operand": {
+              "register": 2
+            }
+          },
+          {
+            "pc": 11,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 6,
+            "sBx": 7,
+            "jump_target_pc": 19
+          },
+          {
+            "pc": 12,
+            "op": "SELF",
+            "A": 2,
+            "B": 0,
+            "C": 260,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": "_DelPreviewById"
+            }
+          },
+          {
+            "pc": 13,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "me"
+          },
+          {
+            "pc": 14,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 1,
+            "C": 258,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 15,
+            "op": "CALL",
+            "A": 2,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 16,
+            "op": "SELF",
+            "A": 2,
+            "B": 0,
+            "C": 261,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 5,
+              "value": "_ClearState"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "me"
+          },
+          {
+            "pc": 18,
+            "op": "CALL",
+            "A": 2,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 19,
+            "op": "LOADK",
+            "A": 2,
+            "B": 0,
+            "C": 6,
+            "constant_index": 6,
+            "constant_value": "<color=yellow>Đặt Vũ Khí cần tẩy chỉ số<color> vào khung để tạo <color=green>VŨ KHÍ XEM TRƯỚC<color>.\n\n"
+          },
+          {
+            "pc": 20,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 7,
+            "constant_index": 7,
+            "constant_value": "<color=orange>Lưu ý:<color> Tạo vũ khí preview sẽ <color=red>trừ 1 Tử Không-Vô Hạ Dẫn<color>.\n"
+          },
+          {
+            "pc": 21,
+            "op": "LOADK",
+            "A": 4,
+            "B": 0,
+            "C": 8,
+            "constant_index": 8,
+            "constant_value": "<color=cyan>Thời gian:<color> Bạn có <color=yellow>5 phút<color> để quyết định.\n"
+          },
+          {
+            "pc": 22,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 9,
+            "constant_index": 9,
+            "constant_value": "<color=pink>Quá 5 phút:<color> nếu không <color=green>Đồng ý<color> → preview <color=red>TỰ HỦY<color> (<color=red>không hoàn tiền<color>).\n\n"
+          },
+          {
+            "pc": 23,
+            "op": "LOADK",
+            "A": 6,
+            "B": 0,
+            "C": 10,
+            "constant_index": 10,
+            "constant_value": "<color=cyan>Hướng dẫn:<color> Tạo xong hãy đóng cửa sổ và xem <color=yellow>vũ khí View<color> trong túi để so sánh.\n"
+          },
+          {
+            "pc": 24,
+            "op": "LOADK",
+            "A": 7,
+            "B": 0,
+            "C": 11,
+            "constant_index": 11,
+            "constant_value": "Đối thoại lại với NPC để <color=green>Đồng ý<color> / <color=red>Hủy<color> / <color=cyan>Tạo lại<color>."
+          },
+          {
+            "pc": 25,
+            "op": "CONCAT",
+            "A": 2,
+            "B": 2,
+            "C": 7
+          },
+          {
+            "pc": 26,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 12,
+            "constant_index": 12,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 27,
+            "op": "SELF",
+            "A": 3,
+            "B": 3,
+            "C": 269,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 13,
+              "value": "OpenGift"
+            }
+          },
+          {
+            "pc": 28,
+            "op": "MOVE",
+            "A": 5,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 29,
+            "op": "LOADNIL",
+            "A": 6,
+            "B": 6,
+            "C": 0
+          },
+          {
+            "pc": 30,
+            "op": "NEWTABLE",
+            "A": 7,
+            "B": 3,
+            "C": 0
+          },
+          {
+            "pc": 31,
+            "op": "GETTABLE",
+            "A": 8,
+            "B": 0,
+            "C": 270,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 14,
+              "value": "CuongHoa"
+            }
+          },
+          {
+            "pc": 32,
+            "op": "MOVE",
+            "A": 9,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 33,
+            "op": "LOADK",
+            "A": 10,
+            "B": 0,
+            "C": 15,
+            "constant_index": 15,
+            "constant_value": 1.0
+          },
+          {
+            "pc": 34,
+            "op": "SETLIST",
+            "A": 7,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 35,
+            "op": "CALL",
+            "A": 3,
+            "B": 5,
+            "C": 1
+          },
+          {
+            "pc": 36,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 167,
+        "original_line_end": 226,
+        "attributes": [
+          1,
+          3,
+          0,
+          15
+        ],
+        "constants": [
+          0.0,
+          "pairs",
+          1.0,
+          "nGenre",
+          2.0,
+          "nDetail",
+          "nParticular",
+          1700.0,
+          12191.0,
+          "nLevel",
+          10.0,
+          "nCount",
+          "Dialog",
+          "Say",
+          "Xin hãy đặt vũ khí vào đây.",
+          "NEED_ITEM",
+          "me",
+          "GetItemCountInBags",
+          3.0,
+          4.0,
+          "NEED_COUNT",
+          "<color=green>Mỗi Lần tẩy chỉ số cần tiêu hao một <color=pink>Tử Không-Vô Hạ Dẫn<color> , tìm đủ nguyên liệu rồi đến gặp ta!<color> <pic=11>.<color=cyan>(Tử Không-Vô Hạ Dẫn có được thông qua chiến trường tống kim và TDLT)<color>",
+          "ConsumeItemInBags",
+          "AddItem",
+          16.0,
+          "Không tạo được preview (kiểm tra túi đồ).",
+          "Bind",
+          "tbState",
+          "nPlayerId",
+          "nId",
+          "szName",
+          "dwPreviewId",
+          "dwId",
+          "dwOldId",
+          "nExpireKey",
+          "bExpired",
+          "Timer",
+          "Register",
+          "FRAME_PER_SEC",
+          "EXPIRE_SEC",
+          "AutoDestroy",
+          "_Black",
+          "Đã tạo vũ khí View, hãy cân nhắc trước khi lựa chọn tẩy lại chỉ số."
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 2,
+            "op": "LOADNIL",
+            "A": 4,
+            "B": 4,
+            "C": 0
+          },
+          {
+            "pc": 3,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 1,
+            "constant_index": 1,
+            "constant_value": "pairs"
+          },
+          {
+            "pc": 4,
+            "op": "TESTSET",
+            "A": 6,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 5,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 0,
+            "sBx": 1,
+            "jump_target_pc": 7
+          },
+          {
+            "pc": 6,
+            "op": "NEWTABLE",
+            "A": 6,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 7,
+            "op": "CALL",
+            "A": 5,
+            "B": 2,
+            "C": 4
+          },
+          {
+            "pc": 8,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 20,
+            "sBx": 21,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 9,
+            "op": "GETTABLE",
+            "A": 10,
+            "B": 9,
+            "C": 258,
+            "B_operand": {
+              "register": 9
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 10,
+            "op": "TEST",
+            "A": 10,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 11,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 17,
+            "sBx": 18,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 12,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 259,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "nGenre"
+            }
+          },
+          {
+            "pc": 13,
+            "op": "EQ",
+            "A": 0,
+            "B": 11,
+            "C": 260,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": 2.0
+            }
+          },
+          {
+            "pc": 14,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 14,
+            "sBx": 15,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 15,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 261,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 5,
+              "value": "nDetail"
+            }
+          },
+          {
+            "pc": 16,
+            "op": "EQ",
+            "A": 0,
+            "B": 11,
+            "C": 258,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 17,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 11,
+            "sBx": 12,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 18,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 262,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "nParticular"
+            }
+          },
+          {
+            "pc": 19,
+            "op": "LE",
+            "A": 0,
+            "B": 263,
+            "C": 11,
+            "B_operand": {
+              "constant_index": 7,
+              "value": 1700.0
+            },
+            "C_operand": {
+              "register": 11
+            }
+          },
+          {
+            "pc": 20,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 8,
+            "sBx": 9,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 21,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 262,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "nParticular"
+            }
+          },
+          {
+            "pc": 22,
+            "op": "LE",
+            "A": 0,
+            "B": 11,
+            "C": 264,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 8,
+              "value": 12191.0
+            }
+          },
+          {
+            "pc": 23,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 24,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 265,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 9,
+              "value": "nLevel"
+            }
+          },
+          {
+            "pc": 25,
+            "op": "EQ",
+            "A": 0,
+            "B": 11,
+            "C": 266,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 10,
+              "value": 10.0
+            }
+          },
+          {
+            "pc": 26,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 2,
+            "sBx": 3,
+            "jump_target_pc": 30
+          },
+          {
+            "pc": 27,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 10,
+            "C": 267,
+            "B_operand": {
+              "register": 10
+            },
+            "C_operand": {
+              "constant_index": 11,
+              "value": "nCount"
+            }
+          },
+          {
+            "pc": 28,
+            "op": "ADD",
+            "A": 3,
+            "B": 11,
+            "C": 3,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "register": 3
+            }
+          },
+          {
+            "pc": 29,
+            "op": "MOVE",
+            "A": 4,
+            "B": 10,
+            "C": 0
+          },
+          {
+            "pc": 30,
+            "op": "TFORLOOP",
+            "A": 5,
+            "B": 0,
+            "C": 2
+          },
+          {
+            "pc": 31,
+            "op": "JMP",
+            "A": 0,
+            "B": 255,
+            "C": 488,
+            "sBx": -23,
+            "jump_target_pc": 9
+          },
+          {
+            "pc": 32,
+            "op": "EQ",
+            "A": 0,
+            "B": 3,
+            "C": 258,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 33,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 1,
+            "sBx": 2,
+            "jump_target_pc": 36
+          },
+          {
+            "pc": 34,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 35,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 42
+          },
+          {
+            "pc": 36,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 12,
+            "constant_index": 12,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 37,
+            "op": "SELF",
+            "A": 5,
+            "B": 5,
+            "C": 269,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 13,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 38,
+            "op": "LOADK",
+            "A": 7,
+            "B": 0,
+            "C": 14,
+            "constant_index": 14,
+            "constant_value": "Xin hãy đặt vũ khí vào đây."
+          },
+          {
+            "pc": 39,
+            "op": "CALL",
+            "A": 5,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 40,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 41,
+            "op": "RETURN",
+            "A": 5,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 42,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 0,
+            "C": 271,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 15,
+              "value": "NEED_ITEM"
+            }
+          },
+          {
+            "pc": 43,
+            "op": "GETGLOBAL",
+            "A": 6,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 44,
+            "op": "GETTABLE",
+            "A": 6,
+            "B": 6,
+            "C": 273,
+            "B_operand": {
+              "register": 6
+            },
+            "C_operand": {
+              "constant_index": 17,
+              "value": "GetItemCountInBags"
+            }
+          },
+          {
+            "pc": 45,
+            "op": "GETTABLE",
+            "A": 7,
+            "B": 5,
+            "C": 258,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 46,
+            "op": "GETTABLE",
+            "A": 8,
+            "B": 5,
+            "C": 260,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": 2.0
+            }
+          },
+          {
+            "pc": 47,
+            "op": "GETTABLE",
+            "A": 9,
+            "B": 5,
+            "C": 274,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 18,
+              "value": 3.0
+            }
+          },
+          {
+            "pc": 48,
+            "op": "GETTABLE",
+            "A": 10,
+            "B": 5,
+            "C": 275,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 19,
+              "value": 4.0
+            }
+          },
+          {
+            "pc": 49,
+            "op": "CALL",
+            "A": 6,
+            "B": 5,
+            "C": 2
+          },
+          {
+            "pc": 50,
+            "op": "GETTABLE",
+            "A": 7,
+            "B": 0,
+            "C": 276,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 20,
+              "value": "NEED_COUNT"
+            }
+          },
+          {
+            "pc": 51,
+            "op": "LT",
+            "A": 0,
+            "B": 6,
+            "C": 7,
+            "B_operand": {
+              "register": 6
+            },
+            "C_operand": {
+              "register": 7
+            }
+          },
+          {
+            "pc": 52,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 59
+          },
+          {
+            "pc": 53,
+            "op": "GETGLOBAL",
+            "A": 7,
+            "B": 0,
+            "C": 12,
+            "constant_index": 12,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 54,
+            "op": "SELF",
+            "A": 7,
+            "B": 7,
+            "C": 269,
+            "B_operand": {
+              "register": 7
+            },
+            "C_operand": {
+              "constant_index": 13,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 55,
+            "op": "LOADK",
+            "A": 9,
+            "B": 0,
+            "C": 21,
+            "constant_index": 21,
+            "constant_value": "<color=green>Mỗi Lần tẩy chỉ số cần tiêu hao một <color=pink>Tử Không-Vô Hạ Dẫn<color> , tìm đủ nguyên liệu rồi đến gặp ta!<color> <pic=11>.<color=cyan>(Tử Không-Vô Hạ Dẫn có được thông qua chiến trường tống kim và TDLT)<color>"
+          },
+          {
+            "pc": 56,
+            "op": "CALL",
+            "A": 7,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 57,
+            "op": "LOADK",
+            "A": 7,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 58,
+            "op": "RETURN",
+            "A": 7,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 59,
+            "op": "GETGLOBAL",
+            "A": 7,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 60,
+            "op": "GETTABLE",
+            "A": 7,
+            "B": 7,
+            "C": 278,
+            "B_operand": {
+              "register": 7
+            },
+            "C_operand": {
+              "constant_index": 22,
+              "value": "ConsumeItemInBags"
+            }
+          },
+          {
+            "pc": 61,
+            "op": "GETTABLE",
+            "A": 8,
+            "B": 0,
+            "C": 276,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 20,
+              "value": "NEED_COUNT"
+            }
+          },
+          {
+            "pc": 62,
+            "op": "GETTABLE",
+            "A": 9,
+            "B": 5,
+            "C": 258,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 2,
+              "value": 1.0
+            }
+          },
+          {
+            "pc": 63,
+            "op": "GETTABLE",
+            "A": 10,
+            "B": 5,
+            "C": 260,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 4,
+              "value": 2.0
+            }
+          },
+          {
+            "pc": 64,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 5,
+            "C": 274,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 18,
+              "value": 3.0
+            }
+          },
+          {
+            "pc": 65,
+            "op": "GETTABLE",
+            "A": 12,
+            "B": 5,
+            "C": 275,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 19,
+              "value": 4.0
+            }
+          },
+          {
+            "pc": 66,
+            "op": "CALL",
+            "A": 7,
+            "B": 6,
+            "C": 1
+          },
+          {
+            "pc": 67,
+            "op": "GETGLOBAL",
+            "A": 7,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 68,
+            "op": "GETTABLE",
+            "A": 7,
+            "B": 7,
+            "C": 279,
+            "B_operand": {
+              "register": 7
+            },
+            "C_operand": {
+              "constant_index": 23,
+              "value": "AddItem"
+            }
+          },
+          {
+            "pc": 69,
+            "op": "GETTABLE",
+            "A": 8,
+            "B": 4,
+            "C": 259,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "nGenre"
+            }
+          },
+          {
+            "pc": 70,
+            "op": "GETTABLE",
+            "A": 9,
+            "B": 4,
+            "C": 261,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 5,
+              "value": "nDetail"
+            }
+          },
+          {
+            "pc": 71,
+            "op": "GETTABLE",
+            "A": 10,
+            "B": 4,
+            "C": 262,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "nParticular"
+            }
+          },
+          {
+            "pc": 72,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 4,
+            "C": 265,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 9,
+              "value": "nLevel"
+            }
+          },
+          {
+            "pc": 73,
+            "op": "LOADNIL",
+            "A": 12,
+            "B": 12,
+            "C": 0
+          },
+          {
+            "pc": 74,
+            "op": "LOADK",
+            "A": 13,
+            "B": 0,
+            "C": 24,
+            "constant_index": 24,
+            "constant_value": 16.0
+          },
+          {
+            "pc": 75,
+            "op": "CALL",
+            "A": 7,
+            "B": 7,
+            "C": 2
+          },
+          {
+            "pc": 76,
+            "op": "TEST",
+            "A": 7,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 77,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 84
+          },
+          {
+            "pc": 78,
+            "op": "GETGLOBAL",
+            "A": 8,
+            "B": 0,
+            "C": 12,
+            "constant_index": 12,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 79,
+            "op": "SELF",
+            "A": 8,
+            "B": 8,
+            "C": 269,
+            "B_operand": {
+              "register": 8
+            },
+            "C_operand": {
+              "constant_index": 13,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 80,
+            "op": "LOADK",
+            "A": 10,
+            "B": 0,
+            "C": 25,
+            "constant_index": 25,
+            "constant_value": "Không tạo được preview (kiểm tra túi đồ)."
+          },
+          {
+            "pc": 81,
+            "op": "CALL",
+            "A": 8,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 82,
+            "op": "LOADK",
+            "A": 8,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 83,
+            "op": "RETURN",
+            "A": 8,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 84,
+            "op": "GETTABLE",
+            "A": 8,
+            "B": 7,
+            "C": 282,
+            "B_operand": {
+              "register": 7
+            },
+            "C_operand": {
+              "constant_index": 26,
+              "value": "Bind"
+            }
+          },
+          {
+            "pc": 85,
+            "op": "LOADK",
+            "A": 9,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": 1.0
+          },
+          {
+            "pc": 86,
+            "op": "CALL",
+            "A": 8,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 87,
+            "op": "GETUPVAL",
+            "A": 8,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 88,
+            "op": "GETGLOBAL",
+            "A": 9,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 89,
+            "op": "CALL",
+            "A": 8,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 90,
+            "op": "GETTABLE",
+            "A": 9,
+            "B": 0,
+            "C": 283,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 27,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 91,
+            "op": "NEWTABLE",
+            "A": 10,
+            "B": 0,
+            "C": 6
+          },
+          {
+            "pc": 92,
+            "op": "GETGLOBAL",
+            "A": 11,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 93,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 11,
+            "C": 285,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 29,
+              "value": "nId"
+            }
+          },
+          {
+            "pc": 94,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 284,
+            "C": 11,
+            "B_operand": {
+              "constant_index": 28,
+              "value": "nPlayerId"
+            },
+            "C_operand": {
+              "register": 11
+            }
+          },
+          {
+            "pc": 95,
+            "op": "GETGLOBAL",
+            "A": 11,
+            "B": 0,
+            "C": 16,
+            "constant_index": 16,
+            "constant_value": "me"
+          },
+          {
+            "pc": 96,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 11,
+            "C": 286,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "constant_index": 30,
+              "value": "szName"
+            }
+          },
+          {
+            "pc": 97,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 286,
+            "C": 11,
+            "B_operand": {
+              "constant_index": 30,
+              "value": "szName"
+            },
+            "C_operand": {
+              "register": 11
+            }
+          },
+          {
+            "pc": 98,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 7,
+            "C": 288,
+            "B_operand": {
+              "register": 7
+            },
+            "C_operand": {
+              "constant_index": 32,
+              "value": "dwId"
+            }
+          },
+          {
+            "pc": 99,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 287,
+            "C": 11,
+            "B_operand": {
+              "constant_index": 31,
+              "value": "dwPreviewId"
+            },
+            "C_operand": {
+              "register": 11
+            }
+          },
+          {
+            "pc": 100,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 4,
+            "C": 288,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 32,
+              "value": "dwId"
+            }
+          },
+          {
+            "pc": 101,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 289,
+            "C": 11,
+            "B_operand": {
+              "constant_index": 33,
+              "value": "dwOldId"
+            },
+            "C_operand": {
+              "register": 11
+            }
+          },
+          {
+            "pc": 102,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 290,
+            "C": 8,
+            "B_operand": {
+              "constant_index": 34,
+              "value": "nExpireKey"
+            },
+            "C_operand": {
+              "register": 8
+            }
+          },
+          {
+            "pc": 103,
+            "op": "SETTABLE",
+            "A": 10,
+            "B": 291,
+            "C": 256,
+            "B_operand": {
+              "constant_index": 35,
+              "value": "bExpired"
+            },
+            "C_operand": {
+              "constant_index": 0,
+              "value": 0.0
+            }
+          },
+          {
+            "pc": 104,
+            "op": "SETTABLE",
+            "A": 9,
+            "B": 8,
+            "C": 10,
+            "B_operand": {
+              "register": 8
+            },
+            "C_operand": {
+              "register": 10
+            }
+          },
+          {
+            "pc": 105,
+            "op": "GETGLOBAL",
+            "A": 9,
+            "B": 0,
+            "C": 36,
+            "constant_index": 36,
+            "constant_value": "Timer"
+          },
+          {
+            "pc": 106,
+            "op": "TEST",
+            "A": 9,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 107,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 12,
+            "sBx": 13,
+            "jump_target_pc": 121
+          },
+          {
+            "pc": 108,
+            "op": "GETGLOBAL",
+            "A": 9,
+            "B": 0,
+            "C": 36,
+            "constant_index": 36,
+            "constant_value": "Timer"
+          },
+          {
+            "pc": 109,
+            "op": "GETTABLE",
+            "A": 9,
+            "B": 9,
+            "C": 293,
+            "B_operand": {
+              "register": 9
+            },
+            "C_operand": {
+              "constant_index": 37,
+              "value": "Register"
+            }
+          },
+          {
+            "pc": 110,
+            "op": "TEST",
+            "A": 9,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 111,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 8,
+            "sBx": 9,
+            "jump_target_pc": 121
+          },
+          {
+            "pc": 112,
+            "op": "GETGLOBAL",
+            "A": 9,
+            "B": 0,
+            "C": 36,
+            "constant_index": 36,
+            "constant_value": "Timer"
+          },
+          {
+            "pc": 113,
+            "op": "SELF",
+            "A": 9,
+            "B": 9,
+            "C": 293,
+            "B_operand": {
+              "register": 9
+            },
+            "C_operand": {
+              "constant_index": 37,
+              "value": "Register"
+            }
+          },
+          {
+            "pc": 114,
+            "op": "GETTABLE",
+            "A": 11,
+            "B": 0,
+            "C": 294,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 38,
+              "value": "FRAME_PER_SEC"
+            }
+          },
+          {
+            "pc": 115,
+            "op": "GETTABLE",
+            "A": 12,
+            "B": 0,
+            "C": 295,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 39,
+              "value": "EXPIRE_SEC"
+            }
+          },
+          {
+            "pc": 116,
+            "op": "MUL",
+            "A": 11,
+            "B": 11,
+            "C": 12,
+            "B_operand": {
+              "register": 11
+            },
+            "C_operand": {
+              "register": 12
+            }
+          },
+          {
+            "pc": 117,
+            "op": "GETTABLE",
+            "A": 12,
+            "B": 0,
+            "C": 296,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 40,
+              "value": "AutoDestroy"
+            }
+          },
+          {
+            "pc": 118,
+            "op": "MOVE",
+            "A": 13,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 119,
+            "op": "MOVE",
+            "A": 14,
+            "B": 8,
+            "C": 0
+          },
+          {
+            "pc": 120,
+            "op": "CALL",
+            "A": 9,
+            "B": 6,
+            "C": 1
+          },
+          {
+            "pc": 121,
+            "op": "SELF",
+            "A": 9,
+            "B": 0,
+            "C": 297,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 41,
+              "value": "_Black"
+            }
+          },
+          {
+            "pc": 122,
+            "op": "LOADK",
+            "A": 11,
+            "B": 0,
+            "C": 42,
+            "constant_index": 42,
+            "constant_value": "Đã tạo vũ khí View, hãy cân nhắc trước khi lựa chọn tẩy lại chỉ số."
+          },
+          {
+            "pc": 123,
+            "op": "CALL",
+            "A": 9,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 124,
+            "op": "LOADK",
+            "A": 9,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": 1.0
+          },
+          {
+            "pc": 125,
+            "op": "RETURN",
+            "A": 9,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 126,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 229,
+        "original_line_end": 257,
+        "attributes": [
+          1,
+          1,
+          0,
+          7
+        ],
+        "constants": [
+          "me",
+          "tbState",
+          "Dialog",
+          "Say",
+          "Không tìm thấy dữ liệu preview.",
+          0.0,
+          "KItem",
+          "GetObjById",
+          "dwPreviewId",
+          null,
+          "Preview Không tồn tại (có thể đã hết hạn).",
+          "dwOldId",
+          "DelItem",
+          "Msg",
+          "Chúc mừng! Tẩy chỉ số vũ khí thành công!!!",
+          1.0
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETUPVAL",
+            "A": 1,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 2,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 3,
+            "op": "CALL",
+            "A": 1,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 4,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 5,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 1,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "register": 1
+            }
+          },
+          {
+            "pc": 6,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 7,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 14
+          },
+          {
+            "pc": 8,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 9,
+            "op": "SELF",
+            "A": 3,
+            "B": 3,
+            "C": 259,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 10,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 4,
+            "constant_index": 4,
+            "constant_value": "Không tìm thấy dữ liệu preview."
+          },
+          {
+            "pc": 11,
+            "op": "CALL",
+            "A": 3,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 12,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 5,
+            "constant_index": 5,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 13,
+            "op": "RETURN",
+            "A": 3,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 14,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 6,
+            "constant_index": 6,
+            "constant_value": "KItem"
+          },
+          {
+            "pc": 15,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 3,
+            "C": 263,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "GetObjById"
+            }
+          },
+          {
+            "pc": 16,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 2,
+            "C": 264,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 8,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "CALL",
+            "A": 3,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 18,
+            "op": "TEST",
+            "A": 3,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 19,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 7,
+            "sBx": 8,
+            "jump_target_pc": 28
+          },
+          {
+            "pc": 20,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 21,
+            "op": "SETTABLE",
+            "A": 4,
+            "B": 1,
+            "C": 265,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 9,
+              "value": null
+            }
+          },
+          {
+            "pc": 22,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 23,
+            "op": "SELF",
+            "A": 4,
+            "B": 4,
+            "C": 259,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 24,
+            "op": "LOADK",
+            "A": 6,
+            "B": 0,
+            "C": 10,
+            "constant_index": 10,
+            "constant_value": "Preview Không tồn tại (có thể đã hết hạn)."
+          },
+          {
+            "pc": 25,
+            "op": "CALL",
+            "A": 4,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 26,
+            "op": "LOADK",
+            "A": 4,
+            "B": 0,
+            "C": 5,
+            "constant_index": 5,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 27,
+            "op": "RETURN",
+            "A": 4,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 28,
+            "op": "GETGLOBAL",
+            "A": 4,
+            "B": 0,
+            "C": 6,
+            "constant_index": 6,
+            "constant_value": "KItem"
+          },
+          {
+            "pc": 29,
+            "op": "GETTABLE",
+            "A": 4,
+            "B": 4,
+            "C": 263,
+            "B_operand": {
+              "register": 4
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "GetObjById"
+            }
+          },
+          {
+            "pc": 30,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 2,
+            "C": 267,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 11,
+              "value": "dwOldId"
+            }
+          },
+          {
+            "pc": 31,
+            "op": "CALL",
+            "A": 4,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 32,
+            "op": "TEST",
+            "A": 4,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 33,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 4,
+            "sBx": 5,
+            "jump_target_pc": 39
+          },
+          {
+            "pc": 34,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 35,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 5,
+            "C": 268,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 12,
+              "value": "DelItem"
+            }
+          },
+          {
+            "pc": 36,
+            "op": "MOVE",
+            "A": 6,
+            "B": 4,
+            "C": 0
+          },
+          {
+            "pc": 37,
+            "op": "CALL",
+            "A": 5,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 38,
+            "op": "JMP",
+            "A": 0,
+            "B": 255,
+            "C": 511,
+            "sBx": 0,
+            "jump_target_pc": 39
+          },
+          {
+            "pc": 39,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 40,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 5,
+            "C": 269,
+            "B_operand": {
+              "register": 5
+            },
+            "C_operand": {
+              "constant_index": 13,
+              "value": "Msg"
+            }
+          },
+          {
+            "pc": 41,
+            "op": "LOADK",
+            "A": 6,
+            "B": 0,
+            "C": 14,
+            "constant_index": 14,
+            "constant_value": "Chúc mừng! Tẩy chỉ số vũ khí thành công!!!"
+          },
+          {
+            "pc": 42,
+            "op": "CALL",
+            "A": 5,
+            "B": 2,
+            "C": 1
+          },
+          {
+            "pc": 43,
+            "op": "GETTABLE",
+            "A": 5,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 44,
+            "op": "SETTABLE",
+            "A": 5,
+            "B": 1,
+            "C": 265,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 9,
+              "value": null
+            }
+          },
+          {
+            "pc": 45,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 15,
+            "constant_index": 15,
+            "constant_value": 1.0
+          },
+          {
+            "pc": 46,
+            "op": "RETURN",
+            "A": 5,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 47,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      },
+      {
+        "source_name": "",
+        "original_line_start": 259,
+        "original_line_end": 273,
+        "attributes": [
+          1,
+          1,
+          0,
+          7
+        ],
+        "constants": [
+          "me",
+          "tbState",
+          "Dialog",
+          "Say",
+          "Không tìm thấy dữ liệu preview.",
+          0.0,
+          "_DelPreviewById",
+          "dwPreviewId",
+          null,
+          "Đã hủy preview. (Không hoàn tiền)",
+          1.0
+        ],
+        "instructions": [
+          {
+            "pc": 1,
+            "op": "GETUPVAL",
+            "A": 1,
+            "B": 0,
+            "C": 0
+          },
+          {
+            "pc": 2,
+            "op": "GETGLOBAL",
+            "A": 2,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 3,
+            "op": "CALL",
+            "A": 1,
+            "B": 2,
+            "C": 2
+          },
+          {
+            "pc": 4,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 5,
+            "op": "GETTABLE",
+            "A": 2,
+            "B": 2,
+            "C": 1,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "register": 1
+            }
+          },
+          {
+            "pc": 6,
+            "op": "TEST",
+            "A": 2,
+            "B": 0,
+            "C": 1
+          },
+          {
+            "pc": 7,
+            "op": "JMP",
+            "A": 0,
+            "B": 256,
+            "C": 5,
+            "sBx": 6,
+            "jump_target_pc": 14
+          },
+          {
+            "pc": 8,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 9,
+            "op": "SELF",
+            "A": 3,
+            "B": 3,
+            "C": 259,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 10,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 4,
+            "constant_index": 4,
+            "constant_value": "Không tìm thấy dữ liệu preview."
+          },
+          {
+            "pc": 11,
+            "op": "CALL",
+            "A": 3,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 12,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 5,
+            "constant_index": 5,
+            "constant_value": 0.0
+          },
+          {
+            "pc": 13,
+            "op": "RETURN",
+            "A": 3,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 14,
+            "op": "SELF",
+            "A": 3,
+            "B": 0,
+            "C": 262,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 6,
+              "value": "_DelPreviewById"
+            }
+          },
+          {
+            "pc": 15,
+            "op": "GETGLOBAL",
+            "A": 5,
+            "B": 0,
+            "C": 0,
+            "constant_index": 0,
+            "constant_value": "me"
+          },
+          {
+            "pc": 16,
+            "op": "GETTABLE",
+            "A": 6,
+            "B": 2,
+            "C": 263,
+            "B_operand": {
+              "register": 2
+            },
+            "C_operand": {
+              "constant_index": 7,
+              "value": "dwPreviewId"
+            }
+          },
+          {
+            "pc": 17,
+            "op": "CALL",
+            "A": 3,
+            "B": 4,
+            "C": 1
+          },
+          {
+            "pc": 18,
+            "op": "GETTABLE",
+            "A": 3,
+            "B": 0,
+            "C": 257,
+            "B_operand": {
+              "register": 0
+            },
+            "C_operand": {
+              "constant_index": 1,
+              "value": "tbState"
+            }
+          },
+          {
+            "pc": 19,
+            "op": "SETTABLE",
+            "A": 3,
+            "B": 1,
+            "C": 264,
+            "B_operand": {
+              "register": 1
+            },
+            "C_operand": {
+              "constant_index": 8,
+              "value": null
+            }
+          },
+          {
+            "pc": 20,
+            "op": "GETGLOBAL",
+            "A": 3,
+            "B": 0,
+            "C": 2,
+            "constant_index": 2,
+            "constant_value": "Dialog"
+          },
+          {
+            "pc": 21,
+            "op": "SELF",
+            "A": 3,
+            "B": 3,
+            "C": 259,
+            "B_operand": {
+              "register": 3
+            },
+            "C_operand": {
+              "constant_index": 3,
+              "value": "Say"
+            }
+          },
+          {
+            "pc": 22,
+            "op": "LOADK",
+            "A": 5,
+            "B": 0,
+            "C": 9,
+            "constant_index": 9,
+            "constant_value": "Đã hủy preview. (Không hoàn tiền)"
+          },
+          {
+            "pc": 23,
+            "op": "CALL",
+            "A": 3,
+            "B": 3,
+            "C": 1
+          },
+          {
+            "pc": 24,
+            "op": "LOADK",
+            "A": 3,
+            "B": 0,
+            "C": 10,
+            "constant_index": 10,
+            "constant_value": 1.0
+          },
+          {
+            "pc": 25,
+            "op": "RETURN",
+            "A": 3,
+            "B": 2,
+            "C": 0
+          },
+          {
+            "pc": 26,
+            "op": "RETURN",
+            "A": 0,
+            "B": 1,
+            "C": 0
+          }
+        ],
+        "children": [],
+        "line_info": [],
+        "locals": [],
+        "upvalues": []
+      }
+    ],
+    "line_info": [],
+    "locals": [],
+    "upvalues": []
+  }
+}

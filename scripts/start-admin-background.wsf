@@ -1,0 +1,11 @@
+<job>
+  <script language="JScript">
+    var shell = new ActiveXObject("WScript.Shell");
+    var node = WScript.Arguments.Item(0);
+    var launcher = "scripts\\start-admin.mjs";
+    var command = '"' + node + '" "' + launcher + '"';
+
+    // Wait so Task Scheduler tracks Next.js for its whole lifetime.
+    WScript.Quit(shell.Run(command, 0, true));
+  </script>
+</job>

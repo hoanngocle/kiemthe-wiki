@@ -1,0 +1,497 @@
+[
+  {
+    "id": "vu-khi-hao-thien",
+    "title": "Vũ Khí Hạo Thiên",
+    "summary": "Đã sửa đủ 7 nhánh ghép và 6 loại rương; Tử Không 10 dòng nhận đúng rương level 4.",
+    "status": "fixed",
+    "verdict": "Đã kiểm chứng 7 công thức, ánh xạ 6 rương, lỗi tạo thưởng và callback rương cũ bằng Lua 5.1. Đã bỏ definition trùng ID rương 8 dòng ở server và client.",
+    "steps": [
+      "Chọn đúng nhánh Vũ Khí Hạo Thiên. Cần ít nhất 1 ô túi trống.",
+      "Hai nhánh Hạo Thiên đầu: chỉ đặt đúng 1 vũ khí vào khung, để nguyên liệu trong túi. Các nhánh Tử Dương/Tử Không: đặt đúng vũ khí và đúng số lượng nguyên liệu vào khung. Vật phẩm lạ hoặc số lượng dư bị từ chối.",
+      "Nhận rương rồi nhấn phải, chọn loại vũ khí, hệ và biến thể. Callback kiểm tra lại rương còn trong túi trước khi trao vũ khí."
+    ],
+    "recipes": [
+      {
+        "name": "Ghép Vũ Khí Hạo Thiên",
+        "formula": "Đúng 1 vũ khí (2,1,1700..2109,10) trong khung + 100 Kim Nguyên Bảo Đại (18,1,1338,1) + 50 Bát Quái Lệnh (18,1,3035,2) trong túi",
+        "result": "1 Rương Vũ Khí Hạo Thiên (18,1,3086,1)",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Hạo Thiên",
+        "formula": "Đúng 1 vũ khí Hạo Thiên (2,1,11704..12109,10) trong khung + 10 Kim Nguyên Bảo Đại trong túi",
+        "result": "1 Rương Vũ Khí Hạo Thiên (18,1,3086,1)",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Tử Dương",
+        "formula": "Trong khung: đúng 1 Hạo Thiên (2,1,11704..12109,10) + đúng 100 Kim Nguyên Bảo Đại + đúng 100 Bát Quái Lệnh.",
+        "result": "1 Rương Vũ Khí Tử Dương (18,1,1452,1), bForceBind=1",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Tử Không (7 dòng)",
+        "formula": "Trong khung: đúng 1 Tử Dương (2,1,12110..12191,10) + đúng 1000 KNB Đại + đúng 300 Bát Quái Lệnh",
+        "result": "1 Rương Vũ Khí Tử Không (18,1,1453,1)",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Tử Không 8 Dòng",
+        "formula": "Trong khung: đúng 1 Tử Không 7 dòng (2,1,3561..3641,10) + đúng 2000 KNB Đại + đúng 200 Bát Quái Lệnh",
+        "result": "1 rương (18,1,1453,2)",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào.",
+          "Đã bỏ definition cũ class ruongtukhong10 trùng ID (18,1,1453,2) trên server và client; giữ class ruongtukhong8dong."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Tử Không 9 Dòng",
+        "formula": "Trong khung: đúng 1 Tử Không 8 dòng (2,1,3642..3722,10) + đúng 3000 KNB Đại + đúng 300 Bát Quái Lệnh",
+        "result": "1 Rương Vũ Khí Tử Không (9 Dòng) (18,1,1453,3)",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào."
+        ]
+      },
+      {
+        "name": "Ghép Rương Vũ Khí Tử Không 10 Dòng",
+        "formula": "Trong khung: đúng 1 Tử Không 9 dòng (2,1,3723..3803,10) + đúng 4000 KNB Đại + đúng 400 Bát Quái Lệnh",
+        "result": "1 Rương Vũ Khí Tử Không (10 Dòng), ID (18,1,1453,4).",
+        "chance": "100% nếu đủ điều kiện và các API vật phẩm thực hiện thành công.",
+        "notes": [
+          "Cần ít nhất 1 ô trống. Chỉ nhận đúng các vật phẩm và số lượng yêu cầu; không xóa vật phẩm lạ hoặc nguyên liệu dư.",
+          "Tạo thưởng trước khi trừ phí/xóa đầu vào; nếu không tạo được thưởng thì giữ nguyên đầu vào.",
+          "Đã sửa AWARD_ITEM từ level 3 thành level 4; rương mở ra dải vũ khí 3804..3884."
+        ]
+      },
+      {
+        "name": "Mở rương / chọn vũ khí",
+        "formula": "Nhấn phải rương → chọn loại vũ khí → hệ → biến thể; tiêu hao 1 rương tương ứng",
+        "result": "Rương Hạo Thiên: item 2,1,11704..12109,10; Tử Dương: 12110..12191; Tử Không 7: 3561..3641; class 8: 3642..3722; class 9: 3723..3803; class 10: 3804..3884. Đều AddItem(...,3,16).",
+        "chance": "100% theo nhánh code; chưa kiểm thử máy chủ",
+        "notes": [
+          "Các lựa chọn phải tồn tại trong bảng của đúng loại rương.",
+          "Rương Hạo Thiên/Tử Dương/Tử Không 7 dòng giữ bảng lựa chọn cũ. Rương 8/9/10 dòng dùng offset 81/162/243 từ bảng gốc 3561..3641.",
+          "Tạo vũ khí trước khi trừ đúng 1 rương; kiểm tra lại số rương trong túi để chặn callback cũ. Nếu AddItem lỗi thì không mất rương."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chưa thử thao tác trên máy chủ game thật; kiểm chứng bằng Lua 5.1 với các API game được mô phỏng ở ranh giới engine.",
+      "API game cũ không cung cấp giao dịch nguyên tử. Code tạo thưởng trước, kiểm tra việc trừ phí và xử lý bù khi gặp lỗi. Nếu chính thao tác hoàn/xóa tạm cũng lỗi, nhật ký và thông báo yêu cầu quản trị viên xử lý.",
+      "Khi phải bù nguyên liệu, code hoàn vật phẩm khóa (bForceBind=1), vì ConsumeItemInBags không cho biết đã chọn chồng khóa hay không khóa. Do đó nguyên liệu được hoàn có thể mất khả năng giao dịch.",
+      "Khi thay trang bị thành công, kết quả là item mới theo công thức. Không sao chép toàn bộ thuộc tính riêng của item cũ.",
+      "Nhánh ghép có nhiều đầu vào: nếu engine xóa thành công một phần rồi lỗi ở món tiếp theo, code yêu cầu hoàn mẫu vật phẩm và ghi cảnh báo; không thể bảo đảm phục hồi toàn bộ thuộc tính riêng của vũ khí đầu vào bằng API cũ."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 263,
+        "label": "7 menu Hạo Thiên"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 69,
+        "label": "Tạo thưởng trước, kiểm tra phí, bù khi lỗi"
+      },
+      {
+        "path": "script/tranphai/haothien/haothien.lua",
+        "line": 3,
+        "label": "Công thức và thưởng haothien"
+      },
+      {
+        "path": "script/tranphai/haothien/doivukhihao.lua",
+        "line": 3,
+        "label": "Công thức và thưởng doivukhihao"
+      },
+      {
+        "path": "script/tranphai/haothien/tuduong.lua",
+        "line": 3,
+        "label": "Công thức và thưởng tuduong"
+      },
+      {
+        "path": "script/tranphai/haothien/tukhongx.lua",
+        "line": 3,
+        "label": "Công thức và thưởng tukhongx"
+      },
+      {
+        "path": "script/tranphai/haothien/tukhong8dong.lua",
+        "line": 3,
+        "label": "Công thức và thưởng tukhong8dong"
+      },
+      {
+        "path": "script/tranphai/haothien/tukhong9dong.lua",
+        "line": 3,
+        "label": "Công thức và thưởng tukhong9dong"
+      },
+      {
+        "path": "script/tranphai/haothien/tukhong10dong.lua",
+        "line": 3,
+        "label": "Công thức và thưởng tukhong10dong"
+      },
+      {
+        "path": "script/tranphai/item/RuongTrangBiTranThienKoCheck.lua",
+        "line": 471,
+        "label": "Mở rương có kiểm tra lại: RuongTrangBiTranThienKoCheck"
+      },
+      {
+        "path": "script/tranphai/item/ruongtuduong.lua",
+        "line": 471,
+        "label": "Mở rương có kiểm tra lại: ruongtuduong"
+      },
+      {
+        "path": "script/tranphai/item/ruongtukhong.lua",
+        "line": 471,
+        "label": "Mở rương có kiểm tra lại: ruongtukhong"
+      },
+      {
+        "path": "script/tranphai/item/ruongtukhong8dong.lua",
+        "line": 548,
+        "label": "Mở rương có kiểm tra lại: ruongtukhong8dong"
+      },
+      {
+        "path": "script/tranphai/item/ruongtukhong9dong.lua",
+        "line": 548,
+        "label": "Mở rương có kiểm tra lại: ruongtukhong9dong"
+      },
+      {
+        "path": "script/tranphai/item/ruongtukhong10dong.lua",
+        "line": 547,
+        "label": "Mở rương có kiểm tra lại: ruongtukhong10dong"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 2611,
+        "label": "Definition duy nhất cho rương 8 dòng"
+      }
+    ]
+  },
+  {
+    "id": "luan-hoi-an",
+    "title": "Luân Hồi Ấn",
+    "summary": "Ghép/nâng Truyền Kỳ Ấn, chuyển sang Phong Thần Ấn VIP100 cấp.",
+    "status": "fixed",
+    "verdict": "Đã giữ hành vi Truyền Kỳ: có Bùa chắc chắn lên 1 cấp, không Bùa chắc chắn giảm 1 cấp (sàn cấp 1). Đối thoại nói đúng hành vi. Ghép/nâng Phong Thần và Truyền Kỳ dùng cơ chế kiểm tra phí và bù khi lỗi.",
+    "steps": [
+      "Truyền Kỳ → Ghép: đặt chính xác 1000 Mảnh Luân Hồi và 2 KNB Đại vào khung để có ấn 1.",
+      "Đeo Truyền Kỳ, giữ nguyên liệu trong túi; chọn Nâng Cấp. Cần Bùa trong túi nếu muốn lên cấp. Item mới nhận ở túi, đeo lại để tiếp tục.",
+      "Phong Thần → Ghép: Truyền Kỳ 10 phải ở túi cùng 1000 KNB, ≥ 1 ô trống.",
+      "Đeo Phong Thần, nguyên liệu/Bùa ở túi, ≥ 1 ô trống → Nâng Cấp → Bắt đầu."
+    ],
+    "recipes": [
+      {
+        "name": "Ghép Truyền Kỳ Ấn cấp 1",
+        "formula": "Khung: đúng 1000 Mảnh (18,1,1192,12)  + đúng 2 KNB Đại (18,1,1338,1)",
+        "result": "1 (1,16,13,1)",
+        "chance": "100%",
+        "notes": [
+          "Đặt đúng 2 loại và đúng số lượng vào khung; nguyên liệu dư hoặc vật phẩm lạ bị từ chối. Cần 1 ô trống."
+        ]
+      },
+      {
+        "name": "Nâng Truyền Kỳ toàn bộ cấp 1..9",
+        "formula": "Cấp hiện tại c=p-12, p13..21. Mỗi lần1000 c Mảnh Luân Hồi +5 c KNB Đại. Bùa(18,1,3031,1) trong túi quyết định nhánh.",
+        "result": "Có Bùa: nhận(1,16,p+1,level cũ), trừ 1 Bùa; không Bùa: nhận(1,16,max(13,p-1),level cũ). Item mới Bind(1).",
+        "chance": "Có Bùa100% lên cấp; không Bùa0% lên cấp, luôn giảm 1 (sàn cấp 1).",
+        "notes": [
+          "Không có random. Có Bùa thì lên 1 cấp và trừ 1 Bùa; không Bùa thì giảm 1 cấp (sàn cấp 1). Chi phí vẫn mất theo công thức.",
+          "Đối thoại hiển thị đúng hai kết quả. Thay item qua helper: tạo item mới, kiểm tra trừ phí, sau đó mới xóa item cũ."
+        ]
+      },
+      {
+        "name": "Ghép Phong Thần Ấn VIP cấp 1",
+        "formula": "Trong túi: 1 Truyền Kỳ 10(1,16,22,1) +1000 KNB Đại; ≥ 1 ô trống",
+        "result": "(1,16,23,1), Bind(1)",
+        "chance": "100% theo nhánh code; chưa kiểm thử máy chủ",
+        "notes": []
+      },
+      {
+        "name": "Nâng Phong Thần cấp 1..99 →2..100",
+        "formula": "Đeo(1,16,p,1), p23..121; c=p-22. Phí1000 c Mảnh Luân Hồi +10 c KNB Đại. Optional Bùa trong túi.",
+        "result": "Thành côngp+1; thất bại có Bùa giữ p và trừ 1 Bùa; thất bại không Bùa max(23,p-1). Tạo item mới Bind(1), nhận ở túi.",
+        "chance": "max(50,110-10 c)%: c1=100,c2=90,c3=80,c4=70,c5=60,c≥ 6=50",
+        "notes": [
+          "Cả thành/bại đều mất phí. Bùa chỉ tiêu hao khi thất bại.",
+          "Chi phí10 KNB+1000 mảnh ởc1; 990 KNB+99000 mảnh ởc99."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chưa thử thao tác trên máy chủ game thật; kiểm chứng bằng Lua 5.1 với các API game được mô phỏng ở ranh giới engine.",
+      "API game cũ không cung cấp giao dịch nguyên tử. Code tạo thưởng trước, kiểm tra việc trừ phí và xử lý bù khi gặp lỗi. Nếu chính thao tác hoàn/xóa tạm cũng lỗi, nhật ký và thông báo yêu cầu quản trị viên xử lý.",
+      "Khi phải bù nguyên liệu, code hoàn vật phẩm khóa (bForceBind=1), vì ConsumeItemInBags không cho biết đã chọn chồng khóa hay không khóa. Do đó nguyên liệu được hoàn có thể mất khả năng giao dịch.",
+      "Khi thay trang bị thành công, kết quả là item mới theo công thức. Không sao chép toàn bộ thuộc tính riêng của item cũ."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 200,
+        "label": "Luân Hồi dispatch2 classes"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 69,
+        "label": "Tạo thưởng trước, kiểm tra phí, bù khi lỗi"
+      },
+      {
+        "path": "script/tranphai/nangcapan/truyenkyan.lua",
+        "line": 11,
+        "label": "Ghép đúng 1000 mảnh + 2 KNB"
+      },
+      {
+        "path": "script/tranphai/nangcapan/truyenky1.lua",
+        "line": 95,
+        "label": "Truyền Kỳ xác định theo Bùa"
+      },
+      {
+        "path": "script/tranphai/nangcapan/thanglongan.lua",
+        "line": 119,
+        "label": "Ghép Phong Thần"
+      },
+      {
+        "path": "script/tranphai/nangcapan/thanglongan.lua",
+        "line": 197,
+        "label": "Nâng Phong Thần, kiểm tra lại dwId"
+      }
+    ]
+  },
+  {
+    "id": "gia-lam-kinh",
+    "title": "Già Lam Kinh",
+    "summary": "Nhận/nâng Già Lam Kinh; ghép/nâng Bí Tịch Truyền Thuyết.",
+    "status": "fixed",
+    "verdict": "Đã đổi nhận miễn phí sang ID 26 để có thể nâng ngay bằng công thức cấp 1..9 hiện tại. Ghép và nâng sách đã dùng tạo thưởng trước, kiểm tra phí, xử lý bù khi lỗi. Đã kiểm chứng đủ các cấp và nhánh thắng/thua trong Lua 5.1.",
+    "steps": [
+      "Già Lam Kinh → Nhận: nhận miễn phí (1,14,26,4), được tính là cấp 1 trong hệ nâng cấp; cần 1 ô túi trống.",
+      "Nếu đã có Già Lam Kinh ID26..34: đeo vào ô bí kíp, giữ nguyên liệu trong túi → Nâng Cấp Già Lam Kinh → Bắt Đầu; đeo lại item mới sau mỗi lần.",
+      "Bí Tịch Truyền Thuyết → Ghép: đưa Già Lam Kinh ID35 vào túi và chuẩn bị nguyên liệu, ≥ 1 ô → Ghép → Tiến hành ghép.",
+      "Đeo Bí Kíp ID45..143, giữ nguyên liệu/Bùa trong túi → Nâng Cấp → Bắt Đầu."
+    ],
+    "recipes": [
+      {
+        "name": "Nhận Già Lam Kinh",
+        "formula": "Miễn phí, cần ít nhất 1 ô trống trong túi.",
+        "result": "1 Già Lam Kinh +1 (1,14,26,4); hệ nâng cấp gọi đây là cấp 1.",
+        "chance": "100% theo nhánh code; chưa kiểm thử máy chủ",
+        "notes": []
+      },
+      {
+        "name": "Nâng Già Lam Kinh tất cả bậc reachable",
+        "formula": "Đeo(1,14,p,4), p26..34; s=p-25, s1..9. Phí1000 s Mảnh Già Lam Kinh(18,1,3051,1) +5 s KNB Đại. Optional Bùa(18,1,3031,1).",
+        "result": "Thành côngp+1; bại có Bùa giữ p và trừ 1 Bùa; bại không Bùa max(26,p-1). (1,14,p kết quả,4), Bind(1). Dừngp35.",
+        "chance": "s1=100%,s2=80%,s3=70%,s4=60%,s5..9=50%",
+        "notes": [
+          "Mọi kết quả đều tiêu hao phí; Bùa chỉ trừ khi thất bại có Bùa.",
+          "Item miễn phí hiện là ID 26, vào đúng dải nâng 26..35. Tên setting Già Lam Kinh +1..+10 tương ứng cấp 1..10 của hệ nâng."
+        ]
+      },
+      {
+        "name": "Ghép Bí Tịch Truyền Thuyết cấp 1",
+        "formula": "Trong túi: 1000 Mảnh Già Lam Kinh(18,1,3051,1) +1 Già Lam Kinh+10(1,14,35,4) +50 KNB Đại; ≥ 1 ô trống",
+        "result": "(1,14,45,4), Bind(1); tên setting Bí Tịch Truyền Thuyết (Cấp 1)",
+        "chance": "100% theo nhánh code; chưa kiểm thử máy chủ",
+        "notes": []
+      },
+      {
+        "name": "Nâng Bí Tịch Truyền Thuyết mọi cấp 1..99",
+        "formula": "Đeo(1,14,p,4),p45..143; c=p-44. Phí10 c KNB Đại +c Chú Văn Huyết Ngọc(18,1,9113,1) +1000 c Mảnh Già Lam Kinh. Optional Bùa trong túi.",
+        "result": "Thành côngp+1; bại có Bùa giữ p và trừ 1 Bùa; bại không Bùa max(45,p-1). Item mới Bind(1), dừngp144 cấp 100.",
+        "chance": "max(50,105-5 c)%: c1=100,c2=95,c3=90,c4=85,c5=80,c6=75,c7=70,c8=65,c9=60,c10=55,c≥ 11=50",
+        "notes": [
+          "Mọi kết quả mất 3 nguyên liệu; Bùa chỉ trừ khi thất bại có Bùa.",
+          "Đầu10 KNB+1 HuyếtNgọc+1000 mảnh; cuối990 KNB+99 HuyếtNgọc+99000 mảnh."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chưa thử thao tác trên máy chủ game thật; kiểm chứng bằng Lua 5.1 với các API game được mô phỏng ở ranh giới engine.",
+      "API game cũ không cung cấp giao dịch nguyên tử. Code tạo thưởng trước, kiểm tra việc trừ phí và xử lý bù khi gặp lỗi. Nếu chính thao tác hoàn/xóa tạm cũng lỗi, nhật ký và thông báo yêu cầu quản trị viên xử lý.",
+      "Khi phải bù nguyên liệu, code hoàn vật phẩm khóa (bForceBind=1), vì ConsumeItemInBags không cho biết đã chọn chồng khóa hay không khóa. Do đó nguyên liệu được hoàn có thể mất khả năng giao dịch.",
+      "Khi thay trang bị thành công, kết quả là item mới theo công thức. Không sao chép toàn bộ thuộc tính riêng của item cũ.",
+      "Già Lam Kinh ID 25 từ dữ liệu cũ không thuộc dải nâng 26..35. Nhánh nhận mới cấp ID 26; chưa tự chuyển các item cũ của người chơi."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 169,
+        "label": "Già Lam Kinh và Bí Kíp dispatcher"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 69,
+        "label": "Tạo thưởng trước, kiểm tra phí, bù khi lỗi"
+      },
+      {
+        "path": "script/tranphai/bikip/bikip2.lua",
+        "line": 140,
+        "label": "Nhận miễn phí ID26"
+      },
+      {
+        "path": "script/tranphai/bikip/lamkinh2.lua",
+        "line": 127,
+        "label": "Nâng Già Lam Kinh"
+      },
+      {
+        "path": "script/tranphai/bikip/bikip1.lua",
+        "line": 71,
+        "label": "Ghép Bí Tịch Truyền Thuyết"
+      },
+      {
+        "path": "script/tranphai/bikip/nangbikipthattruyen.lua",
+        "line": 143,
+        "label": "Nâng Bí Kíp đủ 99 bậc"
+      }
+    ]
+  },
+  {
+    "id": "trang-bi-dong-hanh",
+    "title": "Trang Bị Đồng Hành",
+    "summary": "Bộ 1 đổi trọn bộ 5 món từ cấp 6 đến cấp 11. Bộ 2 kích hoạt và nâng 5 kỹ năng của nhân vật.",
+    "status": "fixed",
+    "verdict": "Đã giữ phí Bộ 1 là 1500000 JbCoin; sửa Bộ 2 kích hoạt trừ đủ 500 KNB Đại và mỗi lần nâng trừ 100 KNB + 10000 mảnh 3120 đúng loại. Đã kiểm chứng đủ bậc, thắng/thua và lỗi cấp kỹ năng.",
+    "steps": [
+      "Bộ 1: tháo đúng 5 món theo cấp đầu vào, đặt vào khung; chuẩn bị 150 vạn đồng thường (JbCoin), chọn cấp kế tiếp rồi xác nhận.",
+      "Bộ 2: chuẩn bị 500 Kim Nguyên Bảo Đại để kích hoạt đủ 5 kỹ năng cấp 1. Chặn kích hoạt lại khi đã có bất kỳ kỹ năng nào trong bộ.",
+      "Để nâng một kỹ năng, giữ ít nhất 10000 mảnh đúng loại và 100 KNB Đại trong túi, rồi chọn Liên, Lưng, Giày, Bội hoặc Nón. Mỗi kỹ năng có thể nâng đến cấp 10."
+    ],
+    "recipes": [
+      {
+        "name": "Bộ 1: nâng full 5 món từ6→7→8→9→10→11",
+        "formula": "Mỗi lần đặt đúng 1 món cho mỗi loại d thuộc {19,20,21,22,23}. Đầu vào: cấp 6→7 dùng (5,d,1,6); 7→8 dùng (5,d,1,7); 8→9 dùng (5,d,1,8); 9→10 dùng (5,d,1,9); 10→11 dùng (5,d,11,10). Mỗi lần cần 1500000 JbCoin, tương đương 150 vạn đồng thường.",
+        "result": "Nhận trọn bộ 5 món tương ứng: (5,d,1,7), (5,d,1,8), (5,d,1,9), (5,d,11,10) hoặc (5,d,12,10).",
+        "chance": "100%; không RNG",
+        "notes": [
+          "Phí dùng JbCoin, không phải vật phẩm Kim Nguyên Bảo Đại.",
+          "Cấp 10/11 là nhãn menu; particular lần lượt 11/12 và level đều là 10.",
+          "Cần 5 ô trống để tạo trước đủ bộ mới; tạo lỗi ở bất kỳ món nào sẽ xóa các món tạm và giữ nguyên bộ cũ, chưa trừ tiền."
+        ]
+      },
+      {
+        "name": "Bộ 2: kích hoạt full level1",
+        "formula": "Có đủ 500 Kim Nguyên Bảo Đại trong túi và chưa có bất kỳ kỹ năng nào trong 1536..1540. Tiêu hao đúng 500 KNB Đại.",
+        "result": "Thêm cả 5 kỹ năng 1536..1540 ở cấp 1; không trao trang bị.",
+        "chance": "100% khi qua điều kiện",
+        "notes": [
+          "Kiểm tra lại đủ tiền khi thực hiện. Nếu cấp kỹ năng thất bại thì yêu cầu xóa các cấp đã tạo và hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Bộ 2: nâng Liên",
+        "formula": "Kỹ năng 1536 cấp c=1..9: tiêu hao đúng 100 Kim Nguyên Bảo Đại và 10000 Mảnh [Liên] Đồng Hành (18,1,3120,7) trong túi.",
+        "result": "Thành công: kỹ năng 1536 lên cấp c+1. Thất bại: giữ nguyên cấp.",
+        "chance": "100−10 c%: lần lượt 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10% khi c=1..9.",
+        "notes": [
+          "Thành công và thất bại đều tiêu hao đủ 2 nguyên liệu; thất bại random giữ nguyên cấp.",
+          "Nếu engine không cấp được kỹ năng ở nhánh thành công, code kiểm tra lại cấp và yêu cầu hoàn chi phí. Không dùng Bùa Bảo Toàn."
+        ]
+      },
+      {
+        "name": "Bộ 2: nâng Lưng",
+        "formula": "Kỹ năng 1537 cấp c=1..9: tiêu hao đúng 100 Kim Nguyên Bảo Đại và 10000 Mảnh [Lưng] Đồng Hành (18,1,3120,8) trong túi.",
+        "result": "Thành công: kỹ năng 1537 lên cấp c+1. Thất bại: giữ nguyên cấp.",
+        "chance": "100−10 c%: lần lượt 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10% khi c=1..9.",
+        "notes": [
+          "Thành công và thất bại đều tiêu hao đủ 2 nguyên liệu; thất bại random giữ nguyên cấp.",
+          "Nếu engine không cấp được kỹ năng ở nhánh thành công, code kiểm tra lại cấp và yêu cầu hoàn chi phí. Không dùng Bùa Bảo Toàn."
+        ]
+      },
+      {
+        "name": "Bộ 2: nâng Giày",
+        "formula": "Kỹ năng 1538 cấp c=1..9: tiêu hao đúng 100 Kim Nguyên Bảo Đại và 10000 Mảnh [Giày] Đồng Hành (18,1,3120,9) trong túi.",
+        "result": "Thành công: kỹ năng 1538 lên cấp c+1. Thất bại: giữ nguyên cấp.",
+        "chance": "100−10 c%: lần lượt 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10% khi c=1..9.",
+        "notes": [
+          "Thành công và thất bại đều tiêu hao đủ 2 nguyên liệu; thất bại random giữ nguyên cấp.",
+          "Nếu engine không cấp được kỹ năng ở nhánh thành công, code kiểm tra lại cấp và yêu cầu hoàn chi phí. Không dùng Bùa Bảo Toàn."
+        ]
+      },
+      {
+        "name": "Bộ 2: nâng Bội",
+        "formula": "Kỹ năng 1539 cấp c=1..9: tiêu hao đúng 100 Kim Nguyên Bảo Đại và 10000 Mảnh [Bội] Đồng Hành (18,1,3120,10) trong túi.",
+        "result": "Thành công: kỹ năng 1539 lên cấp c+1. Thất bại: giữ nguyên cấp.",
+        "chance": "100−10 c%: lần lượt 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10% khi c=1..9.",
+        "notes": [
+          "Thành công và thất bại đều tiêu hao đủ 2 nguyên liệu; thất bại random giữ nguyên cấp.",
+          "Nếu engine không cấp được kỹ năng ở nhánh thành công, code kiểm tra lại cấp và yêu cầu hoàn chi phí. Không dùng Bùa Bảo Toàn."
+        ]
+      },
+      {
+        "name": "Bộ 2: nâng Nón",
+        "formula": "Kỹ năng 1540 cấp c=1..9: tiêu hao đúng 100 Kim Nguyên Bảo Đại và 10000 Mảnh [Nón] Đồng Hành (18,1,3120,11) trong túi.",
+        "result": "Thành công: kỹ năng 1540 lên cấp c+1. Thất bại: giữ nguyên cấp.",
+        "chance": "100−10 c%: lần lượt 90%, 80%, 70%, 60%, 50%, 40%, 30%, 20%, 10% khi c=1..9.",
+        "notes": [
+          "Thành công và thất bại đều tiêu hao đủ 2 nguyên liệu; thất bại random giữ nguyên cấp.",
+          "Nếu engine không cấp được kỹ năng ở nhánh thành công, code kiểm tra lại cấp và yêu cầu hoàn chi phí. Không dùng Bùa Bảo Toàn."
+        ]
+      },
+      {
+        "name": "Bộ 2: thưởng đồng bộ kỹ năng",
+        "formula": "Sau mỗi lần nâng thành công, đếm m là số kỹ năng trong 1536..1540 đã đạt cấp 10.",
+        "result": "Nếu m=2: thêm kỹ năng 1705 cấp 1. Nếu m=3..5: thêm kỹ năng 1705 cấp m−1. Không mất thêm phí.",
+        "chance": "Tự động sau thành công",
+        "notes": [
+          "Nếu chỉ có 0 hoặc 1 kỹ năng đạt cấp 10 thì không thêm kỹ năng 1705. Phép đếm chỉ chạy sau nhánh nâng thành công."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chưa thử thao tác trên máy chủ game thật; kiểm chứng bằng Lua 5.1 với các API game được mô phỏng ở ranh giới engine.",
+      "API game cũ không cung cấp giao dịch nguyên tử. Code tạo thưởng trước, kiểm tra việc trừ phí và xử lý bù khi gặp lỗi. Nếu chính thao tác hoàn/xóa tạm cũng lỗi, nhật ký và thông báo yêu cầu quản trị viên xử lý.",
+      "Khi phải bù nguyên liệu, code hoàn vật phẩm khóa (bForceBind=1), vì ConsumeItemInBags không cho biết đã chọn chồng khóa hay không khóa. Do đó nguyên liệu được hoàn có thể mất khả năng giao dịch.",
+      "Khi thay trang bị thành công, kết quả là item mới theo công thức. Không sao chép toàn bộ thuộc tính riêng của item cũ.",
+      "Với Bộ 1 gồm 5 item cũ, lỗi xóa một phần là giới hạn engine: code hoàn mẫu item đã xóa và thông báo cần quản trị kiểm tra thuộc tính riêng; chưa có giao dịch nguyên tử cho cả bộ."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 150,
+        "label": "Bộ 1→bo7 và Bộ 2→bo2"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 69,
+        "label": "Tạo thưởng trước, kiểm tra phí, bù khi lỗi"
+      },
+      {
+        "path": "script/tranphai/trangbidonghanh/bo7.lua",
+        "line": 80,
+        "label": "Đổi trọn bộ 5 món, phí 1500000 JbCoin"
+      },
+      {
+        "path": "script/tranphai/trangbidonghanh/bo2.lua",
+        "line": 52,
+        "label": "Kích hoạt 500 KNB và bù khi lỗi"
+      },
+      {
+        "path": "script/tranphai/trangbidonghanh/bo2.lua",
+        "line": 69,
+        "label": "Trừ đúng 100 KNB + 10000 mảnh"
+      },
+      {
+        "path": "script/tranphai/trangbidonghanh/bo2.lua",
+        "line": 93,
+        "label": "Thưởng kỹ năng đồng bộ 1705"
+      }
+    ]
+  }
+]

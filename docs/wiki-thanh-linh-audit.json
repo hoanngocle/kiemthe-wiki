@@ -1,0 +1,127 @@
+[
+  {
+    "id": "thanh-linh",
+    "title": "Thánh Linh (Bí Bảo)",
+    "summary": "Tích Linh Hồn từ Thánh Linh Bảo Hạp Hồn rồi dùng Tu Luyện Châu để tụ linh từng dòng; hoặc dùng sách nâng cả năm dòng. Tối đa cấp 400 mỗi dòng.",
+    "status": "issues",
+    "verdict": "Đã đối chiếu menu Tu Luyện Châu, số dư Linh Hồn, bảng kinh nghiệm năm dòng, cửa hàng, rương và sách. Tụ linh kiểm tra trang bị, giới hạn cấp và lỗi cập nhật; nhánh hạp/rương/sách còn thiếu kiểm tra giao dịch. Chưa thử trực tiếp trên nhân vật trong game.",
+    "steps": [
+      "Quan Phi Phi → Cửa Hàng Đặc Biệt (shop 209). Mua Rương Linh Khí Bí Bảo (Vĩnh Viễn) (18,1,3118,4) với 20 Kim Nguyên Bảo Đại (18,1,1338,1). Bảng vật phẩm gọi cùng mã này là Rương Thánh Linh (Vĩnh Viễn).",
+      "Để ít nhất 5 ô hành trang trống, nhấn phải rương → [Nhận] Bí Bảo → chọn Kim, Mộc, Thủy, Hỏa hoặc Thổ. Nhận 1 Thánh Linh theo hệ đã chọn và 1 Sách Tu Luyện (Thánh Linh) (18,1,3119,5). Rương không tự nâng năm dòng lên tối đa.",
+      "Nhân vật cần cấp 120 để đeo các mẫu Thánh Linh này. Đeo vào ô Thánh Linh/Bí Bảo (ô Chân Nguyên phụ thứ nhất). Để trong túi hoặc chỉ đeo Chân Nguyên chính sẽ không tụ linh được.",
+      "Tích nguyên liệu: nhấn phải Thánh Linh Bảo Hạp Hồn (18,1,1334,1) → Ta muốn tích lũy linh hồn. Mỗi hạp dùng cộng 10.000 Linh Hồn vào số dư của nhân vật. Mở hạp chưa tăng chỉ số trang bị; số dư này được giữ để tụ linh sau.",
+      "Mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh. Menu hiển thị số Linh Hồn đang giữ. Chọn Thứ Nhất để nâng Sức mạnh, Thứ Hai để nâng Thân pháp, Thứ Ba để nâng Ngoại công, Thứ Tư để nâng Nội công, hoặc Thứ Năm để nâng tỷ lệ gây hiệu ứng theo hệ.",
+      "Mỗi lần chọn dòng thực hiện ngay, dồn toàn bộ số dư Linh Hồn vào riêng dòng đó, theo tỷ lệ 1 Linh Hồn = 1 điểm tụ linh. Không thu thêm Bạc, Đồng, KNB, Huyết Chân Đơn hoặc Bùa Bảo Toàn. Tu Luyện Châu là vật phẩm mở menu, không bị tiêu hao khi tụ linh.",
+      "Điểm tụ linh được tích lũy, đủ ngưỡng thì dòng đó tự tăng cấp, tối đa cấp 400. Không chia đều Linh Hồn cho năm dòng. Nếu dòng chạm trần, phần Linh Hồn còn dư giữ trong số dư để dùng cho dòng khác; nếu đã đạt 400 từ trước thì không trừ Linh Hồn.",
+      "Theo bảng hiện tại, từ cấp 1, 0 điểm lên cấp 400: mỗi dòng 1, 2, 4, 5 cần 1.036.810.000 Linh Hồn (103.681 hạp); dòng 3 cần 105.490.000 Linh Hồn (10.549 hạp). Tổng năm dòng là 4.252.730.000 Linh Hồn, tương đương 425.273 hạp thường. Đây là lượng khi chỉ dùng hạp và bắt đầu từ cấp 1, 0 điểm; không áp dụng nếu đã dùng sách hoặc có điểm sẵn.",
+      "Cách nâng bằng sách: đeo đúng Thánh Linh muốn nâng, nhấn phải Sách Tu Luyện (Thánh Linh) → [Nâng Max]. Dùng 1 sách để cộng 100.000.000.000 điểm cho mỗi dòng 1–5, đủ đưa cả năm dòng lên cấp 400 theo bảng hiện tại. Không tiêu số dư Linh Hồn; sách này có sẵn khi mở rương vĩnh viễn.",
+      "Nguồn hạp thường: Rương Hoàng Kim có nhánh 45% nhận 5 Thánh Linh Bảo Hạp Hồn; Rương Bạch Ngân có nhánh 47,25% nhận 3 hạp. Đây là tỷ lệ nhận nguyên liệu khi mở rương; thao tác tụ linh không quay tỷ lệ thành công. Có thể tra hạp và Tu Luyện Châu trong Wiki Vật Phẩm.",
+      "Kiểm tra lại cấp/điểm từng dòng sau khi nâng. Khi cả năm dòng đã đạt 400, tích thêm Linh Hồn chưa làm tăng sức mạnh; giữ hạp/sách cho nhu cầu sau, tránh dùng thêm sách cho món đã tối đa."
+    ],
+    "recipes": [
+      {
+        "name": "Mua rương Thánh Linh vĩnh viễn",
+        "formula": "20 Kim Nguyên Bảo Đại (18,1,1338,1) tại Quan Phi Phi → Cửa Hàng Đặc Biệt.",
+        "result": "1 Rương Linh Khí Bí Bảo (Vĩnh Viễn), còn gọi Rương Thánh Linh (Vĩnh Viễn) (18,1,3118,4).",
+        "chance": "Mua trực tiếp, không quay tỷ lệ.",
+        "notes": ["Mặt hàng 4994, quầy 209. Rương kèm sách nâng cả năm dòng khi mở."]
+      },
+      {
+        "name": "Mở rương và chọn hệ Thánh Linh",
+        "formula": "1 Rương Thánh Linh vĩnh viễn (18,1,3118,4) + ít nhất 5 ô hành trang trống.",
+        "result": "1 Thánh Linh theo hệ: Kim Quang Phát Hoạt (1,27,1,1), Mộc Tinh Nhân Dã (1,27,2,1), Thủy Tức Hàn Long (1,27,3,1), Hỏa Thiên Nhất Thống (1,27,4,1) hoặc Thổ Khiếu Vân Vân (1,27,5,1); kèm 1 Sách Tu Luyện (Thánh Linh) (18,1,3119,5).",
+        "chance": "Chọn hệ trực tiếp; không có nhánh trượt ngẫu nhiên.",
+        "notes": ["Nhấn phải rương → [Nhận] Bí Bảo → hệ cần nhận. MathRandom(1) luôn trả 1; chú thích 50% trong script không phải tỷ lệ thực.", "Cần cấp nhân vật 120 để đeo. Sau khi nhận, phải dùng sách hoặc tụ linh để tăng các dòng."]
+      },
+      {
+        "name": "Tích lũy Linh Hồn từ hạp",
+        "formula": "1 Thánh Linh Bảo Hạp Hồn (18,1,1334,1) trong hành trang; nhấn phải → Ta muốn tích lũy linh hồn.",
+        "result": "Cộng 10.000 Linh Hồn vào số dư nhân vật, dùng 1 hạp. Chưa tăng thuộc tính trang bị.",
+        "chance": "Cộng cố định, không quay tỷ lệ.",
+        "notes": ["Không cần đeo Thánh Linh khi tích Linh Hồn, nhưng cần đeo đúng món khi tụ linh.", "Áp dụng cho hạp thường 18,1,1334,1. Siêu Thánh Linh Bảo Hạp Hồn AlphaTest là vật phẩm khác."]
+      },
+      {
+        "name": "Tụ linh dòng 1 — Sức mạnh",
+        "formula": "Đeo Thánh Linh/Bí Bảo, dòng 1 chưa đạt cấp 400 + số dư Linh Hồn lớn hơn 0; mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh → Thứ Nhất.",
+        "result": "Dồn Linh Hồn vào điểm tụ linh dòng Sức mạnh; tự tăng cấp khi đủ điểm, tối đa cấp 400. Giữ lại Linh Hồn dư khi chạm trần.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Không thu thêm tiền hoặc vật phẩm. Không tăng bốn dòng còn lại.", "Cấp 1, 0 điểm → 400 cần 1.036.810.000 Linh Hồn = 103.681 hạp thường. Mỗi cấp dùng ngưỡng riêng trong bảng, không phải luôn 100 điểm."]
+      },
+      {
+        "name": "Tụ linh dòng 2 — Thân pháp",
+        "formula": "Đeo Thánh Linh/Bí Bảo, dòng 2 chưa đạt cấp 400 + số dư Linh Hồn lớn hơn 0; mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh → Thứ Hai.",
+        "result": "Dồn Linh Hồn vào điểm tụ linh dòng Thân pháp; tự tăng cấp khi đủ điểm, tối đa cấp 400. Giữ lại Linh Hồn dư khi chạm trần.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Không thu thêm tiền hoặc vật phẩm. Không tăng bốn dòng còn lại.", "Cấp 1, 0 điểm → 400 cần 1.036.810.000 Linh Hồn = 103.681 hạp thường."]
+      },
+      {
+        "name": "Tụ linh dòng 3 — Ngoại công",
+        "formula": "Đeo Thánh Linh/Bí Bảo, dòng 3 chưa đạt cấp 400 + số dư Linh Hồn lớn hơn 0; mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh → Thứ Ba.",
+        "result": "Dồn Linh Hồn vào điểm tụ linh dòng Ngoại công; tự tăng cấp khi đủ điểm, tối đa cấp 400. Giữ lại Linh Hồn dư khi chạm trần.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Không thu thêm tiền hoặc vật phẩm. Không tăng bốn dòng còn lại.", "Cấp 1, 0 điểm → 400 cần 105.490.000 Linh Hồn = 10.549 hạp thường. Bảng kinh nghiệm hiện tại của dòng 3 khác bốn dòng còn lại ở các cấp cao."]
+      },
+      {
+        "name": "Tụ linh dòng 4 — Nội công",
+        "formula": "Đeo Thánh Linh/Bí Bảo, dòng 4 chưa đạt cấp 400 + số dư Linh Hồn lớn hơn 0; mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh → Thứ Tư.",
+        "result": "Dồn Linh Hồn vào điểm tụ linh dòng Nội công; tự tăng cấp khi đủ điểm, tối đa cấp 400. Giữ lại Linh Hồn dư khi chạm trần.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Không thu thêm tiền hoặc vật phẩm. Không tăng bốn dòng còn lại.", "Cấp 1, 0 điểm → 400 cần 1.036.810.000 Linh Hồn = 103.681 hạp thường."]
+      },
+      {
+        "name": "Tụ linh dòng 5 — Tỷ lệ gây hiệu ứng",
+        "formula": "Đeo Thánh Linh/Bí Bảo, dòng 5 chưa đạt cấp 400 + số dư Linh Hồn lớn hơn 0; mở Tu Luyện Châu (18,1,16,1) → Tụ Linh Thánh Linh → Thứ Năm.",
+        "result": "Tăng dòng tỷ lệ gây hiệu ứng theo hệ: Kim gây thọ thương, Mộc gây suy yếu, Thủy gây làm chậm, Hỏa gây bỏng, Thổ gây choáng. Tối đa cấp 400, giữ lại Linh Hồn dư khi chạm trần.",
+        "chance": "100% nếu hợp lệ và cập nhật thành công.",
+        "notes": ["Không thu thêm tiền hoặc vật phẩm. Không tăng bốn dòng còn lại.", "Cấp 1, 0 điểm → 400 cần 1.036.810.000 Linh Hồn = 103.681 hạp thường. Hiệu ứng cụ thể phụ thuộc hệ của món đang đeo."]
+      },
+      {
+        "name": "Dùng sách nâng cả năm dòng",
+        "formula": "Đeo Thánh Linh/Bí Bảo cần nâng + 1 Sách Tu Luyện Thánh Linh (18,1,3119,5) trong túi; nhấn phải sách → [Nâng Max].",
+        "result": "Cộng 100.000.000.000 điểm vào mỗi dòng 1–5, đủ đưa cả năm dòng lên cấp 400 theo bảng hiện tại. Dùng 1 sách; giữ nguyên số dư Linh Hồn.",
+        "chance": "Không quay tỷ lệ; nhánh sách chưa kiểm tra đầy đủ lỗi engine.",
+        "notes": ["Sách đi kèm Rương Thánh Linh vĩnh viễn; không cần tích thêm hạp nếu chỉ muốn dùng sách đưa món đó lên trần.", "Không thu KNB, Bạc, Đồng hoặc Huyết Chân Đơn. Điểm dư của sách không cộng vào số dư Linh Hồn.", "Không dùng thêm sách cho món đã đủ năm dòng cấp 400. Kiểm tra cấp thực tế sau khi dùng."]
+      },
+      {
+        "name": "Nhận hạp từ Rương Hoàng Kim",
+        "formula": "1 Rương Hoàng Kim; ít nhất 1 ô hành trang trống; chưa mở đủ 70 rương theo bộ đếm tuần.",
+        "result": "Nhánh Thánh Linh nhận 5 Thánh Linh Bảo Hạp Hồn (18,1,1334,1), tương đương 50.000 Linh Hồn sau khi sử dụng các hạp.",
+        "chance": "45% mỗi lần mở rương.",
+        "notes": ["Các nhánh khác trao phần thưởng khác; không đảm bảo nhận hạp trong mọi lần mở."]
+      },
+      {
+        "name": "Nhận hạp từ Rương Bạch Ngân",
+        "formula": "1 Rương Bạch Ngân; ít nhất 1 ô hành trang trống; chưa mở đủ 100 rương theo bộ đếm tuần.",
+        "result": "Nhánh Thánh Linh nhận 3 Thánh Linh Bảo Hạp Hồn (18,1,1334,1), tương đương 30.000 Linh Hồn sau khi sử dụng các hạp.",
+        "chance": "47,25% mỗi lần mở rương.",
+        "notes": ["Các nhánh khác trao phần thưởng khác; không đảm bảo nhận hạp trong mọi lần mở."]
+      }
+    ],
+    "warnings": [
+      "Thánh Linh/Bí Bảo và Chân Nguyên là hai món khác nhau. Thánh Linh dùng Linh Hồn từ hạp và Tu Luyện Châu; Chân Nguyên dùng Chân Nguyên Tu Luyện Đơn. Linh Hồn này cũng khác vật phẩm Linh Hồn Thú Cưng.",
+      "Mở hạp chỉ tăng số dư Linh Hồn, chưa tăng sức mạnh. Cần đeo Thánh Linh rồi tụ linh, hoặc dùng Sách Tu Luyện (Thánh Linh) để nâng món đang đeo.",
+      "Linh Hồn được dùng theo số dư hiện có, không có ô nhập số lượng. Một lượt chỉ nâng dòng được chọn, không chia đều năm dòng. Có thể mở ít hạp trước để phân bổ dần cho từng dòng.",
+      "Lời thoại cũ về tốn Bạc, tỷ lệ 1/5 Linh Hồn hoặc Huyết Chân Đơn không áp dụng cho nhánh Tụ Linh Thánh Linh hiện tại: tỷ lệ thực là 1:1, không thu thêm phí.",
+      "Tổng nguyên liệu tính từ các dòng cấp 1, 0 điểm trong bảng hiện tại; không yêu cầu tích cùng lúc toàn bộ lượng này. Khi đủ năm dòng cấp 400, dùng thêm hạp chưa làm món đồ mạnh hơn.",
+      "Nhánh hạp chưa kiểm tra kết quả trừ vật phẩm; rương và sách chưa kiểm tra đầy đủ quyền sở hữu/kết quả trao hoặc nâng trước khi trừ. Chỉ dùng vật phẩm đang có, giữ đủ ô trống và kiểm tra kết quả sau khi dùng; chưa xác nhận giao dịch trực tiếp trong game."
+    ],
+    "sources": [
+      { "path": "script/item/class/jxsf8_soulbox.lua", "line": 13, "label": "Mỗi hạp thường dùng cộng 10.000 Linh Hồn vào số dư" },
+      { "path": "script/item/class/xiulianzhu.lua", "line": 179, "label": "Tu Luyện Châu mở Tụ Linh Thánh Linh" },
+      { "path": "script/item/class/xiulianzhu.lua", "line": 752, "label": "Chọn một trong năm dòng và xem số dư Linh Hồn" },
+      { "path": "script/item/class/xiulianzhu.lua", "line": 767, "label": "Điều kiện trang bị, tụ linh bằng số dư và giữ Linh Hồn dư" },
+      { "path": "script/item/function/soulupgrade.lua", "line": 31, "label": "Một Linh Hồn tương ứng một điểm, ngưỡng kinh nghiệm từng dòng" },
+      { "path": "script/item/function/soulupgrade.lua", "line": 97, "label": "Cập nhật thuộc tính, giới hạn và phần nguyên liệu còn lại" },
+      { "path": "script/item/define.lua", "line": 417, "label": "Năm dòng Thánh Linh, mỗi dòng tối đa cấp 400" },
+      { "path": "setting/item/001/extern/soulsignet/levelsetting.txt", "line": 2, "label": "Ngưỡng kinh nghiệm và tổng Linh Hồn riêng cho năm dòng" },
+      { "path": "setting/item/001/equip/general/soulsignet.txt", "line": 2, "label": "Năm hệ, thuộc tính và yêu cầu cấp nhân vật 120" },
+      { "path": "setting/item/001/other/scriptitem.txt", "line": 1782, "label": "Vật phẩm hạp thường 18,1,1334,1" },
+      { "path": "setting/shop/goods.txt", "line": 3598, "label": "Rương Thánh Linh/Bí Bảo vĩnh viễn giá 20 KNB Đại" },
+      { "path": "setting/shop/buysell.txt", "line": 203, "label": "Mặt hàng 4994 nằm trong quầy Đặc Biệt 209" },
+      { "path": "script/tinhtinhtang/ruongtb_BiBao_VV.lua", "line": 29, "label": "Mở rương chọn hệ, cần 5 ô trống, nhận trang bị và sách" },
+      { "path": "script/tinhtinhtang/ruongtb_NangMaxBiBao_VV.lua", "line": 12, "label": "Sách nâng năm dòng, không trừ số dư Linh Hồn" },
+      { "path": "script/item/class/goldbox.lua", "line": 27, "label": "Rương Hoàng Kim: 45% nhận 5 hạp" },
+      { "path": "script/item/class/silverbox.lua", "line": 27, "label": "Rương Bạch Ngân: 47,25% nhận 3 hạp" }
+    ]
+  }
+]

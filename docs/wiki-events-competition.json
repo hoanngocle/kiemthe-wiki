@@ -1,0 +1,392 @@
+[
+  {
+    "id": "hoa-son-luan-kiem",
+    "title": "Hoa Sơn Luận Kiếm",
+    "category": "doi-khang",
+    "summary": "Đấu sinh tồn tại Hoa Sơn: người chơi sống cuối cùng sau khi hạ hết đối thủ và bot nhận 20 triệu đồng thường.",
+    "schedule": "Mở bất kỳ lúc nào khi bấm tham gia. Mỗi lượt báo danh 2 phút, thi đấu tối đa 5 phút và nhận thưởng trong 2 phút.",
+    "timings": [
+      {
+        "label": "Mở lượt và báo danh",
+        "when": "2 phút từ lần bấm đầu tiên",
+        "detail": "Chọn Hoa Sơn Luận Kiếm tại Bảo Ngọc để mở lượt mới hoặc vào lượt đang báo danh. Bấm lại không kéo dài lượt."
+      },
+      {
+        "label": "Thi đấu",
+        "when": "Tối đa 5 phút sau báo danh",
+        "detail": "Tự chuyển vào khu chiến đấu. Trận kết thúc sớm khi chỉ còn một người chơi và không còn bot."
+      },
+      {
+        "label": "Nhận thưởng",
+        "when": "2 phút sau khi phân thắng bại",
+        "detail": "Người thắng đến NPC nhận thưởng tại (1535,3428). Hết thời gian, hoạt động đóng và đưa người còn lại về Phượng Tường."
+      }
+    ],
+    "entry": [
+      "Chọn Hoa Sơn Luận Kiếm tại Bảo Ngọc; cấp 80 trở lên, đã gia nhập môn phái và đang sống.",
+      "Có thể tham gia một mình. Khi lượt đang thi đấu hoặc nhận thưởng, chờ đóng lượt rồi bấm tham gia để mở lượt mới."
+    ],
+    "steps": [
+      "Bấm tham gia và chờ hết 2 phút báo danh ở Hoa Sơn.",
+      "Hạ những đấu thủ còn lại và bot, giữ mình sống sót cuối cùng.",
+      "Nếu chiến thắng, đối thoại NPC nhận thưởng trong 2 phút để nhận đồng và rời bản đồ."
+    ],
+    "mechanics": [
+      {
+        "title": "Đối thủ và chiến thắng",
+        "description": "Nếu có dưới 8 người chơi khi khai chiến, hệ thống thêm bot cho đủ 8 đấu thủ. Chỉ một người chơi còn sống và không còn bot mới được tính thắng; hết giờ chưa đạt điều kiện thì không có thưởng thắng."
+      },
+      {
+        "title": "Bị loại",
+        "description": "Chết, rời bản đồ hoặc đăng xuất sẽ bị loại khỏi lượt. Người chết được hồi sinh và đưa ra ngoài; không được quay lại lượt đã khai chiến."
+      },
+      {
+        "title": "Trong trận",
+        "description": "Đấu tự do, tự rời tổ đội; tạm khóa tổ đội, giao dịch, bày bán và kết bạn. Không chịu phạt chết. Các trạng thái được khôi phục khi rời hoạt động."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Người thắng",
+        "detail": "20.000.000 đồng thường, nhận một lần trong lượt tại NPC nhận thưởng. Chỉ người thắng của lượt đó được nhận."
+      }
+    ],
+    "limits": [
+      "Mỗi nhân vật chỉ vào một lần trong lượt; không có giới hạn lượt theo ngày trong cửa vào.",
+      "Hết 2 phút nhận thưởng thì không thể nhận lại quà của lượt đã đóng."
+    ],
+    "issues": [],
+    "status": "implemented",
+    "verdict": "Mở theo yêu cầu, đấu sinh tồn với bot và trao thưởng một lần cho người thắng.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 44,
+        "label": "Chọn tham gia Hoa Sơn"
+      },
+      {
+        "path": "Server/gamecenter/script/HOASON/hs_gc.lua",
+        "line": 3,
+        "label": "Mở lượt theo yêu cầu"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/define.lua",
+        "line": 6,
+        "label": "Thời lượng, cấp và thưởng"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/hs_gs.lua",
+        "line": 91,
+        "label": "Cửa vào và báo danh"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/hs_gs.lua",
+        "line": 182,
+        "label": "Khai chiến và thêm bot"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/hs_gs.lua",
+        "line": 230,
+        "label": "Bị loại khi chết"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/hs_gs.lua",
+        "line": 272,
+        "label": "Xét người sống cuối cùng"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/HOASON/hs_gs.lua",
+        "line": 317,
+        "label": "Nhận thưởng người thắng"
+      },
+      {
+        "path": "Server/gameserver/script/NguyenHoPhuc87/2536.lua",
+        "line": 1,
+        "label": "Vào và rời bản đồ"
+      },
+      {
+        "path": "Server/gamecenter/setting/scheduletask/tasklist.ini",
+        "line": 546,
+        "label": "Mở thủ công, bỏ lịch cũ"
+      }
+    ]
+  },
+  {
+    "id": "van-tieu",
+    "title": "Vận Tiêu",
+    "category": "nhiem-vu",
+    "summary": "Hộ tống xe tại Thần Nữ Phong, bảo vệ xe khỏi người cướp và NPC tuần tra. Mỗi ngày tối đa 5 chuyến, phí 3 Tiêu Lệnh mỗi chuyến.",
+    "schedule": "Nhận chuyến mới hằng ngày 00:00–23:58 theo giờ máy chủ. Chuyến hoàn thành có thể nhận thưởng cả sau khung giờ này hoặc qua ngày mới.",
+    "timings": [
+      {
+        "label": "Nhận chuyến",
+        "when": "Hằng ngày 00:00–23:58",
+        "detail": "Tối đa 5 chuyến mỗi ngày; bộ đếm hộ tống và cướp có thưởng đặt lại khi sang ngày mới."
+      },
+      {
+        "label": "Hoàn thành",
+        "when": "Xe đến (1741,3711)",
+        "detail": "Giữ cùng bản đồ và cách xe không quá 30 đơn vị đến khi có thông báo hộ tống thành công."
+      }
+    ],
+    "entry": [
+      "Chọn Vận Tiêu tại Bảo Ngọc để đến Tổng Tiêu Đầu ở Thần Nữ Phong (134), tọa độ (1841,3522).",
+      "Cấp 50 trở lên, có bang hội, còn lượt và đủ 3 Tiêu Lệnh; đứng gần Tổng Tiêu Đầu để nhận xe.",
+      "Phải nhận xong thưởng chuyến trước mới nhận chuyến mới. Cần 10 ô hành trang trống khi nhận thưởng."
+    ],
+    "steps": [
+      "Đến Tổng Tiêu Đầu, chọn nhận nhiệm vụ; nhận xe thành công sẽ trừ 3 Tiêu Lệnh và tính một lượt.",
+      "Đi sát xe trên cùng bản đồ, bảo vệ xe đến đích (1741,3711).",
+      "Có thông báo hoàn thành thì quay về Tổng Tiêu Đầu nhận thưởng. Nếu nhận chưa đủ quà, dọn hành trang và nhận tiếp."
+    ],
+    "mechanics": [
+      {
+        "title": "Bảo vệ xe",
+        "description": "Có 6 NPC cướp tiêu tuần tra cùng người chơi có thể phá xe. Xe bị phá, người hộ tống mất kết nối, sang bản đồ khác hoặc cách xe quá 30 đơn vị sẽ thất bại."
+      },
+      {
+        "title": "Hủy chuyến",
+        "description": "Có thể hủy tại Tổng Tiêu Đầu khi đang hộ tống. Hủy hoặc thất bại không hoàn Tiêu Lệnh và lượt đã dùng."
+      },
+      {
+        "title": "Cướp tiêu",
+        "description": "Người hạ xe của người khác có thể nhận quà cướp tối đa 3 lần/ngày, cần 5 ô hành trang trống. Tự phá xe của mình không nhận quà."
+      },
+      {
+        "title": "Qua ngày mới",
+        "description": "Lượt ngày được đặt lại; chuyến đang đi và thưởng của chuyến hoàn thành được giữ. Nếu phần thưởng được cấp thiếu, lần nhận tiếp chỉ cấp phần còn thiếu."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Hộ tống thành công",
+        "detail": "10 Túi Nguyên Liệu Đồng Hành, 10 Túi Nguyên Liệu Nâng Cấp, 1 Kim Nguyên Bảo Đại, 1 Thẻ Tích Lũy Sự Kiện và 1 Tử Không-Vô Hạ Dẫn mỗi chuyến."
+      },
+      {
+        "title": "Cướp thành công",
+        "detail": "1 Kim Nguyên Bảo Đại khóa, tối đa 3 lần/ngày."
+      }
+    ],
+    "limits": [
+      "Tối đa 5 chuyến nhận/ngày; chuyến thất bại hoặc hủy vẫn tính lượt.",
+      "Cần cùng bản đồ Thần Nữ Phong và cách xe không quá 30 đơn vị trong suốt chuyến."
+    ],
+    "issues": [],
+    "status": "implemented",
+    "verdict": "Có đủ luồng nhận, hộ tống, hủy, cướp và trả thưởng.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 209,
+        "label": "Menu đến Tổng Tiêu Đầu"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/shennvfeng/info.txt",
+        "line": 29,
+        "label": "Vị trí Tổng Tiêu Đầu"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/VanTieu.lua",
+        "line": 10,
+        "label": "Phí, lượt và quà"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/VanTieu.lua",
+        "line": 91,
+        "label": "Điều kiện nhận chuyến"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/VanTieu.lua",
+        "line": 219,
+        "label": "Theo xe và hoàn thành"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/VanTieu.lua",
+        "line": 266,
+        "label": "Thưởng cướp tiêu"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/VanTieu.lua",
+        "line": 284,
+        "label": "Nhận và nhận tiếp thưởng"
+      },
+      {
+        "path": "Server/gameserver/script/Config/VanTieu/TieuCap1/npc_vantieu.lua",
+        "line": 37,
+        "label": "Hủy nhiệm vụ"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1937,
+        "label": "Tên túi nguyên liệu"
+      }
+    ]
+  },
+  {
+    "id": "cong-thanh-chien",
+    "title": "Công Thành Chiến",
+    "category": "doi-khang",
+    "summary": "Bang hội tranh bốn Long Trụ và Ngai Vàng tại Thiết Phù Thành (1832). Chiếm mục tiêu và bảo vệ trụ để tích điểm xếp hạng; có NPC Hồng Hưng và Hắc Sát cùng tham chiến.",
+    "schedule": "Thứ 7 và Chủ Nhật, báo danh 18:30–18:45, thi đấu 18:45–19:30 theo giờ máy chủ.",
+    "timings": [
+      {
+        "label": "Báo danh",
+        "when": "Thứ 7, Chủ Nhật 18:30–18:45",
+        "detail": "Bang chủ đăng ký bang hội, thành viên truyền tống vào khu chuẩn bị."
+      },
+      {
+        "label": "Thi đấu",
+        "when": "18:45–19:30",
+        "detail": "Sau 15 phút chuẩn bị, trận diễn ra trong 45 phút."
+      },
+      {
+        "label": "Nhận thưởng",
+        "when": "Sau trận, trước lần mở báo danh kế tiếp",
+        "detail": "Gặp lại NPC Công Thành Chiến để nhận quà theo hạng của trận vừa kết thúc. Qua nửa đêm không tạo thêm lượt nhận."
+      }
+    ],
+    "entry": [
+      "Chọn Công Thành Chiến tại Bảo Ngọc, hoặc gặp Tướng Viễn Chinh Thiết Phù ở Phượng Tường (24), tọa độ (1760,3512).",
+      "Bang chủ báo danh trong thời gian chuẩn bị; tối đa 4 bang hội tham gia.",
+      "Thành viên phải thuộc bang đã báo danh. Có thể truyền tống vào trong thời gian chuẩn bị hoặc khi trận đang diễn ra."
+    ],
+    "steps": [
+      "Bang chủ chọn Báo danh Thiết Phù Thành, thành viên chọn truyền tống và đồng ý.",
+      "Chờ trong doanh trại đến khi khai chiến; đi qua lối ra để vào khu chiến đấu.",
+      "Đánh chiếm Long Trụ và Ngai Vàng, giữ thành viên quanh mục tiêu của bang để tích điểm.",
+      "Kết thúc trận, về Phượng Tường và chọn nhận thưởng bang chủ hoặc thành viên phù hợp với xếp hạng."
+    ],
+    "mechanics": [
+      {
+        "title": "Điểm bang",
+        "description": "Chiếm Long Trụ được 30 điểm, Ngai Vàng được 70 điểm. Mỗi 15 giây, mỗi thành viên cùng bang trong phạm vi 40 quanh mục tiêu đang giữ tạo thêm 1 điểm bang và nhận 5.000 EXP cơ bản cùng hiệu ứng hỗ trợ."
+      },
+      {
+        "title": "Xếp hạng",
+        "description": "Xếp theo tổng điểm giảm dần; bằng điểm ưu tiên bang có mã ID nhỏ hơn. Hai bang NPC cũng nằm trong bảng xếp hạng. Phải có bang đạt điểm dương mới chốt thưởng trận."
+      },
+      {
+        "title": "Hồi sinh và trở lại",
+        "description": "Điểm hồi sinh tạm ở doanh trại; không dùng được Cửu Chuyển Tục Mệnh Hoàn trong trận. Có thể truyền tống trở lại khi bang đã báo danh và trận còn mở. Ra khỏi doanh trại được bảo hộ 6 giây."
+      },
+      {
+        "title": "Nhận quà theo trận",
+        "description": "Cần 10 ô hành trang trống và vẫn thuộc bang được ghi nhận kết quả. Kết quả của người đã vào trận được lưu cả khi mất kết nối lúc kết thúc. Bang chủ hạng 1 nhận gói bang chủ; thành viên và bang chủ các hạng còn lại nhận gói thành viên."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Thưởng khi kết thúc trận",
+        "detail": "Hạng 1–4 lần lượt nhận 50.000 / 40.000 / 30.000 / 20.000 bạc thường và cùng nhận 10.000.000 EXP cơ bản nếu đang online lúc kết thúc. EXP được cộng thêm theo danh hiệu đang đeo nếu có."
+      },
+      {
+        "title": "Bang chủ hạng 1",
+        "detail": "100 Túi Nguyên Liệu Đồng Hành, 100 Túi Nguyên Liệu Nâng Cấp, 20 Kim Nguyên Bảo Đại, 20 Thẻ Tích Lũy Sự Kiện và 20 Tử Không-Vô Hạ Dẫn."
+      },
+      {
+        "title": "Quà thành viên hạng 1–4 đã đối chiếu",
+        "detail": "Hạng 1: 30 Đá Huyền Thiết, 1 Huyền Tinh cấp 9 khóa, 20 Kim Nguyên Bảo. Hạng 2: 20 Đá Huyền Thiết, 2 Huyền Tinh cấp 8 khóa, 15 Kim Nguyên Bảo. Hạng 3: 20 Đá Huyền Thiết, 1 Huyền Tinh cấp 8 khóa, 10 Kim Nguyên Bảo. Hạng 4: 10 Đá Huyền Thiết, 2 Huyền Tinh cấp 7 khóa, 10 Kim Nguyên Bảo. Các vật phẩm còn lại của gói chưa xác nhận đầy đủ."
+      },
+      {
+        "title": "Ngoài hạng 1–4",
+        "detail": "Không có quà thực thi cho các hạng còn lại trong bảng thưởng hiện tại."
+      }
+    ],
+    "limits": [
+      "Mỗi nhân vật nhận gói quà phù hợp một lần cho mỗi trận. Kết quả nhận quà cũ bị thay khi mở báo danh trận mới.",
+      "Quà theo thứ hạng gồm cả vị trí của bang NPC; bang người chơi ngoài top 4 không có gói thưởng."
+    ],
+    "issues": [
+      "Một số vật phẩm trong gói quà thành viên chưa có định nghĩa trong dữ liệu hiện tại, nên chưa thể xác nhận nhận đủ toàn bộ gói."
+    ],
+    "status": "issues",
+    "verdict": "Đã có lịch, báo danh, tính điểm và nhận thưởng theo trận; một phần quà thành viên chưa xác nhận đủ vật phẩm.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 189,
+        "label": "Menu Công Thành Chiến"
+      },
+      {
+        "path": "Server/gamecenter/setting/scheduletask/tasklist.ini",
+        "line": 547,
+        "label": "Mở báo danh 18:30"
+      },
+      {
+        "path": "Server/gamecenter/script/event/cachd/CauCa/cauca_logicGC.lua",
+        "line": 10,
+        "label": "Lịch thứ 7 và Chủ Nhật"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/define.lua",
+        "line": 10,
+        "label": "15 phút chuẩn bị, 45 phút thi đấu"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/chefu.lua",
+        "line": 262,
+        "label": "Bang chủ báo danh"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/ctc_gs.lua",
+        "line": 572,
+        "label": "Điều kiện vào trận"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/longtru.lua",
+        "line": 262,
+        "label": "Điểm chiếm mục tiêu"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/longtru.lua",
+        "line": 316,
+        "label": "Điểm bảo vệ mỗi 15 giây"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/ctc_gs.lua",
+        "line": 506,
+        "label": "Xếp hạng và phân định hòa"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/chefu.lua",
+        "line": 32,
+        "label": "Nhận thưởng theo từng trận"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/define.lua",
+        "line": 78,
+        "label": "Thưởng bạc và EXP cuối trận"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/chefu.lua",
+        "line": 97,
+        "label": "Quà bang chủ hạng 1"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/npc/chefu.lua",
+        "line": 173,
+        "label": "Quà thành viên và các mã chưa đối chiếu được"
+      },
+      {
+        "path": "Server/gameserver/script/Sesshomaru/CTC/map/thietphuthanh.lua",
+        "line": 37,
+        "label": "Ra doanh trại và bảo hộ"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 75,
+        "label": "Thưởng thêm EXP theo danh hiệu"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 210,
+        "label": "Huyền Tinh khóa cấp 7–9"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1751,
+        "label": "Tên Đá Huyền Thiết"
+      }
+    ]
+  }
+]

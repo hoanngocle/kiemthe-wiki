@@ -1,0 +1,28 @@
+.equipment-slots a[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--selected);
+  font-weight: 600;
+}
+.equipment-catalogue { min-width: 780px; }
+.equipment-catalogue th, .equipment-catalogue td { padding: 9px 12px; }
+.equipment-catalogue thead th:nth-child(2) { width: 95px; }
+.equipment-catalogue tbody th:first-child { width: 28%; }
+.equipment-sources > div + div {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid var(--line);
+}
+.equipment-quick-links {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 12px;
+}
+.equipment-brief { font-size: 12px; }
+.equipment-brief summary { width: fit-content; cursor: pointer; color: var(--accent); }
+.equipment-brief[open] > :not(summary) { margin-top: 8px; }
+.equipment-brief li + li { margin-top: 2px; }
+.equipment-brief .weapon-table { min-width: 460px; }
+.equipment-brief .weapon-table th, .equipment-brief .weapon-table td { padding: 6px 10px; }
+.equipment-intro .equipment-slots { margin-top: 10px; }

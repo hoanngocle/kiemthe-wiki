@@ -1,0 +1,73 @@
+.upgrade-wiki .wiki-intro { margin-bottom: 24px; }
+.upgrade-wiki .wiki-intro h1 { margin-bottom: 0; }
+.upgrade-toc-group + .upgrade-toc-group { border-top: 1px solid var(--line); margin-top: 7px; padding-top: 7px; }
+.upgrade-toc-group > summary { cursor: pointer; padding: 10px 9px; font-size: 12px; font-weight: 600; color: var(--text); }
+.upgrade-toc-group > summary > span { float: right; font-size: 11px; font-weight: 400; color: var(--muted); }
+.upgrade-toc-group > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.upgrade-toc-group > a { display: flex; align-items: center; gap: 9px; padding: 10px 8px; border-radius: 4px; font-size: 12px; line-height: 1.5; }
+.upgrade-toc-group > a:hover { background: var(--hover); }
+.upgrade-toc-group > a > span { color: var(--muted); font: 10px Consolas, monospace; flex-shrink: 0; }
+.upgrade-wiki .wiki-card-heading { padding: 0; border-bottom: 0; }
+.upgrade-wiki .wiki-card h2.upgrade-menu-heading { width: 100%; margin: 0; }
+.upgrade-menu-toggle { display: flex; align-items: center; gap: 13px; width: 100%; padding: 18px 20px; border: 0; border-radius: 8px; background: transparent; color: inherit; text-align: left; font: inherit; cursor: pointer; }
+.upgrade-menu-toggle:hover { background: var(--hover); }
+.upgrade-menu-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.upgrade-menu-title { flex: 1; min-width: 0; }
+.upgrade-menu-chevron { color: var(--muted); transition: transform .15s ease; }
+.upgrade-menu-toggle[aria-expanded="true"] .upgrade-menu-chevron { transform: rotate(180deg); }
+.upgrade-menu-body { border-top: 1px solid var(--line); }
+.upgrade-wiki .wiki-search input, .upgrade-disclosure-actions button { height: 46px; }
+.upgrade-disclosure-actions { display: flex; gap: 8px; align-self: flex-end; }
+.upgrade-disclosure-actions button { padding: 9px 12px; min-height: 38px; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: var(--text); white-space: nowrap; cursor: pointer; font-size: 12px; }
+.upgrade-disclosure-actions button:hover:not(:disabled) { background: var(--hover); }
+.upgrade-disclosure-actions button:disabled { opacity: .45; cursor: default; }
+.upgrade-disclosure-actions button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.upgrade-table-wrap { overflow-x: auto; scrollbar-width: thin; }
+.upgrade-table-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.upgrade-table { width: 100%; min-width: 740px; border-collapse: collapse; table-layout: fixed; font-size: 12px; line-height: 1.7; }
+.upgrade-table thead { background: var(--sidebar); text-align: left; }
+.upgrade-table th, .upgrade-table td { padding: 15px; vertical-align: top; border-bottom: 1px solid var(--line); }
+.upgrade-table th:nth-child(1) { width: 21%; }
+.upgrade-table th:nth-child(2) { width: 34%; }
+.upgrade-table th:nth-child(3) { width: 30%; }
+.upgrade-table th:nth-child(4) { width: 15%; }
+.upgrade-table tbody th { text-align: left; font-weight: 600; }
+.upgrade-table tbody tr:last-child > * { border-bottom: 0; }
+.upgrade-table tbody tr:hover { background: #2c493c04; }
+.upgrade-recipe-content { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; }
+.upgrade-item { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 4px 7px 4px 4px; background: var(--sidebar); border: 1px solid var(--line); border-radius: 5px; line-height: 1.5; }
+.upgrade-item-name { font-weight: 700; }
+.upgrade-rarity-common { color: var(--text); }
+.upgrade-rarity-green { color: #27733c; }
+.upgrade-rarity-blue { color: #2456ab; }
+.upgrade-rarity-purple { color: #793bb1; }
+.upgrade-rarity-orange { color: #a64b12; }
+.upgrade-rarity-gold { color: #85600b; }
+.upgrade-rarity-pink { color: #a32d78; }
+.upgrade-rarity-red { color: #b02e2e; }
+.upgrade-item-quantity { white-space: nowrap; color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+.upgrade-item-icon { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; }
+.upgrade-item-icon img { max-width: 32px; max-height: 32px; object-fit: contain; image-rendering: pixelated; }
+.upgrade-recipe-text { white-space: pre-line; }
+.upgrade-chance { font-weight: 600; color: var(--accent); }
+.upgrade-row-notes { margin-top: 9px; font-size: 11px; font-weight: 400; color: var(--muted); }
+.upgrade-row-notes summary, .upgrade-menu-details summary { cursor: pointer; color: var(--muted); }
+.upgrade-row-notes ul { padding-left: 15px; margin: 8px 0 0; }
+.upgrade-row-notes li + li { margin-top: 6px; }
+.upgrade-menu-details { padding: 13px 20px; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.8; }
+.upgrade-menu-details ol, .upgrade-menu-details ul { padding-left: 20px; }
+.upgrade-menu-details li + li { margin-top: 6px; }
+@media (max-width: 720px) {
+  .upgrade-menu-toggle { padding: 15px; }
+  .upgrade-disclosure-actions { align-self: stretch; flex-wrap: wrap; }
+  .upgrade-menu-details { padding: 12px 15px; }
+  .upgrade-table { min-width: 700px; }
+  .upgrade-table th, .upgrade-table td { padding: 12px; }
+}
+@media print {
+  .upgrade-disclosure-actions, .upgrade-menu-chevron { display: none; }
+  .upgrade-menu-body[hidden] { display: block; }
+  .upgrade-table { min-width: 0; font-size: 9px; }
+  .upgrade-table-wrap { overflow: visible; }
+  .upgrade-table tr { break-inside: avoid; }
+}

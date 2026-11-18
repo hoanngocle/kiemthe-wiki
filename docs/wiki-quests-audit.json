@@ -1,0 +1,27 @@
+{
+  "chains": 466,
+  "quests": 659,
+  "types": {
+    "1": 77,
+    "2": 360,
+    "3": 4,
+    "5": 25
+  },
+  "questTypes": {
+    "1": 257,
+    "2": 373,
+    "3": 4,
+    "5": 25
+  },
+  "missingSub": [],
+  "unreferencedSub": [],
+  "readSources": {
+    "loose": 1125
+  },
+  "pakSha256": "ac48ad39a653007f9244a0f0abf0ab5944c638533114eea4fb7830b29c8bce3f",
+  "awardEntries": 9186,
+  "unresolvedItems": [
+    "18,1,901,15",
+    "18,1,901,16"
+  ]
+}

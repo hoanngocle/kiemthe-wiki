@@ -1,0 +1,120 @@
+.faction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+  gap: 16px;
+}
+
+.faction-grid, .faction-skill-grid { padding: 0; margin: 0; list-style: none; }
+
+.faction-wiki [data-series="1"] { --faction-ink: var(--warning); --faction-tint: var(--warning-bg); }
+.faction-wiki [data-series="2"] { --faction-ink: var(--accent-hover); --faction-tint: var(--success-bg); }
+.faction-wiki [data-series="3"] { --faction-ink: var(--info); --faction-tint: var(--info-bg); }
+.faction-wiki [data-series="4"] { --faction-ink: var(--danger-hover); --faction-tint: var(--danger-bg); }
+.faction-wiki [data-series="5"] { --faction-ink: #75502e; --faction-tint: #f6ede4; }
+
+.faction-card {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 132px;
+  padding: 17px 38px 17px 18px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .15s, border-color .15s, box-shadow .15s;
+}
+
+.faction-card:hover { background: var(--hover); border-color: var(--accent); box-shadow: 0 4px 16px var(--shadow); }
+.faction-card strong { font-size: 20px; line-height: 1.2; }
+.faction-card-routes { color: var(--muted); font-size: 13px; line-height: 1.4; }
+.faction-card-arrow { position: absolute; top: calc(50% - 8px); right: 15px; width: 16px; height: 16px; color: var(--accent); }
+
+.faction-element {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--faction-tint, var(--sidebar));
+  color: var(--faction-ink, var(--text));
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.faction-dialog {
+  position: fixed;
+  inset: 0;
+  width: min(960px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 20px 70px #17271e40;
+}
+
+.faction-dialog::backdrop { background: #17271e80; }
+body:has(.faction-dialog[open]) { overflow: hidden; }
+.faction-dialog-layout { display: flex; flex-direction: column; max-height: calc(100dvh - 34px); }
+.faction-dialog-header { display: flex; justify-content: space-between; align-items: start; padding: 20px 24px 16px; gap: 16px; }
+.faction-dialog-header h2 { margin: 0 0 8px; font-size: 25px; }
+
+.faction-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.faction-close:hover { background: var(--hover); }
+.faction-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 24px 12px; border-bottom: 1px solid var(--line); }
+.faction-tabs button { padding: 10px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+.faction-tabs button[aria-selected="true"] { background: var(--selected); border-color: var(--accent); color: var(--accent-hover); }
+.faction-card:focus-visible, .faction-close:focus-visible, .faction-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.faction-dialog-content { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 0 24px 24px; background: var(--bg); }
+.faction-dialog-content [role="tabpanel"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.faction-route-summary { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 15px 0; color: var(--muted); font-size: 13px; }
+.faction-skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.faction-skill { min-width: 0; padding: 15px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); overflow-wrap: anywhere; }
+.faction-skill-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.faction-skill-title { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.faction-skill-title img { flex: 0 0 36px; width: 36px; height: 36px; object-fit: contain; }
+.faction-skill-header h3 { margin: 0; font-size: 16px; line-height: 1.4; }
+.faction-skill-level { flex: none; color: var(--accent-hover); font-size: 12px; font-weight: 650; }
+.faction-skill-type { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.faction-skill-description { margin: 9px 0 0; font-size: 13px; line-height: 1.6; white-space: pre-line; }
+.faction-skill-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; margin: 11px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: 12px; }
+.faction-skill-stats dt { color: var(--muted); }
+.faction-skill-stats dd { margin: 3px 0 0; font-weight: 600; }
+.faction-skill-damage { display: grid; gap: 6px; margin: 11px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.5; }
+.faction-skill-damage div { display: grid; grid-template-columns: 47px minmax(0, 1fr); gap: 8px; }
+.faction-skill-damage dt { color: var(--muted); font-weight: 600; }
+.faction-skill-damage dd { margin: 0; }
+.faction-skill-horse { color: var(--warning); margin: 9px 0 0; font-size: 12px; }
+.faction-skill-groups { display: grid; gap: 20px; }
+.faction-skill-groups > section > h3 { margin: 0 0 10px; font-size: 15px; }
+.faction-skill-book { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 12px; }
+.faction-skill-book p { margin: 4px 0 0; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .faction-dialog-header { padding: 16px; }
+  .faction-tabs { padding-inline: 16px; }
+  .faction-dialog-content { padding-inline: 16px; }
+  .faction-skill-grid { grid-template-columns: minmax(0, 1fr); }
+}

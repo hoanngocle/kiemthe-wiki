@@ -1,0 +1,2006 @@
+[
+  {
+    "id": "phapbao",
+    "title": "Pháp Bảo Trấn Phái",
+    "summary": "Nhận Pháp Bảo +1 với 20 KNB Đại. Nâng Pháp Bảo đang đeo đến +20 bằng 20 KNB Đại + 1 Bùa Bảo Toàn + 1.000 Mảnh Pháo Bảo mỗi lượt. Đổi nhánh ở +20 với 2 KNB Đại.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Quan Ưng Phi → Hệ Thống Pháp Bảo Trấn Phái → Nhận Pháp Bảo cấp 1. Chọn một trong 24 nhánh, giữ 20 KNB Đại trong túi và chừa 1 ô trống. Mặc từ cấp 130 và theo yêu cầu môn phái.",
+      "Đeo vào ô Pháp Bảo rồi chọn Nâng cấp Pháp Bảo Trấn Phái. Mỗi lượt nâng một cấp nếu giao dịch được hoàn tất.",
+      "Cấp +20 bị chặn. Handler xác minh đúng genre/detail, template cấp 7 và phạm vi 24 nhánh trước khi thanh toán.",
+      "Đổi +20: đặt duy nhất 1 Pháp Bảo +20 vào khung rồi chọn nhánh. Mục Kiếm Nhẫn trả món tên Cổ Mộ trong bảng vật phẩm. Phí trừ khi chọn nhánh.",
+      "Khi chọn, callback kiểm tra lại phiên, chủ sở hữu, vị trí trong túi, ID và nguyên liệu. Mỗi phiên chỉ dùng một lần.",
+      "Regenerate trên chính vật phẩm, giữ series, cường hóa, lucky, GenInfo, version, random seed, strengthen và khôi phục hạn dùng; nâng khóa vật phẩm, đổi giữ trạng thái khóa cũ."
+    ],
+    "recipes": [
+      {
+        "name": "Nhận Pháp Bảo cấp 1",
+        "formula": "20 KNB Đại (18,1,1338,1) trong túi và ít nhất 1 ô trống.",
+        "result": "1 Pháp Bảo +1 của nhánh đã chọn. Mã (1,15,101 + 20 × (nhánh − 1),7), với nhánh từ 1 đến 24.",
+        "chance": "Chọn trực tiếp trong menu.",
+        "notes": [
+          "Menu Kiếm Nhẫn trả [Pháp Bảo] Cổ Mộ + 1 (1,15,401,7)."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +1 → +2",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +2, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 1; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +2 → +3",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +3, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 2; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +3 → +4",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +4, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 3; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +4 → +5",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +5, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 4; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +5 → +6",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +6, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 5; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +6 → +7",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +7, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 6; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +7 → +8",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +8, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 7; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +8 → +9",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +9, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 8; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +9 → +10",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +10, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 9; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +10 → +11",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +11, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 10; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +11 → +12",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +12, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 11; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +12 → +13",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +13, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 12; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +13 → +14",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +14, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 13; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +14 → +15",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +15, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 14; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +15 → +16",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +16, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 15; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +16 → +17",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +17, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 16; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +17 → +18",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +18, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 17; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +18 → +19",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +19, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 18; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Pháp Bảo +19 → +20",
+        "formula": "Pháp Bảo đang đeo ở EQUIPPOS_ZHEN + 20 Kim Nguyên Bảo Đại (18,1,1338,1) + 1 Bùa Bảo Toàn (18,1,3031,1) + 1.000 Mảnh Pháo Bảo (18,1,3114,1)",
+        "result": "Pháp Bảo gốc đổi sang cùng nhánh +20, khóa Bind(1). ID mới (1,15,p+1,nLevel cũ), p = 100 + 20×(nhánh−1) + 19; nhánh 1–24.",
+        "chance": "100% — không có MathRandom hay nhánh thất bại xác suất",
+        "notes": [
+          "Đổi template trên chính vật phẩm bằng Regenerate, giữ thuộc tính riêng và khôi phục hạn dùng; nâng đặt Bind(1).",
+          "Thanh toán kiểm tra số lượng trước/sau; lỗi trừ nguyên liệu hoặc Regenerate thì không nâng và yêu cầu bù phần đã trừ.",
+          "Mốc tối đa particular 120,140,…,580 tương ứng +20; nLevel của template là 7."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [PB Thiếu Lâm] Đao Thiếu + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[PB Thiếu Lâm] Đao Thiếu + 20 — (1,15,120,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Quyền Tông + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Quyền Tông + 20 — (1,15,140,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Thương Thiên + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Thương Thiên + 20 — (1,15,160,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Thiên Vương Chùy + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Thiên Vương Chùy + 20 — (1,15,180,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Đường Môn Tiễn + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Đường Môn Tiễn + 20 — (1,15,200,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Đường Môn Bẫy + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Đường Môn Bẫy + 20 — (1,15,220,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Ngũ Độc Đao + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Ngũ Độc Đao + 20 — (1,15,240,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Tinh Túc + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Tinh Túc + 20 — (1,15,260,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Nga My Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Nga My Kiếm + 20 — (1,15,280,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Nga My Chưởng + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Nga My Chưởng + 20 — (1,15,300,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Thúy Yên Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Thúy Yên Kiếm + 20 — (1,15,320,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Thúy Yên Đao + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Thúy Yên Đao + 20 — (1,15,340,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Cái Bang Chưởng + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Cái Bang Chưởng + 20 — (1,15,360,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Cái Bang Bổng + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Cái Bang Bổng + 20 — (1,15,380,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Ma Nhẫn + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Ma Nhẫn + 20 — (1,15,400,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Cổ Mộ + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Cổ Mộ + 20 — (1,15,420,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Toàn Chân + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Toàn Chân + 20 — (1,15,440,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Võ Đang Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Võ Đang Kiếm + 20 — (1,15,460,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Côn Lôn Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Côn Lôn Kiếm + 20 — (1,15,480,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Côn Lôn Đao + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Côn Lôn Đao + 20 — (1,15,500,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Minh Giáo Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Minh Giáo Kiếm + 20 — (1,15,520,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Minh Giáo Chùy + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Minh Giáo Chùy + 20 — (1,15,540,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Đoàn Thị Kiếm + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Đoàn Thị Kiếm + 20 — (1,15,560,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      },
+      {
+        "name": "Đổi +20 → [Pháp Bảo] Tiêu Dao + 20",
+        "formula": "1 Pháp Bảo bất kỳ nhánh đã +20, tuple (1,15,p,7) với p ∈ {120,140,…,580} + 2 Kim Nguyên Bảo Đại (18,1,1338,1)",
+        "result": "[Pháp Bảo] Tiêu Dao + 20 — (1,15,580,7)",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Đặt duy nhất 1 đồ +20 hợp lệ. Mở, hủy hoặc đóng chọn không mất đồ/tiền.",
+          "Chỉ thu 2 KNB sau khi xác nhận lựa chọn; kiểm tra phiên một lần, chủ sở hữu, túi và nguyên liệu.",
+          "Regenerate trên đồ gốc, giữ thuộc tính riêng, hạn dùng và trạng thái khóa; lỗi engine yêu cầu hoàn chi phí."
+        ]
+      }
+    ],
+    "warnings": [
+      "Đã kiểm thử bằng Lua 5.1 thật với biên engine mô phỏng; đã nạp lại GS1–GS4; chưa chạy thử giao dịch trong game.",
+      "Hoàn nguyên liệu dùng API bù trừ, không phải giao dịch nguyên tử của engine. Vật phẩm bù hoàn dùng bForceBind=1, nên stack không khóa có thể được hoàn thành vật phẩm khóa. Nếu chính API hoàn thất bại, hệ thống ghi log để quản trị đối soát.",
+      "Chưa kiểm thử Regenerate, FindItemInBags, GetOwner và hạn dùng trên engine sống; lời gọi Regenerate dựa theo script/item/zhenfabox.lua đang có trong nguồn.",
+      "Tên nguyên liệu trong setting vẫn là Mảnh Pháo Bảo (18,1,3114,1); không có xác suất thất bại nâng đồ. Bùa Bảo Toàn là chi phí cố định theo công thức.",
+      "Các mẫu Pháp Bảo yêu cầu cấp nhân vật 130 và môn phái tương ứng theo bảng vật phẩm."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/phapbao/nhanphapbao.lua",
+        "line": 16,
+        "label": "Nhận Pháp Bảo +1 theo nhánh với 20 KNB Đại"
+      },
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 133,
+        "label": "Menu nâng/đổi Pháp Bảo"
+      },
+      {
+        "path": "script/tranphai/phapbao/nangphapbao.lua",
+        "line": 3,
+        "label": "Kiểm tra đúng template, phạm vi và tối đa +20"
+      },
+      {
+        "path": "script/tranphai/phapbao/nangphapbao.lua",
+        "line": 10,
+        "label": "Công thức nâng"
+      },
+      {
+        "path": "script/tranphai/phapbao/safe_phapbao.lua",
+        "line": 20,
+        "label": "Đổi template tại chỗ và hoàn nguyên liệu khi lỗi"
+      },
+      {
+        "path": "script/tranphai/phapbao/safe_phapbao.lua",
+        "line": 34,
+        "label": "Giữ thuộc tính riêng"
+      },
+      {
+        "path": "script/tranphai/phapbao/safe_phapbao.lua",
+        "line": 24,
+        "label": "Khôi phục hạn dùng"
+      },
+      {
+        "path": "script/tranphai/phapbao/phap1.lua",
+        "line": 12,
+        "label": "Đặt duy nhất một đồ hợp lệ; chưa thu tiền"
+      },
+      {
+        "path": "script/tranphai/phapbao/phap1.lua",
+        "line": 4,
+        "label": "Tên nhánh trong menu, gồm Kiếm Nhẫn trỏ tới mẫu Cổ Mộ"
+      },
+      {
+        "path": "script/tranphai/phapbao/phap1.lua",
+        "line": 40,
+        "label": "Callback có phiên, chủ sở hữu, túi và nguyên liệu"
+      },
+      {
+        "path": "script/item/zhenfabox.lua",
+        "line": 180,
+        "label": "API Regenerate và giữ metadata/hạn dùng có sẵn trong nguồn"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "Kiểm tra ConsumeItemInBags trả 0 và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/item/001/equip/general/zhen.txt",
+        "line": 53,
+        "label": "Template Pháp Bảo (1,15,101,7)"
+      },
+      {
+        "path": "setting/item/001/equip/general/zhen.txt",
+        "line": 72,
+        "label": "Template Pháp Bảo (1,15,120,7)"
+      },
+      {
+        "path": "setting/item/001/equip/general/zhen.txt",
+        "line": 532,
+        "label": "Template Pháp Bảo (1,15,580,7)"
+      }
+    ]
+  },
+  {
+    "id": "kinhmach",
+    "title": "Kinh Mạch",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lần nâng: 20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Kinh Mạch. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Kinh Mạch để nhận cấp 1. Tỷ lệ thành công 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Kinh Mạch Toàn Thư trong hành trang. Mỗi lần chọn Nâng cấp Kinh Mạch thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ từ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn Kinh Mạch Toàn Thư: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 cuốn khóa; Rương TDLT ngẫu nhiên cho 5 cuốn khóa; thưởng online tại NPC quay số may mắn có lượt nhận 1 cuốn khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Kinh Mạch cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Nhân vật cấp 20 trở lên và chưa kích hoạt Kinh Mạch."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Kinh Mạch Toàn Thư, để trong hành trang.",
+        "result": "Thành công: Kinh Mạch đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay; chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công được tính riêng cho từng lượt, không cộng dồn sau các lần thất bại.",
+      "Cấp tối đa 10. Nhân vật chưa kích hoạt hoặc chưa đủ cấp 20 không thể nâng."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 129,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/kinhmach.lua",
+        "line": 5,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1907,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1913,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      }
+    ]
+  },
+  {
+    "id": "baochau",
+    "title": "Bảo Châu",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Bảo Châu. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Bảo Châu để nhận cấp 1. Tỷ lệ thành công 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Bảo Châu-Sơ trong hành trang. Mỗi lần chọn Nâng cấp Bảo Châu thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Đổi nguyên liệu: NPC Đổi Thưởng → Nguyên Liệu Nâng Cấp → Bảo Châu. Chọn một trong 11 loại nguyên liệu; mỗi lần dùng 50.000 nguyên liệu cùng loại, nhận 50.000 Bảo Châu-Sơ khóa. Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+      "Nguồn nhận khác: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Bảo Châu-Sơ khóa; Rương TDLT ngẫu nhiên cho 5; thưởng online tại NPC quay số may mắn có lượt nhận 1."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Bảo Châu cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Nhân vật cấp 20 trở lên và chưa kích hoạt Bảo Châu."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Bảo Châu-Sơ, để trong hành trang.",
+        "result": "Thành công: Bảo Châu đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Linh Khí",
+        "formula": "50.000 Linh Khí trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Mảnh Già Lam Kinh",
+        "formula": "50.000 Mảnh Già Lam Kinh trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Kinh Mạch Toàn Thư",
+        "formula": "50.000 Kinh Mạch Toàn Thư trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Linh Hồn Thú Cưng",
+        "formula": "50.000 Linh Hồn Thú Cưng trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Sách Kỹ Năng Ngựa",
+        "formula": "50.000 Sách Kỹ Năng Ngựa trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Mảnh Ghép Ngựa",
+        "formula": "50.000 Mảnh Ghép Ngựa trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Thuần Dưỡng Đơn",
+        "formula": "50.000 Thuần Dưỡng Đơn trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Mảnh Mặt Nạ",
+        "formula": "50.000 Mảnh Mặt Nạ trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Dị Dung Thạch",
+        "formula": "50.000 Dị Dung Thạch trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: đổi bằng Mảnh Pháo Bảo",
+        "formula": "50.000 Mảnh Pháo Bảo trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      },
+      {
+        "name": "Đổi nguyên liệu: Căn Cốt Đan",
+        "formula": "50.000 Căn Cốt Đan trong hành trang.",
+        "result": "50.000 Bảo Châu-Sơ khóa.",
+        "chance": "100% — không quay số",
+        "notes": [
+          "Chọn loại nguyên liệu là thực hiện đổi ngay; chưa chọn thì chưa mất nguyên liệu.",
+          "Không thu thêm Kim Nguyên Bảo Đại hoặc Đồng.",
+          "Nếu không cấp đủ Bảo Châu-Sơ, hệ thống thu hồi phần tạm và yêu cầu hoàn nguyên liệu."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt, Nâng cấp hoặc loại nguyên liệu để đổi là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Bảo Châu là kỹ năng nhân vật; Bảo Châu-Sơ là vật phẩm nguyên liệu, không phải trang bị cần đeo.",
+      "Vật phẩm được hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 125,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/baochau.lua",
+        "line": 7,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1924,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1911,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      },
+      {
+        "path": "script/tranphai/doiitem/baochau.lua",
+        "line": 2,
+        "label": "Class đổi nguyên liệu riêng"
+      },
+      {
+        "path": "script/tranphai/doiitem/baochau.lua",
+        "line": 4,
+        "label": "11 công thức đúng ID và tên setting"
+      },
+      {
+        "path": "script/tranphai/doiitem/baochau.lua",
+        "line": 25,
+        "label": "Thanh toán/grant kiểm tra số lượng"
+      },
+      {
+        "path": "script/tranphai/doithuong1.lua",
+        "line": 40,
+        "label": "Dispatch đổi thưởng tới class riêng"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1915,
+        "label": "Tên Căn Cốt Đan"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 53,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 33,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 140,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "covan",
+    "title": "Thủy Linh",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Thủy Linh. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Thủy Linh để nhận cấp 1. Tỷ lệ thành công 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Mảnh Già Lam Kinh trong hành trang. Mỗi lần chọn Nâng cấp Thủy Linh thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn Mảnh Già Lam Kinh: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 mảnh khóa; Rương TDLT ngẫu nhiên cho 5 mảnh khóa; thưởng online tại NPC quay số may mắn có lượt nhận 1 mảnh khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Thủy Linh cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Nhân vật cấp 20 trở lên và chưa kích hoạt Thủy Linh."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Thủy Linh đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Thủy Linh là kỹ năng nhân vật, không phải trang bị cần đeo. Mảnh Già Lam Kinh là nguyên liệu dùng cho lượt nâng kỹ năng này.",
+      "Vật phẩm được hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 121,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/covan.lua",
+        "line": 7,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1925,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1875,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 74,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 28,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 133,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "thientuong",
+    "title": "Kiếm Sĩ",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Kiếm Sĩ. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Kiếm Sĩ để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Mảnh Già Lam Kinh trong hành trang. Mỗi lần chọn Nâng cấp Kiếm Sĩ thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Mảnh Già Lam Kinh khóa. Rương TDLT ngẫu nhiên cho 5 mảnh khóa. Thưởng online tại NPC quay số may mắn có lượt nhận 1 mảnh khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Kiếm Sĩ cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chưa kích hoạt Kiếm Sĩ. Nhân vật cấp 20 trở lên."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Mảnh Già Lam Kinh, để trong hành trang.",
+        "result": "Thành công: Kiếm Sĩ đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Kiếm Sĩ trong menu này là kỹ năng nhân vật; Mảnh Già Lam Kinh là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký.",
+      "Cấp kỹ năng cũ chưa xác minh được sẽ dừng thao tác trước khi trừ nguyên liệu; cần quản trị đối soát dữ liệu cũ."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 117,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thientuong.lua",
+        "line": 7,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1915,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1875,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 74,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 28,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 133,
+        "label": "Thưởng online"
+      }
+    ]
+  },
+  {
+    "id": "kynangbang",
+    "title": "Nguyệt Ảnh",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Nguyệt Ảnh. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Nguyệt Ảnh để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Linh Hồn Thú Cưng trong hành trang. Mỗi lần chọn Nâng cấp Nguyệt Ảnh thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Linh Hồn Thú Cưng khóa. Rương Linh Hồn Thú Cưng cho ngẫu nhiên 2, 4, 6, 8 hoặc 10 Linh Hồn Thú Cưng khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Nguyệt Ảnh cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chưa kích hoạt Nguyệt Ảnh. Nhân vật cấp 20 trở lên."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Hồn Thú Cưng, để trong hành trang.",
+        "result": "Thành công: Nguyệt Ảnh đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Nguyệt Ảnh trong menu này là kỹ năng nhân vật; Linh Hồn Thú Cưng là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 113,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/kynangbang.lua",
+        "line": 7,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1927,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1910,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      },
+      {
+        "path": "script/fightskill/faction/skilladdthem.lua",
+        "line": 315,
+        "label": "Bảng chỉ số chuẩn duy nhất"
+      },
+      {
+        "path": "script/fightskill/banghoi/banghoi.lua",
+        "line": 1,
+        "label": "Bỏ bảng đăng ký cạnh tranh (server; client áp dụng tương tự)"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 95,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/TuiLHTC.lua",
+        "line": 11,
+        "label": "Rương Linh Hồn Thú Cưng"
+      }
+    ]
+  },
+  {
+    "id": "thankhi",
+    "title": "Tử Điệp",
+    "summary": "Nhân vật cấp 20 trở lên. Kích hoạt cấp 1: 200 Kim Nguyên Bảo Đại, thành công 100%. Mỗi lượt nâng: 20 Kim Nguyên Bảo Đại + 5.000 Linh Khí. Tối đa cấp 10.",
+    "status": "fixed",
+    "verdict": "Đã sửa và kiểm thử Lua mô phỏng; chưa thử game.",
+    "steps": [
+      "Đến NPC Nâng cấp → Tử Điệp. Nhân vật phải đạt cấp 20 trở lên.",
+      "Kích hoạt: để 200 Kim Nguyên Bảo Đại trong hành trang, chọn Kích hoạt Tử Điệp để nhận cấp 1. Tỷ lệ 100%; không kích hoạt lại khi đã có.",
+      "Nâng cấp: để 20 Kim Nguyên Bảo Đại và 5.000 Linh Khí trong hành trang. Mỗi lần chọn Nâng cấp Tử Điệp thực hiện ngay một lượt.",
+      "Thành công tăng 1 cấp. Thất bại giữ nguyên cấp nhưng tiêu hao toàn bộ nguyên liệu của lượt nâng. Tối đa cấp 10.",
+      "Tỷ lệ cấp 1 lên 2 là 90%, giảm 10% mỗi cấp; từ cấp 9 lên 10 là 10%.",
+      "Nguồn nguyên liệu: Túi Nguyên Liệu Nâng Cấp ngẫu nhiên cho 150 Linh Khí khóa. Rương TDLT ngẫu nhiên cho 5 Linh Khí khóa. Thưởng online tại NPC quay số may mắn có lượt nhận 1 Linh Khí khóa."
+    ],
+    "recipes": [
+      {
+        "name": "Kích hoạt: chưa có → cấp 1",
+        "formula": "200 Kim Nguyên Bảo Đại trong hành trang.",
+        "result": "Kích hoạt Tử Điệp cấp 1.",
+        "chance": "100% — không có quay số",
+        "notes": [
+          "Chưa kích hoạt Tử Điệp. Nhân vật cấp 20 trở lên."
+        ]
+      },
+      {
+        "name": "Cấp 1 → 2",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 2. Thất bại: giữ nguyên cấp 1.",
+        "chance": "90%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 2 → 3",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 3. Thất bại: giữ nguyên cấp 2.",
+        "chance": "80%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 3 → 4",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 4. Thất bại: giữ nguyên cấp 3.",
+        "chance": "70%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 4 → 5",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 5. Thất bại: giữ nguyên cấp 4.",
+        "chance": "60%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 5 → 6",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 6. Thất bại: giữ nguyên cấp 5.",
+        "chance": "50%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 6 → 7",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 7. Thất bại: giữ nguyên cấp 6.",
+        "chance": "40%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 7 → 8",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 8. Thất bại: giữ nguyên cấp 7.",
+        "chance": "30%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 8 → 9",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 9. Thất bại: giữ nguyên cấp 8.",
+        "chance": "20%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      },
+      {
+        "name": "Cấp 9 → 10",
+        "formula": "20 Kim Nguyên Bảo Đại + 5.000 Linh Khí, để trong hành trang.",
+        "result": "Thành công: Tử Điệp đạt cấp 10. Thất bại: giữ nguyên cấp 9.",
+        "chance": "10%",
+        "notes": [
+          "Mỗi lượt nâng dùng đủ số nguyên liệu trên, không tăng theo cấp.",
+          "Thất bại do xác suất vẫn mất nguyên liệu; không tụt cấp.",
+          "Lỗi thanh toán hoặc cấp kỹ năng: hệ thống dừng và yêu cầu hoàn phần chi phí đã trừ."
+        ]
+      }
+    ],
+    "warnings": [
+      "Chọn Kích hoạt hoặc Nâng cấp là thực hiện ngay. Chỉ mở menu chưa mất phí.",
+      "Tỷ lệ thành công tính riêng từng lượt, không cộng dồn sau thất bại. Cấp tối đa 10.",
+      "Tử Điệp trong menu này là kỹ năng nhân vật; Linh Khí là vật phẩm nguyên liệu dùng khi nâng.",
+      "Vật phẩm hoàn khi lỗi giao dịch có thể là vật phẩm khóa. Nếu hoàn trả thất bại, cần quản trị kiểm tra nhật ký.",
+      "Cấp kỹ năng cũ chưa xác minh được sẽ dừng thao tác trước khi trừ nguyên liệu; cần quản trị đối soát dữ liệu cũ."
+    ],
+    "sources": [
+      {
+        "path": "script/tranphai/nangcap1.lua",
+        "line": 109,
+        "label": "Dispatch menu"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/thankhi.lua",
+        "line": 7,
+        "label": "ID skill, task và nguyên liệu chính xác"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 6,
+        "label": "Đọc cấp đã học, gồm common skill route -1"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 24,
+        "label": "Nhập cấp cũ và tách hai task bị trùng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 56,
+        "label": "Kiểm tra callback, nhân vật cấp 20 và tối đa 10"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 71,
+        "label": "Xác suất 90→10%"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 69,
+        "label": "Thanh toán kiểm tra trước khi nâng"
+      },
+      {
+        "path": "script/tranphai/nangcapf1/upgrade_skill.lua",
+        "line": 77,
+        "label": "Cấp skill có kiểm chứng và bù chi phí nếu lỗi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 42,
+        "label": "ConsumeItemInBags 0-success và delta túi"
+      },
+      {
+        "path": "script/tranphai/upgrade_transaction.lua",
+        "line": 23,
+        "label": "Bù trừ và log khi lỗi hoàn"
+      },
+      {
+        "path": "setting/fightskill/skill.txt",
+        "line": 1928,
+        "label": "Skill đúng ID, ReqLevel 20 và MaxLevel 10 trong setting"
+      },
+      {
+        "path": "setting/item/001/other/scriptitem.txt",
+        "line": 1909,
+        "label": "Tên nguyên liệu trong setting"
+      },
+      {
+        "path": "script/faction/changefaction.lua",
+        "line": 209,
+        "label": "Tiền lệ lưu cấp học từ GetFightSkillList"
+      },
+      {
+        "path": "script/tranphai/item/tuinguyenlieu.lua",
+        "line": 41,
+        "label": "Túi Nguyên Liệu Nâng Cấp"
+      },
+      {
+        "path": "script/Copdakto/item/ruongTDLT.lua",
+        "line": 31,
+        "label": "Rương TDLT"
+      },
+      {
+        "path": "script/Copdakto/Event/quaysomayman.lua",
+        "line": 138,
+        "label": "Thưởng online"
+      }
+    ]
+  }
+]

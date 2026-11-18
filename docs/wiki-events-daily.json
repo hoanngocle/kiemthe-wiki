@@ -1,0 +1,669 @@
+[
+  {
+    "id": "hang-ngay",
+    "title": "Hằng Ngày",
+    "category": "nhiem-vu",
+    "summary": "Ba nhiệm vụ diệt 500 quái và một nhiệm vụ Thí Luyện. Mỗi nhiệm vụ nhận thưởng một lần mỗi ngày.",
+    "schedule": "Làm bất kỳ lúc nào. Lượt nhận thưởng tính theo ngày máy chủ; tiến độ chưa nhận thưởng được giữ sang ngày sau.",
+    "timings": [
+      {
+        "label": "Nhận thưởng",
+        "when": "Hằng ngày, không giới hạn khung giờ",
+        "detail": "Mỗi nhiệm vụ tối đa 1 lần/ngày; hoàn thành cả bốn nhận được bốn phần thưởng."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Hằng Ngày tại Phượng Tường hoặc Giang Tân Thôn.",
+      "Đã gia nhập môn phái và có ít nhất 5 ô túi trống để nhận thưởng. Không cần nhận nhiệm vụ trước khi diệt quái."
+    ],
+    "steps": [
+      "Nhiệm vụ 1: diệt 500 Kỵ Binh Kim Quốc tại Sắc Lặc Xuyên, rồi chọn Nhận Thưởng Nhiệm Vụ 1.",
+      "Nhiệm vụ 2: diệt 500 Sơn Miêu tại Thục Cương Bí Cảnh, rồi chọn Nhận Thưởng Nhiệm Vụ 2.",
+      "Nhiệm vụ 3: diệt 500 Bưu Bá Khán Thủ tại Vũ Lăng Sơn, rồi chọn Nhận Thưởng Nhiệm Vụ 3.",
+      "Thí Luyện: diệt 300 Hắc Thủy Khoái Kỵ Binh tại Mê Cung Sa Mạc, hoàn thành lượt Tiêu Dao Cốc được thưởng và đi qua cửa cuối Bạch Hổ Đường; quay lại mục Thí Luyện → Nhận Thưởng Nhiệm Vụ."
+    ],
+    "mechanics": [
+      {
+        "title": "Tiến độ cá nhân",
+        "description": "Chỉ người trực tiếp hạ quái được cộng số lượng; không chia tiến độ diệt quái cho cả đội."
+      },
+      {
+        "title": "Giữ tiến độ",
+        "description": "Số quái và tiến độ vượt ải giữ đến khi nhận thưởng; nhận thưởng sẽ xóa tiến độ tương ứng."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Mỗi nhiệm vụ diệt 500 quái",
+        "detail": "1 tỷ EXP cơ bản; 2 Kim Nguyên Bảo, 2 Bùa Bảo Toàn, 5 Linh Tê Ngọc, 1 Rương Trang Bị Đồng Hành, 1 Bản đồ Vạn Hoa Cốc và 1 Lệnh bài Thiên Quỳnh Cung. Vật phẩm khóa."
+      },
+      {
+        "title": "Thí Luyện",
+        "detail": "10 triệu EXP cơ bản, 1 Huyền Tinh cấp 7 và 5 Tiền Du Long khóa."
+      },
+      {
+        "title": "Thưởng EXP theo danh hiệu",
+        "detail": "Danh hiệu đang đeo có thể tăng EXP so với mức cơ bản."
+      }
+    ],
+    "limits": [
+      "Ba nhiệm vụ diệt quái phát sáu loại vật phẩm: nên chừa ít nhất 6 ô nếu chưa có các chồng đồ tương ứng.",
+      "Tiêu Dao Cốc và Bạch Hổ Đường áp dụng lịch và điều kiện vào riêng."
+    ],
+    "issues": [
+      "Thí Luyện có thể chưa ghi nhận đúng tiến độ Tiêu Dao Cốc cho mọi thành viên.",
+      "Mở đối thoại Thí Luyện trước khi mở Vạn Hoa Cốc trong ngày mới để tránh xung đột lượt nhận. Tiến độ Bạch Hổ Đường cũng có thể bị ảnh hưởng khi dùng Lệnh bài Thiên Quỳnh Cung."
+    ],
+    "status": "issues",
+    "verdict": "Ba nhiệm vụ diệt quái có thưởng riêng; Thí Luyện còn có thể ghi nhận sai tiến độ hoặc lượt nhận.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 129,
+        "label": "Menu Hằng Ngày và mục tiêu"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/blood_npc3.lua",
+        "line": 12,
+        "label": "Lượt ngày, điều kiện và quà nhiệm vụ 1"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/blood_npc4.lua",
+        "line": 22,
+        "label": "Điều kiện và quà nhiệm vụ 2"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/blood_npc5.lua",
+        "line": 22,
+        "label": "Điều kiện và quà nhiệm vụ 3"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/blood_npc6.lua",
+        "line": 22,
+        "label": "Điều kiện Thí Luyện và 5 Tiền Du Long"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/enemy_bdldm3.lua",
+        "line": 19,
+        "label": "Tiến độ diệt quái cá nhân"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/nhiemvungay/enemy_bdldm6.lua",
+        "line": 26,
+        "label": "Mục tiêu 300 quái Thí Luyện"
+      },
+      {
+        "path": "Server/gameserver/script/mission/xoyogame/xoyogame_base.lua",
+        "line": 408,
+        "label": "Thưởng Tiêu Dao Cốc và ghi nhận tiến độ"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/baihutang_def.lua",
+        "line": 102,
+        "label": "Qua cửa cuối Bạch Hổ Đường"
+      },
+      {
+        "path": "Server/gameserver/script/task/treasuremap/instancing/wanhuagu/item/item_main.lua",
+        "line": 61,
+        "label": "Vạn Hoa Cốc dùng chung dữ liệu ngày"
+      },
+      {
+        "path": "Server/gameserver/script/task/treasuremap/instancing/qianqiongong/item/item_main.lua",
+        "line": 54,
+        "label": "Thiên Quỳnh Cung dùng chung dữ liệu tiến độ"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5884,
+        "label": "Bảo Ngọc mở menu hoạt động"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/fengxiangfu/info.txt",
+        "line": 165,
+        "label": "Bảo Ngọc tại Phượng Tường"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/jiangjincun/info.txt",
+        "line": 94,
+        "label": "Bảo Ngọc tại Giang Tân"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 26,
+        "label": "EXP tăng theo danh hiệu đang đeo"
+      }
+    ]
+  },
+  {
+    "id": "qua-huy-hoang",
+    "title": "Nhặt Quả Huy Hoàng",
+    "category": "thu-thap",
+    "summary": "Mở đợt nhặt quả 15 phút tại Chiến Trường Cổ và Quán Trọ Long Môn. Mỗi bản đồ có một Quả Hoàng Kim dùng chung cho người chơi.",
+    "schedule": "Mở thủ công bất kỳ lúc nào tại Bảo Ngọc → Nhặt Quả Huy Hoàng. Mỗi đợt kéo dài 15 phút.",
+    "timings": [
+      {
+        "label": "Mở đợt",
+        "when": "Bất kỳ lúc nào",
+        "detail": "Chọn Mở Nhặt Quả Huy Hoàng (15 phút)."
+      },
+      {
+        "label": "Kết thúc",
+        "when": "15 phút sau khi mở",
+        "detail": "Quả chưa nhặt tự biến mất. Mở lại trong đợt không gia hạn hoặc bổ sung quả."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Nhặt Quả Huy Hoàng → Mở Nhặt Quả Huy Hoàng (15 phút).",
+      "Chọn đến Chiến Trường Cổ hoặc Quán Trọ Long Môn ngay trong menu."
+    ],
+    "steps": [
+      "Mở đợt rồi chọn bản đồ muốn đến.",
+      "Tìm Quả Hoàng Kim và nhấp vào để nhận quà trước khi hết giờ.",
+      "Chiến Trường Cổ: quả xuất hiện tại một trong ba điểm (1709, 4000), (1745, 3912), (1830, 3680).",
+      "Quán Trọ Long Môn: một trong ba điểm (1941, 3595), (1908, 3722), (1821, 3860)."
+    ],
+    "mechanics": [
+      {
+        "title": "Tranh nhặt quả",
+        "description": "Mỗi bản đồ chỉ có một quả mỗi đợt. Người nhặt trước nhận quà; quả đã nhặt không xuất hiện lại trong đợt."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Mỗi quả",
+        "detail": "1 Lệnh bài Thiên Quỳnh Cung, 1 Rương Trang Bị Đồng Hành, 1 Bản đồ Vạn Hoa Cốc, 2 Bùa Bảo Toàn và 5 Linh Tê Ngọc. Tất cả khóa."
+      }
+    ],
+    "limits": [
+      "Không giới hạn số đợt trong ngày; hết đợt mới mở được đợt mới.",
+      "Chừa chỗ cho năm loại quà trước khi nhặt; túi đầy có thể không nhận đủ đồ."
+    ],
+    "issues": [],
+    "status": "implemented",
+    "verdict": "Mở thủ công 15 phút, mỗi bản đồ một quả; quà cố định và không bổ sung quả trong đợt.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 103,
+        "label": "Menu mở đợt và dịch chuyển"
+      },
+      {
+        "path": "Server/gamecenter/script/event/cachd/MongCoSu/mongcosu_GC.lua",
+        "line": 84,
+        "label": "Thời hạn chung 15 phút"
+      },
+      {
+        "path": "Server/gameserver/script/event/cacevent/MongCoSu/mongcosu_logic.lua",
+        "line": 300,
+        "label": "Hạn nhặt, dọn quả và vị trí xuất hiện"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/huangjinzhiguo1.lua",
+        "line": 9,
+        "label": "Nhận quà ở Quán Trọ Long Môn"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/huangjinzhiguo2.lua",
+        "line": 9,
+        "label": "Nhận quà ở Chiến Trường Cổ"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 2184,
+        "label": "Quả Hoàng Kim ở Long Môn"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5890,
+        "label": "Quả Hoàng Kim ở Chiến Trường Cổ"
+      }
+    ]
+  },
+  {
+    "id": "bao-ruong",
+    "title": "Nhặt Bảo Rương",
+    "category": "thu-thap",
+    "summary": "Mở đợt nhặt rương 15 phút tại Đào Hoa Nguyên: 16 Rương Vàng, 32 Kiếm Tặc và 3 Bách Bảo Rương.",
+    "schedule": "Mở thủ công bất kỳ lúc nào tại Bảo Ngọc → Nhặt Bảo Rương. Mỗi đợt kéo dài 15 phút.",
+    "timings": [
+      {
+        "label": "Mở đợt",
+        "when": "Bất kỳ lúc nào",
+        "detail": "Chọn Mở Nhặt Bảo Rương (15 phút)."
+      },
+      {
+        "label": "Kết thúc",
+        "when": "15 phút sau khi mở",
+        "detail": "Dọn toàn bộ rương chưa nhặt và Kiếm Tặc. Mở lại trong đợt không gia hạn hoặc sinh thêm rương."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Nhặt Bảo Rương → Mở Nhặt Bảo Rương (15 phút).",
+      "Chọn Đến Đào Hoa Nguyên để tới điểm (1780, 3567)."
+    ],
+    "steps": [
+      "Tìm Rương Vàng quanh khu vực (1756, 3599) đến (1908, 3668).",
+      "Nhấp Rương Vàng và đứng yên mở trong 2 giây; di chuyển hoặc bị tấn công có thể ngắt thao tác. Cần ít nhất 1 ô túi trống.",
+      "Ba Bách Bảo Rương ở (1788, 3603), (1825, 3643), (1880, 3647): nhấp trực tiếp để nhận gói quà cố định."
+    ],
+    "mechanics": [
+      {
+        "title": "Rương dùng chung",
+        "description": "Mỗi rương chỉ được nhận một lần trong đợt; người khác có thể nhặt trước bạn."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Mỗi Rương Vàng",
+        "detail": "100 triệu EXP cơ bản và một trong năm quà, mỗi khả năng 20%: 10 Túi Nguyên Liệu Nâng Cấp; 10 Túi Nguyên Liệu Đồng Hành; 5 Túi Nguyên Liệu Nâng Cấp; 5 Túi Nguyên Liệu Đồng Hành; hoặc 1 Kim Nguyên Bảo Đại."
+      },
+      {
+        "title": "Mỗi Bách Bảo Rương",
+        "detail": "1 Chú Văn Huyết Ngọc, 5 Túi Nguyên Liệu Nâng Cấp, 5 Túi Nguyên Liệu Đồng Hành và 2 Kim Nguyên Bảo. Tất cả khóa."
+      },
+      {
+        "title": "Thưởng EXP theo danh hiệu",
+        "detail": "Danh hiệu đang đeo có thể tăng EXP của Rương Vàng."
+      }
+    ],
+    "limits": [
+      "Không giới hạn số đợt trong ngày; rương đã nhặt không xuất hiện lại trong đợt.",
+      "Chừa chỗ cho bốn loại quà khi mở Bách Bảo Rương; túi đầy có thể không nhận đủ đồ."
+    ],
+    "issues": [
+      "Rương Vàng có thể không phát quà đúng người sau thao tác mở 2 giây; chưa xác nhận bằng thử nghiệm trong game."
+    ],
+    "status": "issues",
+    "verdict": "Đợt 15 phút và hai loại quà đã có; việc phát quà Rương Vàng sau thao tác mở cần kiểm tra trong game.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 84,
+        "label": "Menu mở đợt và đến Đào Hoa Nguyên"
+      },
+      {
+        "path": "Server/gamecenter/script/event/cachd/BachThuThao/BachThuThao_gc.lua",
+        "line": 4,
+        "label": "Yêu cầu mở thủ công"
+      },
+      {
+        "path": "Server/gameserver/script/event/cacevent/BachThuThao/BachThuThao_logic.lua",
+        "line": 19,
+        "label": "15 phút, số lượng NPC và dọn đợt"
+      },
+      {
+        "path": "Server/gameserver/script/event/cacevent/BachThuThao/BachThuThao.lua",
+        "line": 22,
+        "label": "Mở 2 giây, kiểm tra túi và quà Rương Vàng"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/huangjinzhiguo3.lua",
+        "line": 9,
+        "label": "Hạn nhặt và quà Bách Bảo Rương 1"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/huangjinzhiguo4.lua",
+        "line": 9,
+        "label": "Quà Bách Bảo Rương 2"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/huangjinzhiguo5.lua",
+        "line": 9,
+        "label": "Quà Bách Bảo Rương 3"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5683,
+        "label": "Rương Vàng nối chức năng mở rương"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5891,
+        "label": "Ba Bách Bảo Rương nối chức năng nhận quà"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1799,
+        "label": "Kim Nguyên Bảo Đại"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1937,
+        "label": "Tên hai túi nguyên liệu"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 26,
+        "label": "EXP tăng theo danh hiệu"
+      }
+    ]
+  },
+  {
+    "id": "lua-trai",
+    "title": "Lửa Trại",
+    "category": "thu-thap",
+    "summary": "Mở Lửa Trại 15 phút tại Lâm An, đứng gần nhận EXP, Đồng thường và vật phẩm mỗi 5 giây.",
+    "schedule": "Mở thủ công bất kỳ lúc nào tại Bảo Ngọc → Lửa Trại. Mỗi đợt tối đa 15 phút.",
+    "timings": [
+      {
+        "label": "Mở đợt",
+        "when": "Bất kỳ lúc nào",
+        "detail": "Chọn Mở Lửa Trại (15 phút)."
+      },
+      {
+        "label": "Nhận quà",
+        "when": "Mỗi 5 giây khi đứng gần",
+        "detail": "Lửa tự tắt khi hết đợt; mở lại trong đợt không gia hạn hoặc sinh thêm lửa."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Lửa Trại → Mở Lửa Trại (15 phút).",
+      "Chọn Đến Lửa Trại tại Lâm An để tới (1616, 3940)."
+    ],
+    "steps": [
+      "Mở đợt và dịch chuyển đến Lâm An.",
+      "Đứng sát lửa để tự nhận quà mỗi 5 giây; không cần nhấp nhận từng lần."
+    ],
+    "mechanics": [
+      {
+        "title": "Nhận quà quanh lửa",
+        "description": "Mọi người đứng trong vùng quanh lửa đều được nhận; không cần tổ đội. Rượu không tăng thưởng trong đợt này."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Mỗi nhịp 5 giây",
+        "detail": "50.000 EXP cơ bản, 5.000 Đồng thường; mỗi loại 1 vật phẩm khóa: Chiến Thần, Thuần Dưỡng Đơn, Tinh Thạch Phượng Hoàng, Túi Nguyên Liệu Nâng Cấp và Túi Nguyên Liệu Đồng Hành."
+      },
+      {
+        "title": "Thưởng EXP theo danh hiệu",
+        "detail": "Danh hiệu đang đeo có thể tăng EXP so với mức cơ bản."
+      }
+    ],
+    "limits": [
+      "Không giới hạn số đợt/ngày; hết đợt mới mở được đợt mới.",
+      "Chừa chỗ cho năm loại vật phẩm; rời xa lửa sẽ không nhận quà của nhịp đó."
+    ],
+    "issues": [],
+    "status": "implemented",
+    "verdict": "Mở thủ công tối đa 15 phút tại Lâm An; quà tự phát mỗi 5 giây cho người đứng gần.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 64,
+        "label": "Menu mở Lửa Trại và đến Lâm An"
+      },
+      {
+        "path": "Server/gamecenter/script/event/cachd/MongCoSu/mongcosu_GC.lua",
+        "line": 27,
+        "label": "Chỉ mở bằng yêu cầu thủ công"
+      },
+      {
+        "path": "Server/gameserver/script/event/cacevent/MongCoSu/mongcosu_logic.lua",
+        "line": 85,
+        "label": "Vị trí, hạn 15 phút và nhịp 5 giây"
+      },
+      {
+        "path": "Server/gameserver/script/Copdakto/npc/LuaTrai.lua",
+        "line": 19,
+        "label": "Cấu hình lửa và không dùng rượu"
+      },
+      {
+        "path": "Server/gameserver/script/Copdakto/npc/LuaTrai.lua",
+        "line": 156,
+        "label": "Nhận thưởng cho mọi người quanh lửa"
+      },
+      {
+        "path": "Server/gameserver/script/Copdakto/npc/LuaTrai.lua",
+        "line": 434,
+        "label": "Quà thực nhận mỗi nhịp"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1914,
+        "label": "Thuần Dưỡng Đơn"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1937,
+        "label": "Tên hai túi nguyên liệu"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 26,
+        "label": "EXP tăng theo danh hiệu"
+      }
+    ]
+  },
+  {
+    "id": "trong-cay",
+    "title": "Trồng Cây",
+    "category": "che-tao",
+    "summary": "Đổi 1 Bình Nước Tưới Cây lấy ngay một phần quà ngẫu nhiên tại Cây Kim Tiền.",
+    "schedule": "Đổi nước bất kỳ lúc nào; không giới hạn lượt trong ngày.",
+    "timings": [
+      {
+        "label": "Đổi nước",
+        "when": "Bất kỳ lúc nào",
+        "detail": "Mỗi lượt tiêu hao 1 Bình Nước Tưới Cây và nhận quà ngay."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Trồng Cây → Tưới Cây Hái Quả; hoặc gặp Cây Kim Tiền tại Phượng Tường hay Giang Tân Thôn.",
+      "Cần Bình Nước Tưới Cây trong túi."
+    ],
+    "steps": [
+      "Chuẩn bị bình nước và chỗ trống cho quà.",
+      "Chọn Tưới Cây Hái Quả; mỗi lượt dùng 1 bình.",
+      "Có thể đổi tiếp nếu còn bình nước."
+    ],
+    "mechanics": [
+      {
+        "title": "Đổi nước nhận quà",
+        "description": "Mục này nhận quà ngay, không cần hạt giống hoặc chờ cây trưởng thành."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "30%",
+        "detail": "1 Bùa Bảo Toàn khóa."
+      },
+      {
+        "title": "40%",
+        "detail": "10 Linh Tê Ngọc khóa."
+      },
+      {
+        "title": "30%",
+        "detail": "10 Tiền Du Long khóa."
+      }
+    ],
+    "limits": [
+      "Không có thời gian chờ giữa các lượt.",
+      "Chừa ô túi trước khi đổi để tránh mất quà hoặc lỗi khi túi đầy."
+    ],
+    "issues": [
+      "Bình nước được gán hạn hết ngày 18/05/2025 khi tạo. Cần kiểm tra bình còn sử dụng được trước khi mua hoặc đổi."
+    ],
+    "status": "issues",
+    "verdict": "Đổi một bình lấy quà theo tỷ lệ 30% / 40% / 30%; hạn dùng cũ của bình cần được kiểm tra.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 35,
+        "label": "Menu Trồng Cây"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien1.lua",
+        "line": 3,
+        "label": "Menu gọi thẳng chức năng đổi nước"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien1.lua",
+        "line": 20,
+        "label": "Một bình mỗi lượt, tỷ lệ và quà"
+      },
+      {
+        "path": "Server/gameserver/setting/npc/npc.txt",
+        "line": 5887,
+        "label": "Cây Kim Tiền nối chức năng đổi nước"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/fengxiangfu/info.txt",
+        "line": 167,
+        "label": "Cây Kim Tiền tại Phượng Tường"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/jiangjincun/info.txt",
+        "line": 97,
+        "label": "Cây Kim Tiền tại Giang Tân"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 1934,
+        "label": "Bình Nước Tưới Cây và chức năng hạn dùng"
+      },
+      {
+        "path": "Server/gameserver/script/event/jieri/200903_zhishujie/tree_item.lua",
+        "line": 56,
+        "label": "Bình nước đặt hạn cố định 18/05/2025"
+      }
+    ]
+  },
+  {
+    "id": "lam-banh",
+    "title": "Làm Bánh",
+    "category": "che-tao",
+    "summary": "Làm bánh Thập Cẩm hoặc Kim Long theo gói 1 hay 10, rồi dùng bánh nhận quà ngẫu nhiên. Kim Long có 26% khả năng mất bánh mà không nhận quà.",
+    "schedule": "Chế tạo và dùng bánh bất kỳ lúc nào, không giới hạn số lượt trong ngày.",
+    "timings": [
+      {
+        "label": "Làm và dùng bánh",
+        "when": "Bất kỳ lúc nào",
+        "detail": "Chọn loại bánh, chọn gói 1 hoặc 10; nhận bánh rồi nhấp phải để mở quà."
+      }
+    ],
+    "entry": [
+      "Bảo Ngọc → Làm Bánh; hoặc gặp NPC Bánh Trung Thu tại Lâm An (1630, 3943).",
+      "Mỗi bánh cần 1 Nước, 1 Bột Mì, 1 Đường Cát, 1 Trứng Gà và Đồng thường."
+    ],
+    "steps": [
+      "Thập Cẩm: 1 bánh tốn 10.000 Đồng và 1 mỗi nguyên liệu; 10 bánh tốn 100.000 Đồng và 10 mỗi nguyên liệu.",
+      "Kim Long: 1 bánh tốn 150.000 Đồng và 1 mỗi nguyên liệu; 10 bánh tốn 1.500.000 Đồng và 10 mỗi nguyên liệu.",
+      "Chọn gói muốn làm rồi nhấp phải bánh để nhận quà. Bánh Thập Cẩm hiện tên Nguyệt Mãn Tây Lâu trong túi."
+    ],
+    "mechanics": [
+      {
+        "title": "Nguồn nguyên liệu",
+        "description": "Qua mỗi cửa Bạch Hổ Đường được 10 mỗi loại nguyên liệu khi đủ điều kiện nhận quà. Hoàn thành lượt Tiêu Dao Cốc được thưởng nhận 1 mỗi loại."
+      },
+      {
+        "title": "Gói 10 bánh",
+        "description": "Dùng đủ 10 lần nguyên liệu và chi phí, không giảm giá; bánh làm theo gói 10 được khóa."
+      }
+    ],
+    "rewards": [
+      {
+        "title": "Thập Cẩm: mỗi bánh nhận một quà",
+        "detail": "10%: 3 Linh Tê Ngọc; 40%: 5 Túi Nguyên Liệu Nâng Cấp; 10%: 50 Tiền Du Long; 40%: 1 tỷ EXP cơ bản."
+      },
+      {
+        "title": "Kim Long: 10/150 lượt",
+        "detail": "1 Bá Chủ Bạch Ngọc và 1 Thẻ Tích Lũy Sự Kiện."
+      },
+      {
+        "title": "Kim Long: 41/150 lượt",
+        "detail": "2 tỷ EXP cơ bản và 1 Thẻ Tích Lũy Sự Kiện."
+      },
+      {
+        "title": "Kim Long: 40/150 lượt",
+        "detail": "50 Túi Nguyên Liệu Nâng Cấp và 1 Thẻ Tích Lũy Sự Kiện."
+      },
+      {
+        "title": "Kim Long: 10/150 lượt",
+        "detail": "50 Linh Tê Ngọc và 1 Thẻ Tích Lũy Sự Kiện."
+      },
+      {
+        "title": "Kim Long: 10/150 lượt",
+        "detail": "1 Chú Văn Huyết Ngọc và 1 Thẻ Tích Lũy Sự Kiện."
+      },
+      {
+        "title": "Kim Long: 39/150 lượt (26%)",
+        "detail": "Tiêu hao bánh nhưng không nhận quà."
+      },
+      {
+        "title": "Thưởng EXP theo danh hiệu",
+        "detail": "Danh hiệu đang đeo có thể tăng EXP so với mức cơ bản."
+      }
+    ],
+    "limits": [
+      "Chừa chỗ trong túi trước khi làm hoặc mở bánh; không tự hoàn tiền và nguyên liệu nếu phát bánh thất bại."
+    ],
+    "issues": [
+      "Phí Kim Long thực thu là 150.000/1.500.000 Đồng cho 1/10 bánh; một số lời thoại ghi thấp hơn."
+    ],
+    "status": "issues",
+    "verdict": "Công thức dùng bốn nguyên liệu; Thập Cẩm mở một trong bốn quà, Kim Long còn 26% lượt tiêu bánh không có quà.",
+    "sources": [
+      {
+        "path": "Server/gameserver/script/tranphai/sukien1.lua",
+        "line": 30,
+        "label": "Menu Làm Bánh"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien2.lua",
+        "line": 23,
+        "label": "Công thức 1 Thập Cẩm"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien2.lua",
+        "line": 57,
+        "label": "Công thức 10 Thập Cẩm"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien2.lua",
+        "line": 99,
+        "label": "Công thức 1 Kim Long, thực thu 150.000 Đồng"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/kimtien2.lua",
+        "line": 133,
+        "label": "Công thức 10 Kim Long, thực thu 1.500.000 Đồng"
+      },
+      {
+        "path": "Server/gameserver/setting/item/001/other/scriptitem.txt",
+        "line": 2085,
+        "label": "Tên bánh và chức năng mở quà"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/Event_TaoHaiSan.lua",
+        "line": 19,
+        "label": "Tỷ lệ và quà Thập Cẩm"
+      },
+      {
+        "path": "Server/gameserver/script/tranphai/item/Event_HuChao.lua",
+        "line": 19,
+        "label": "Tỷ lệ Kim Long và lượt không quà"
+      },
+      {
+        "path": "Server/gameserver/script/pvp/baihutang_def.lua",
+        "line": 75,
+        "label": "Bạch Hổ Đường phát 10 mỗi nguyên liệu"
+      },
+      {
+        "path": "Server/gameserver/script/mission/xoyogame/xoyogame_base.lua",
+        "line": 408,
+        "label": "Tiêu Dao Cốc phát 1 mỗi nguyên liệu khi được thưởng"
+      },
+      {
+        "path": "Server/gameserver/setting/map/map_info/linanfu/info.txt",
+        "line": 207,
+        "label": "NPC Bánh Trung Thu tại Lâm An"
+      },
+      {
+        "path": "Server/gameserver/script/player/title_reward_bonus.lua",
+        "line": 26,
+        "label": "EXP tăng theo danh hiệu"
+      }
+    ]
+  }
+]
