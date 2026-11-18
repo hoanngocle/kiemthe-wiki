@@ -7,6 +7,11 @@ import type { ItemTooltip, ItemTooltipStat, ItemWikiEntry, ItemAcquisition, Item
 
 const elements: Record<number, string> = { 1: "Kim", 2: "Mộc", 3: "Thủy", 4: "Hỏa", 5: "Thổ", [-1]: "Ngẫu nhiên 5 hệ" };
 const keyOf = (variant: { source: string; line: number }) => `${variant.source}:${variant.line}`;
+const hiddenAcquisitionMaps = new Set([
+  "Vân Trung Trấn", "Long Môn Trấn", "Vĩnh Lạc Trấn", "Đạo Hương Thôn", "Thạch Cổ Trấn", "Giang Tân Thôn",
+  "Long Tuyền Thôn", "Ba Lăng Huyện", "Biện Kinh Phủ", "Phượng Tường Phủ", "Dương Châu Phủ", "Tương Dương Phủ",
+  "Thành Đô Phủ", "Đại Lý Phủ", "Lâm An Phủ", "Tiêu Dao Cốc", "Tần Lăng 1", "Tần Lăng 3",
+].map((name) => name.normalize("NFC").toLocaleLowerCase("vi-VN")));
 
 function Stats({ stats }: { stats: ItemTooltipStat[] }) {
   return <div className="item-stats">
@@ -24,6 +29,7 @@ function Stats({ stats }: { stats: ItemTooltipStat[] }) {
 }
 
 function TooltipContent({ tooltip }: { tooltip: ItemTooltip }) {
+  const stats = tooltip.stats.filter((stat) => !stat.section.startsWith("Cường hóa"));
   return <>
     <strong className="item-tooltip-name">{tooltip.name}</strong>
     <div className="item-tooltip-meta">
@@ -32,24 +38,27 @@ function TooltipContent({ tooltip }: { tooltip: ItemTooltip }) {
       {elements[tooltip.series] && <span>Hệ {elements[tooltip.series]}</span>}
     </div>
     {tooltip.requirements.length > 0 && <p className="item-tooltip-requirements">{tooltip.requirements.join(" · ")}</p>}
-    <Stats stats={tooltip.stats} />
+    {stats.length > 0 && <Stats stats={stats} />}
     {tooltip.description && <p className="item-tooltip-description">{tooltip.description}</p>}
-    {!tooltip.description && !tooltip.stats.length && <p className="item-tooltip-note">Mẫu vật phẩm chưa khai báo chỉ số hoặc mô tả công dụng.</p>}
+    {!tooltip.description && !stats.length && <p className="item-tooltip-note">Mẫu vật phẩm chưa khai báo chỉ số hoặc mô tả công dụng.</p>}
   </>;
 }
 
 function AcquisitionList({ routes }: { routes: ItemAcquisition[] }) {
-  return <ul className="item-acquisition">{routes.map((route, index) => <li key={index}>
+  return <ul className="item-acquisition">{routes.map((route, index) => {
+    const maps = route.maps.filter((name) => !hiddenAcquisitionMaps.has(name.normalize("NFC").replace(/\s+/g, " ").trim().toLocaleLowerCase("vi-VN")));
+    return <li key={index}>
     <p>{route.method}{route.targetId && <>{" · "}<a href={`/wiki/vat-pham?q=${encodeURIComponent(route.targetId)}`}>Tra vật phẩm</a></>}</p>
-    {route.npc && <p className="item-acquisition-location"><strong>NPC: {route.npc}</strong>{route.maps.length ? ` · ${route.maps.join(", ")}` : " · Chưa xác minh bản đồ"}</p>}
-    {!route.npc && route.maps.length > 0 && <p className="item-acquisition-location">Bản đồ: {route.maps.join(", ")}</p>}
+    {route.npc && <p className="item-acquisition-location"><strong>NPC: {route.npc}</strong>{maps.length ? ` · ${maps.join(", ")}` : !route.maps.length ? " · Chưa xác minh bản đồ" : ""}</p>}
+    {!route.npc && maps.length > 0 && <p className="item-acquisition-location">Bản đồ: {maps.join(", ")}</p>}
     {route.cost && <p>Nguyên liệu/phí: {route.cost}</p>}
     {route.requirements.length > 0 && <ul className="item-acquisition-requirements">{route.requirements.map((requirement) => <li key={requirement}>{requirement}</li>)}</ul>}
-  </li>)}</ul>;
+    </li>;
+  })}</ul>;
 }
 
 export function ItemRow({ item }: { item: ItemWikiEntry }) {
-  const [selected, setSelected] = useState(item.selectedVariant);
+  const [selected] = useState(item.selectedVariant);
   const [tooltip, setTooltip] = useState<ItemTooltip>(item.tooltip);
   const [acquisition, setAcquisition] = useState<ItemAcquisition[]>(item.acquisition);
   const [classification, setClassification] = useState<ItemClassification>(item.classification);
@@ -135,13 +144,6 @@ export function ItemRow({ item }: { item: ItemWikiEntry }) {
       {!loading && !error && <div className="item-classification"><span>{classification.slotName}</span><span>{classification.familyName}</span>{classification.requiredLevel !== null && <span>Cấp mặc {classification.requiredLevel}</span>}
         {classification.group === "vu-khi" && /^[12],[12],/.test(variant.id) && <a href={`/wiki/vat-pham/${variant.id.replaceAll(",", "-")}`}>Đối chiếu chỉ số</a>}
       </div>}
-      {item.variants.length > 1 && <label className="item-variant-selector"><span>Biến thể</span>
-        <select aria-label={`Biến thể ${item.name}`} value={selected} onChange={(event) => {
-          const next = event.target.value;
-          setOpen(false); setError(""); setSelected(next); setLoading(next !== item.selectedVariant);
-          if (next === item.selectedVariant) { setTooltip(item.tooltip); setAcquisition(item.acquisition); setClassification(item.classification); }
-        }}>{item.variants.map((entry) => <option key={keyOf(entry)} value={keyOf(entry)}>{entry.label}</option>)}</select>
-      </label>}
       {open && createPortal(<div ref={card} id={tooltipId} role="dialog" aria-label={`Tooltip ${tooltip.name}`} className="item-tooltip" style={position}
         onFocus={() => clearTimeout(closeTimer.current)} onBlur={hide}
         onPointerEnter={() => clearTimeout(closeTimer.current)} onPointerLeave={hide}>

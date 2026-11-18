@@ -20,6 +20,10 @@ test("classifies weapons, ordinary equipment and companion weapons into the prop
 test("merged catalog retains weapon families and special equipment upgrade routes", async () => {
   const catalog = await loadUnifiedItemCatalog("../gameserver");
   const weapon = catalog.items.find((item) => item.id === "2,1,12084,10")!;
+  assert.ok(weapon, "a weapon with a confirmed chest source stays visible");
+  assert.ok(catalog.items.some((item) => item.id === "2,1,1215,10"), "a weapon sold by an NPC stays visible");
+  assert.ok(!catalog.items.some((item) => item.id === "2,1,12044,10"), "upgrade-only weapons without an acquisition route are hidden");
+  assert.ok(!catalog.items.some((item) => item.id === "2,1,1700,10"), "weapons without a confirmed acquisition route are hidden");
   assert.equal(weapon.variants[0].classification.family, "hao-thien");
   const mask = catalog.items.find((item) => item.id === "1,13,218,4")!;
   assert.equal(mask.variants[0].classification.slot, "mat-na");

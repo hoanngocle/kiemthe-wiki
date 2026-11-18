@@ -9,7 +9,7 @@ const number = (value: number) => value.toLocaleString("vi-VN");
 
 export function ItemWiki({ initial = {}, guides }: { initial?: ItemFilters & { q?: string; page?: string; size?: string }; guides?: ReactNode }) {
   const [query, setQuery] = useState(initial.q ?? "");
-  const [filters, setFilters] = useState<ItemFilters>({ group: initial.group, slot: initial.slot, family: initial.family, series: initial.series, level: initial.level, quality: initial.quality });
+  const [filters, setFilters] = useState<ItemFilters>({ group: initial.group, slot: initial.slot, family: initial.family, series: initial.series });
   const [page, setPage] = useState(Math.max(1, Number(initial.page) || 1));
   const [pageSize, setPageSize] = useState([25, 50, 100, 200].includes(Number(initial.size)) ? Number(initial.size) : 50);
   const [revision, setRevision] = useState(0);
@@ -68,11 +68,10 @@ export function ItemWiki({ initial = {}, guides }: { initial?: ItemFilters & { q
   function changeFilter(name: keyof ItemFilters, value: string) {
     setLoading(true); setPage(1);
     setFilters((current) => name === "group" ? { group: value }
-      : name === "slot" ? { ...current, slot: value, family: "", level: "", quality: "" }
-      : name === "family" ? { ...current, family: value, level: "", quality: "" } : { ...current, [name]: value });
+      : name === "slot" ? { ...current, slot: value, family: "" } : { ...current, [name]: value });
   }
   return <div className="page-content wiki-page item-wiki-page">
-    <section className="wiki-intro"><h1>Wiki Vật Phẩm</h1><p>Rê chuột hoặc bấm vào tên/icon để xem tooltip. Chọn biến thể để đối chiếu đúng mã và chỉ số.</p></section>
+    <section className="wiki-intro"><h1>Wiki Vật Phẩm</h1><p>Rê chuột hoặc bấm vào tên/icon để xem tooltip.</p></section>
     <section id="danh-muc" className="item-catalog" aria-label="Danh sách vật phẩm">
       <nav className="item-groups" aria-label="Nhóm vật phẩm">
         <button type="button" aria-pressed={!filters.group} onClick={() => changeFilter("group", "")}>Tất cả</button>
@@ -83,8 +82,6 @@ export function ItemWiki({ initial = {}, guides }: { initial?: ItemFilters & { q
         <label className="wiki-filter"><span>Vị trí / Loại</span><select value={filters.slot ?? ""} onChange={(event) => changeFilter("slot", event.target.value)}><option value="">Tất cả vị trí / loại</option>{data?.facets.slots.map((slot) => <option key={slot.value} value={slot.value}>{slot.label}</option>)}</select></label>
         <label className="wiki-filter"><span>Dòng / Bộ</span><select value={filters.family ?? ""} onChange={(event) => changeFilter("family", event.target.value)}><option value="">Tất cả dòng / bộ</option>{data?.facets.families.map((family) => <option key={family.value} value={family.value}>{family.label}</option>)}</select></label>
         <label className="wiki-filter"><span>Hệ</span><select value={filters.series ?? ""} onChange={(event) => changeFilter("series", event.target.value)}><option value="">Tất cả hệ</option>{["Kim", "Mộc", "Thủy", "Hỏa", "Thổ"].map((name, index) => <option key={name} value={index + 1}>{name}</option>)}</select></label>
-        <label className="wiki-filter"><span>Cấp mặc</span><select value={filters.level ?? ""} onChange={(event) => changeFilter("level", event.target.value)}><option value="">Tất cả cấp</option>{data?.facets.levels.map((level) => <option key={level} value={level}>{level || "Không yêu cầu"}</option>)}</select></label>
-        <label className="wiki-filter"><span>Phẩm chất</span><select value={filters.quality ?? ""} onChange={(event) => changeFilter("quality", event.target.value)}><option value="">Tất cả phẩm chất</option>{data?.facets.qualities.map((quality) => <option key={quality}>{quality}</option>)}</select></label>
         <label className="item-page-size"><span>Mỗi trang</span><select value={pageSize} onChange={(event) => { setLoading(true); setPageSize(Number(event.target.value)); setPage(1); }}>{[25, 50, 100, 200].map((size) => <option key={size} value={size}>{size}</option>)}</select></label>
         <button className="item-refresh" disabled={loading} onClick={refresh}><ArrowPathIcon className="ui-icon ui-icon-sm" aria-hidden="true" />Làm mới</button>
       </div>

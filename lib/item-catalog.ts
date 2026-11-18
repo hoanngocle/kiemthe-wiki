@@ -29,5 +29,13 @@ export async function loadUnifiedItemCatalog(root: string) {
     }
   }
   const acquisition = await loadItemAcquisition(root, catalog.items, { weapons, equipment, specials });
-  return { ...catalog, acquisition };
+  // Apply visibility before grouping and pagination so unknown weapon profiles
+  // cannot remain as the representative of an otherwise verified name group.
+  const items = catalog.items.filter((item) => {
+    const variant = item.variants[0];
+    if (variant.classification.group !== "vu-khi") return true;
+    return (acquisition.get(variant.id) ?? []).some((route) => route.type !== "upgrade"
+      && (!route.series || variant.tooltip.series === -1 || route.series === variant.tooltip.series));
+  });
+  return { ...catalog, items, acquisition };
 }

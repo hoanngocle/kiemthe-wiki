@@ -10,11 +10,11 @@ import "../trang-bi/equipment-wiki.css";
 
 export const metadata: Metadata = {
   title: "Wiki Vật Phẩm · Kiếm Thế",
-  description: "Tra toàn bộ vật phẩm, vũ khí và trang bị theo vị trí, dòng, hệ, cấp mặc; xem chỉ số, nguồn nhận và nâng cấp.",
+  description: "Tra toàn bộ vật phẩm, vũ khí và trang bị theo vị trí, dòng và hệ; xem chỉ số, nguồn nhận và nâng cấp.",
 };
 export default async function ItemWikiPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const params = await searchParams;
-  const initial = Object.fromEntries(["q", "group", "slot", "family", "series", "level", "quality", "page", "size"].flatMap((name) => typeof params[name] === "string" ? [[name, params[name]]] : [])) as ItemFilters & { q?: string; page?: string; size?: string };
+  const initial = Object.fromEntries(["q", "group", "slot", "family", "series", "page", "size"].flatMap((name) => typeof params[name] === "string" ? [[name, params[name]]] : [])) as ItemFilters & { q?: string; page?: string; size?: string };
   return <AdminShell section="wiki" wikiPage="vat-pham"><ItemWiki key={JSON.stringify(initial)} initial={initial} guides={<>
     <details className="item-guides"><summary>Lộ trình và công thức vũ khí</summary><WeaponGuide /></details>
     <details className="item-guides"><summary>Hướng dẫn luyện hóa ngoại trang</summary><div><CosmeticMaterials /></div></details>
